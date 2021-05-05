@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharTwoModl : Characters
 {
-    public CharTwoModl(float spd) : base(spd)
+    public CharTwoModl() : base()
     {
 
     }
