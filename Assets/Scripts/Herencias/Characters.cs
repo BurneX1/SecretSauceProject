@@ -12,12 +12,19 @@ public class Characters : Entities
 
     public Camera myCamera;
     //-----Escoger Teclas------//
+    [HideInInspector]
     public KeyCode key_up;
+    [HideInInspector]
     public KeyCode key_down;
-    public KeyCode key_der;
-    public KeyCode key_izq;
+    [HideInInspector]
+    public KeyCode key_rigth;
+    [HideInInspector]
+    public KeyCode key_left;
+    [HideInInspector]
     public KeyCode key_jump;
+    [HideInInspector]
     public KeyCode key_atk;
+    [HideInInspector]
     public KeyCode key_spcAtk;
     //-------------------------//
 
@@ -39,6 +46,10 @@ public class Characters : Entities
      
     }
 
+    public void Update()
+    {
+        grounded = GroundDetect(groundLayer, 1.1f);
+    }
 
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -95,12 +106,12 @@ public class Characters : Entities
     {
         float hor;
         float ver;
-        if (Input.GetKey(key_izq))
+        if (Input.GetKey(key_left))
         {
             hor = -1;
             Move_in_transform(movSpd);
         }
-        else if (Input.GetKey(key_der))
+        else if (Input.GetKey(key_rigth))
         {
             hor = 1;
             Move_in_transform(movSpd);
