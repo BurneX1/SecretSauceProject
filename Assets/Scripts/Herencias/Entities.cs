@@ -23,7 +23,10 @@ public class Entities : MonoBehaviour
     {  
         
     }
+    public virtual void SelfDmg(int dmg)
+    {
 
+    }
     public bool GroundDetect(LayerMask dtcLayer, float distance)
     {
         bool grnd;

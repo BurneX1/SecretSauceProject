@@ -17,9 +17,9 @@ public class Enemies : Entities
         _atkDmg = dmg;
     }
 
-    public void SelfDmg(int dmg)
+    public override void SelfDmg(int dmg)
     {
-
+        Debug.Log(name + ": Auch!");
     }
 
     public void IncreaseLife(int addLife)

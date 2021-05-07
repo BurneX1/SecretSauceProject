@@ -15,7 +15,7 @@ public class PlayerMangr : MonoBehaviour
     public KeyCode key_left;
     public KeyCode key_jump;
     public KeyCode key_atk;
-    public KeyCode key_spcAtk;
+    public KeyCode[] keyArray_extrAct;
 
     public KeyCode key_switch;
     //-------------------------//
@@ -117,7 +117,7 @@ public class PlayerMangr : MonoBehaviour
                     playerArray[i].GetComponent<Characters>().key_rigth = key_rigth;
                     playerArray[i].GetComponent<Characters>().key_jump = key_jump;
                     playerArray[i].GetComponent<Characters>().key_atk = key_atk;
-                    playerArray[i].GetComponent<Characters>().key_spcAtk = key_spcAtk;
+                    playerArray[i].GetComponent<Characters>().keyArray_extrAct = keyArray_extrAct;
 
                 }
             }

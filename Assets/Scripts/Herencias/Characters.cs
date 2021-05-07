@@ -8,6 +8,8 @@ public class Characters : Entities
     private Vector3 camRight;
     private Vector3 lookCamPs;
     private Vector3 playerInput;
+    private bool cooldownActive;
+    private float atkCDTimer;
 
 
     public Camera myCamera;
@@ -25,11 +27,12 @@ public class Characters : Entities
     [HideInInspector]
     public KeyCode key_atk;
     [HideInInspector]
-    public KeyCode key_spcAtk;
+    public KeyCode[] keyArray_extrAct;
     //-------------------------//
 
-    [Range(0.0f,20000)]
+    [Range(0.0f,3)]
     public float meleCD;
+    public Collider meleHitCollider;
     [Range(0.0f, 1000)]
     public float jmpForce;
     [Range(0.0f, 500)]
@@ -49,11 +52,25 @@ public class Characters : Entities
     public void Update()
     {
         grounded = GroundDetect(groundLayer, 1.1f);
+        CDTimer(meleCD);
     }
 
+    void CDTimer(float cooldownTime)
+    {
+        if (cooldownActive == true)
+        {
+            atkCDTimer += Time.deltaTime;
+        }
+        if (atkCDTimer >= cooldownTime)
+        {
+            cooldownActive = false;
+            meleHitCollider.gameObject.SetActive(false);
+            atkCDTimer = 0;
+        }
+    }
 
     /////////////////////////////////////////////////////////////////////////////////
-    public void SelfDmg(int dmg)
+    public override void SelfDmg(int dmg)
     {
 
     }
@@ -63,10 +80,21 @@ public class Characters : Entities
         CamDirection();
         Jump(jmpForce);
     }
-    public void HitBoxAtk(int dmg, bool oneHitatk)
+    public void HitBoxAtk(int dmg, bool oneHitatk, Collider hitBox)
     {
-
+        if (Input.GetKeyDown(key_atk))
+        {
+            if(cooldownActive == false)
+            {
+                cooldownActive = true;
+                hitBox.gameObject.GetComponent<HitElements>().dmg = dmg;
+                hitBox.gameObject.GetComponent<HitElements>().hitDetect = false;
+                hitBox.gameObject.GetComponent<HitElements>().despOnCollision = oneHitatk;
+                hitBox.gameObject.SetActive(true);
+            }
+        }
     }
+
 
     void CamDirection()
     {

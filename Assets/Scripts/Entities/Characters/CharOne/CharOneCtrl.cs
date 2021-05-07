@@ -17,6 +17,7 @@ public class CharOneCtrl : MonoBehaviour
         _cmp_mod = gameObject.GetComponent<CharOneModl>();
         _cmp_view = gameObject.GetComponent<CharOneView>();
         _cmp_mod.grndDistance = 7;
+        _cmp_mod.meleHitCollider.gameObject.SetActive(false);
 
     }
 
@@ -39,7 +40,7 @@ public class CharOneCtrl : MonoBehaviour
         }
         else
         {
-
+            _cmp_mod.HitBoxAtk(1, true, _cmp_mod.meleHitCollider);
         }
     }
    
