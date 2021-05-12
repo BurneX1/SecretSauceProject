@@ -169,7 +169,7 @@ public class Characters : Entities
 
     }
 
-    private void Jump( float force)
+    private void Jump(float force)
     {
         if (Input.GetKey(key_jump) && grounded)
         {

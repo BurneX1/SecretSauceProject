@@ -36,7 +36,7 @@ public class CharOneCtrl : MonoBehaviour
     {
         if (_cmp_mod.afkMode == true)
         {
-
+           
         }
         else
         {
