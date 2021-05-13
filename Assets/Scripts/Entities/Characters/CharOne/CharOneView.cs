@@ -7,46 +7,103 @@ public class CharOneView : MonoBehaviour
 {
     private CharOneModl _cmp_mod;
     private CharOneCtrl _cmp_ctrl;
-    private Animator anim;
+    private Animator _cmp_anim;
 
     public bool viewMove;
     public bool viewAttack;
     public bool viewEspecial;
     public bool viewGetDamage;
     public bool viewKnockDown;
-    public float move;
-    public int viewLife;
+    public float activationMove;
+    public float timer;
 
     // Start is called before the first frame update
     void Start()
     {
         _cmp_mod = gameObject.GetComponent<CharOneModl>();
         _cmp_ctrl = gameObject.GetComponent<CharOneCtrl>();
-        anim = GetComponent<Animator>();
+        _cmp_anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("Move", move);
-        anim.SetBool("Grounded", _cmp_mod.grounded);
-        anim.SetBool("Attack", viewAttack);
-        anim.SetBool("Especial", viewEspecial);
-        anim.SetBool("KnockDown", viewKnockDown);
-        anim.SetBool("GetDamage", viewGetDamage);
+        _cmp_anim.SetBool("Grounded", _cmp_mod.grounded);
 
+        ActivateAnimationMove();
+        ActivateAnimationAttack();
+        ActivateAnimationEspecial();
+        ActivateAnimationKnockDown();
+        ActivateAnimationRecoil();
+
+    }
+    
+    void ActivateAnimationMove()
+    {
+        _cmp_anim.SetFloat("Move", activationMove);
         if (viewMove == true)
         {
-            move = 1;
+            activationMove = 1;
         }
         else
         {
-            move = 0;
+            activationMove = 0;
         }
-
-        if (viewLife == 0)
+    }
+    
+    void ActivateAnimationAttack()
+    {
+        if (viewAttack == true)
         {
-            viewKnockDown = true;
+            _cmp_anim.SetTrigger("Attack");
+            timer += Time.deltaTime;
+            if (timer >= 0.1f)
+            {
+                viewAttack = false;
+                timer = 0;
+            }
+        }
+    }
+
+    void ActivateAnimationEspecial()
+    {
+        if (viewEspecial == true)
+        {
+            _cmp_anim.SetTrigger("Especial");
+            timer += Time.deltaTime;
+            if (timer >= 0.1f)
+            {
+                viewEspecial = false;
+                timer = 0;
+            }
+        }
+    }
+
+    void ActivateAnimationKnockDown()
+    {
+        if (viewKnockDown == true)
+        {
+            _cmp_anim.SetTrigger("KnockDown");
+            timer += Time.deltaTime;
+            if (timer >= 0.1f)
+            {
+                viewKnockDown = false;
+                timer = 0;
+            }
+        }
+    }
+
+    void ActivateAnimationRecoil()
+    {
+        if (viewGetDamage == true)
+        {
+            _cmp_anim.SetTrigger("GetDamage");
+            timer += Time.deltaTime;
+            if (timer >= 0.1f)
+            {
+                viewGetDamage = false;
+                timer = 0;
+            }
         }
     }
 }

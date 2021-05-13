@@ -2,53 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharTwoModl))]
-public class CharTwoView : MonoBehaviour
+public class EnemyTwoView : MonoBehaviour
 {
-    private CharTwoModl _cmp_mod;
-    private CharTwoCtrl _cmp_ctrl;
-    private Animator _cmp_anim;
-
-    public bool viewMove;
     public bool viewAttack;
-    public bool viewEspecial;
     public bool viewGetDamage;
     public bool viewKnockDown;
-    public float activationMove;
+    public bool viewHaveShield;
+    public bool viewDetectPlayer;
+    public bool viewProtect;
     public float timer;
+    private Animator _cmp_anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        _cmp_mod = gameObject.GetComponent<CharTwoModl>();
-        _cmp_ctrl = gameObject.GetComponent<CharTwoCtrl>();
         _cmp_anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        _cmp_anim.SetBool("Grounded", _cmp_mod.grounded);
-
-        ActivateAnimationMove();
         ActivateAnimationAttack();
-        ActivateAnimationEspecial();
-        ActivateAnimationKnockDown();
         ActivateAnimationRecoil();
-
-    }
-
-    void ActivateAnimationMove()
-    {
-        _cmp_anim.SetFloat("Move", activationMove);
-        if (viewMove == true)
-        {
-            activationMove = 1;
-        }
-        else
-        {
-            activationMove = 0;
-        }
+        ActivateAnimationKnockDown();
+        ActivateAnimationProtect();
     }
 
     void ActivateAnimationAttack()
@@ -65,15 +42,15 @@ public class CharTwoView : MonoBehaviour
         }
     }
 
-    void ActivateAnimationEspecial()
+    void ActivateAnimationRecoil()
     {
-        if (viewEspecial == true)
+        if (viewGetDamage == true)
         {
-            _cmp_anim.SetTrigger("Especial");
+            _cmp_anim.SetTrigger("GetDamage");
             timer += Time.deltaTime;
             if (timer >= 0.1f)
             {
-                viewEspecial = false;
+                viewGetDamage = false;
                 timer = 0;
             }
         }
@@ -93,17 +70,16 @@ public class CharTwoView : MonoBehaviour
         }
     }
 
-    void ActivateAnimationRecoil()
+    void ActivateAnimationProtect()
     {
-        if (viewGetDamage == true)
+        _cmp_anim.SetBool("Protect", viewProtect);
+        if (viewHaveShield == true && viewDetectPlayer == true)
         {
-            _cmp_anim.SetTrigger("GetDamage");
-            timer += Time.deltaTime;
-            if (timer >= 0.1f)
-            {
-                viewGetDamage = false;
-                timer = 0;
-            }
+            viewProtect = true;
+        }
+        else
+        {
+            viewProtect = false;
         }
     }
 }
