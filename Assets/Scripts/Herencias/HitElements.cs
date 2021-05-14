@@ -11,11 +11,13 @@ public class HitElements : MonoBehaviour
     public int dmg;
     public string[] dmgTagsArray;
     public string[] intrcTagsArray;
+    public Transform sphere;
+    public Rigidbody cmp_rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cmp_rb = GetComponent<Rigidbody>();
     }
     private void FixedUpdate()
     {
@@ -67,7 +69,7 @@ public class HitElements : MonoBehaviour
 
     public void Movement()
     {
-
+        cmp_rb.AddForce(sphere.forward * shtSpd, ForceMode.Impulse);
     }
 
     public void Desapear()

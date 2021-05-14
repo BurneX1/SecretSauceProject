@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyOneModl))]
 public class EnemyOneView : MonoBehaviour
 {
+    private EnemyOneModl _cmp_mod;
+    private EnemyOneCtrl _cmp_ctrl;
+    private Animator _cmp_anim;
+
     public bool viewAttack;
     public bool viewGetDamage;
     public bool viewKnockDown;
     public float timer;
-    private Animator _cmp_anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        _cmp_mod = gameObject.GetComponent<EnemyOneModl>();
+        _cmp_ctrl = gameObject.GetComponent<EnemyOneCtrl>();
         _cmp_anim = GetComponent<Animator>();
     }
 

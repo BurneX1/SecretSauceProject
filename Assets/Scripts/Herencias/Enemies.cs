@@ -11,10 +11,14 @@ public class Enemies : Entities
 
     public GameObject targetObj;
 
-    public Enemies(int life, int dmg) : base()
+    public float sphereRadius;
+    public Transform target;
+    public Transform sphere;
+    public bool ActivateAttack;
+
+    public Enemies() : base()
     {
-        _vida = life;
-        _atkDmg = dmg;
+
     }
 
     public override void SelfDmg(int dmg)
@@ -31,4 +35,29 @@ public class Enemies : Entities
     {
 
     }
+
+    public void DetectPlayer()
+    {
+        float distancePlayer = Vector3.Distance(target.position, sphere.position);
+        if (distancePlayer <= sphereRadius)
+        {
+            Debug.Log("te veo bb");
+            ActivateAttack = true;
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(sphere.position, sphereRadius);
+    }
+
+    public void FaceTarget()
+    {
+        Vector3 direction = (target.position - sphere.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
+        sphere.rotation = Quaternion.Slerp(sphere.rotation, lookRotation, Time.deltaTime * 5f);
+
+    }
+
 }
