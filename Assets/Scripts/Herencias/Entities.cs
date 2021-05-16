@@ -14,7 +14,7 @@ public class Entities : MonoBehaviour
     [HideInInspector]
     public Rigidbody cmp_rb;
 
-    void Start()
+    public virtual void Start()
     {
         cmp_rb = gameObject.GetComponent<Rigidbody>();
     }

@@ -88,6 +88,12 @@ public class PlayerMangr : MonoBehaviour
                 if (i != _inptPly)
                 {
                     playerArray[i].GetComponent<Characters>().afkMode = true;
+                    if (playerArray[i].GetComponent<Characters>().cmp_agent)
+                    {
+                        playerArray[i].GetComponent<Characters>().cmp_agent.enabled = true;
+                        playerArray[i].GetComponent<Characters>().AFKtarget = playerArray[_inptPly].transform;
+                    }
+
                 }
                 else
                 {
@@ -109,6 +115,11 @@ public class PlayerMangr : MonoBehaviour
 
                     //Change the AFK mode to make able to play
                     playerArray[i].GetComponent<Characters>().afkMode = false;
+                    if (playerArray[i].GetComponent<Characters>().cmp_agent)
+                    {
+                        playerArray[i].GetComponent<Characters>().cmp_agent.enabled = false;
+                    }
+
 
                     //Set de Controlls of the player
                     playerArray[i].GetComponent<Characters>().key_up = key_up;

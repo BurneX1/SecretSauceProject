@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Characters : Entities
 {
+    
     private Vector3 camForward;
     private Vector3 camRight;
     private Vector3 lookCamPs;
@@ -13,6 +16,11 @@ public class Characters : Entities
 
 
     public Camera myCamera;
+    [HideInInspector]
+    public Transform AFKtarget;
+    [HideInInspector]
+    public NavMeshAgent cmp_agent;
+
     //-----Escoger Teclas------//
     [HideInInspector]
     public KeyCode key_up;
@@ -43,7 +51,12 @@ public class Characters : Entities
     public bool afkMode;
 
 
-
+    public override void Start()
+    {
+        base.Start();
+        cmp_agent = gameObject.GetComponent<NavMeshAgent>();
+        //cmp_agent.destination = AFKtarget.position;
+    }
     public Characters() : base() 
     {
      
@@ -53,6 +66,7 @@ public class Characters : Entities
     {
         grounded = GroundDetect(groundLayer, 1.1f);
         CDTimer(meleCD);
+        
     }
 
     void CDTimer(float cooldownTime)
@@ -175,6 +189,58 @@ public class Characters : Entities
         {
             cmp_rb.AddForce(new Vector3(0, force, 0));
         }
+    }
+
+    public void AFKmove()
+    {
+        if (Vector3.Distance(AFKtarget.transform.position, transform.position) > 15.5f)
+        {
+            float xValue = 1;
+            float zValue = 1;
+
+            if (AFKtarget.transform.position.x > transform.position.x)
+            {
+                xValue = -1;
+            }
+            if (AFKtarget.transform.position.z > transform.position.z)
+            {
+                zValue = -1;
+            }
+
+            if(cmp_agent.enabled)
+            {
+                cmp_agent.enabled = false;
+                gameObject.transform.position = new Vector3(AFKtarget.position.x + (3.5f * xValue), AFKtarget.position.y, AFKtarget.position.z + (3.5f * zValue));
+                cmp_agent.enabled = true;
+            }
+
+        }
+
+        if (Vector3.Distance(AFKtarget.transform.position, transform.position) > 6.5f)
+        {
+            float xValue = 1;
+            float zValue = 1;
+
+            if (AFKtarget.transform.position.x > transform.position.x)
+            {
+                xValue = -1;
+            }
+            if (AFKtarget.transform.position.z > transform.position.z)
+            {
+                zValue = -1;
+            }
+
+
+            Vector3 targ = new Vector3(AFKtarget.position.x + (2.5f*xValue), AFKtarget.position.y, AFKtarget.position.z + (2.5f * zValue));
+            cmp_agent.destination = targ;
+        }
+
+        
+    }
+
+    private void AFKjump()
+    {
+
     }
     
 

@@ -25,7 +25,7 @@ public class CharTwoCtrl : MonoBehaviour
     {
         if (_cmp_mod.afkMode == true)
         {
-
+            _cmp_mod.AFKmove();
         }
         else
         {

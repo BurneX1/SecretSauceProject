@@ -26,9 +26,11 @@ public class CharOneCtrl : MonoBehaviour
         if (_cmp_mod.afkMode == true)
         {
 
+            _cmp_mod.AFKmove();
         }
         else
         {
+            _cmp_mod.cmp_agent.enabled = false;
             _cmp_mod.Move();
         }
     }
