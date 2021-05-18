@@ -55,6 +55,7 @@ public class Characters : Entities
     {
         base.Start();
         cmp_agent = gameObject.GetComponent<NavMeshAgent>();
+        //cmp_agent.autoTraverseOffMeshLink = false;
         //cmp_agent.destination = AFKtarget.position;
     }
     public Characters() : base() 
@@ -193,8 +194,10 @@ public class Characters : Entities
 
     public void AFKmove()
     {
-        if (Vector3.Distance(AFKtarget.transform.position, transform.position) > 15.5f)
+        if (Vector3.Distance(AFKtarget.transform.position, transform.position) > 30.5f)
         {
+            
+
             float xValue = 1;
             float zValue = 1;
 
@@ -232,15 +235,60 @@ public class Characters : Entities
 
 
             Vector3 targ = new Vector3(AFKtarget.position.x + (2.5f*xValue), AFKtarget.position.y, AFKtarget.position.z + (2.5f * zValue));
-            cmp_agent.destination = targ;
+            if (cmp_agent.enabled)
+            {
+                cmp_agent.destination = targ;
+            }
         }
-
         
+        StartCoroutine(AFKjump());
     }
 
-    private void AFKjump()
+    private IEnumerator AFKjump()
     {
+        //cmp_agent.autoTraverseOffMeshLink = false;
+        //cmp_agent.
+        if (cmp_agent.isOnOffMeshLink)
+        {
+            
+            yield return StartCoroutine(JumpAFK(cmp_agent, 7.5f, 1.5f));
+            cmp_agent.enabled = true;
+            //cmp_agent.CompleteOffMeshLink();
 
+            //cmp_agent.CompleteOffMeshLink();
+            //cmp_agent.updateRotation = true;
+        }
+        yield return null;
+
+    }
+
+    IEnumerator JumpAFK(NavMeshAgent agnt, float heigth, float duration)
+    {
+        OffMeshLinkData meshData = agnt.currentOffMeshLinkData;
+        Vector3 strPos = agnt.transform.position;
+        Vector3 endPos = meshData.endPos;
+
+        float time = 0.0f;
+
+        while(time <= 1.0f)
+        {
+            float upDist = heigth * (time - time * time);
+            agnt.enabled = false;
+            time += Time.deltaTime / duration;
+            if (Vector3.Distance(agnt.transform.position, endPos + new Vector3(0, agnt.baseOffset, 0)) <= 0.2f)
+            {
+                agnt.gameObject.transform.position = endPos + new Vector3(0, agnt.baseOffset, 0);
+                //cmp_agent.CompleteOffMeshLink();
+                yield return null;
+            }
+            else
+            {
+                agnt.gameObject.transform.position = Vector3.Lerp(strPos, endPos + new Vector3(0, agnt.baseOffset, 0), time) + upDist * Vector3.up;
+                yield return null;
+            }
+            
+        }
+        //cmp_agent.CompleteOffMeshLink();
     }
     
 
