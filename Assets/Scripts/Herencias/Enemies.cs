@@ -11,10 +11,12 @@ public class Enemies : Entities
 
     public GameObject targetObj;
 
-    public float sphereRadius;
+    public float sightRadius;
+    public float attackRadius;
     public Transform target;
     public Transform sphere;
-    public bool ActivateAttack;
+    public bool activateShoot;
+    public bool activateAttack;
 
     public Enemies() : base()
     {
@@ -39,17 +41,33 @@ public class Enemies : Entities
     public void DetectPlayer()
     {
         float distancePlayer = Vector3.Distance(target.position, sphere.position);
-        if (distancePlayer <= sphereRadius)
+        if (distancePlayer <= sightRadius)
         {
             Debug.Log("te veo bb");
-            ActivateAttack = true;
+            activateShoot = true;
+        }
+        else
+        {
+            activateShoot = false;
+        }
+        float distanciaAttack = Vector3.Distance(target.position, sphere.position);
+        if(distanciaAttack <= attackRadius)
+        {
+            activateAttack = true;
+        }
+        else
+        {
+            activateAttack = false;
         }
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(sphere.position, sphereRadius);
+        Gizmos.DrawWireSphere(sphere.position, sightRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(sphere.position, attackRadius);
+
     }
 
     public void FaceTarget()
