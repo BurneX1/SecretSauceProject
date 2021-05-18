@@ -24,14 +24,14 @@ public class EnemyOneCtrl : MonoBehaviour
     void Update()
     {
         _cmp_mod.DetectPlayer();
-        if (_cmp_mod.ActivateAttack == true)
+        if (_cmp_mod.activateShoot == true)
         {
-            Attack();
+            Shoot();
             _cmp_mod.FaceTarget();
         }
     }
 
-    public void Attack()
+    public void Shoot()
     {
             timer += Time.deltaTime;
             if (timer >= maxTimer)

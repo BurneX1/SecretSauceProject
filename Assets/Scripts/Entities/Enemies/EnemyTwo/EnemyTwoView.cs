@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyTwoModl))]
 public class EnemyTwoView : MonoBehaviour
 {
+    private EnemyTwoModl _cmp_mod;
+    private EnemyTwoCtrl _cmp_ctrl;
+    private Animator _cmp_anim;
+
     public bool viewAttack;
     public bool viewGetDamage;
     public bool viewKnockDown;
@@ -11,11 +16,12 @@ public class EnemyTwoView : MonoBehaviour
     public bool viewDetectPlayer;
     public bool viewProtect;
     public float timer;
-    private Animator _cmp_anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        _cmp_mod = gameObject.GetComponent<EnemyTwoModl>();
+        _cmp_ctrl = gameObject.GetComponent<EnemyTwoCtrl>();
         _cmp_anim = GetComponent<Animator>();
     }
 
