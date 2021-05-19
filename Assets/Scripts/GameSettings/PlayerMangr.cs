@@ -25,6 +25,7 @@ public class PlayerMangr : MonoBehaviour
 
 
     // Start is called before the first frame update
+
     void Start()
     {
         _inptPly = 0;
@@ -35,53 +36,54 @@ public class PlayerMangr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Switch();   
+        if (Input.GetKeyDown(key_switch))
+        {
+            Switch();
+        }
     }
 
     void Switch()
     {
 
-        if(Input.GetKeyDown(key_switch))
+        int tmpUses = 0;
+        while (tmpUses <= playerArray.Length)
         {
-            int tmpUses = 0;
-            while (tmpUses <= playerArray.Length)
+            if (_inptPly < playerArray.Length - 1)
             {
-                if (_inptPly < playerArray.Length -1)
-                {
-                    _inptPly++;
-                    tmpUses++;
-                }
-                else
-                {
-                    _inptPly = 0;
-                    tmpUses++;
-                }
+                _inptPly++;
+                tmpUses++;
+            }
+            else
+            {
+                _inptPly = 0;
+                tmpUses++;
+            }
 
-                if (playerArray[_inptPly] != null)
+            if (playerArray[_inptPly] != null)
+            {
+                if (_befInp != _inptPly)
                 {
-                    if (_befInp != _inptPly)
-                    {
-                        SetPlayer();
-                    }
-                    return;
+                    SetPlayer();
                 }
-                else
-                {
-                    Debug.Log(name + ": There was some empty CharacterSpaces" + "(" + tmpUses + ")");
-                }
+                return;
+            }
+            else
+            {
+                Debug.Log(name + ": There was some empty CharacterSpaces" + "(" + tmpUses + ")");
             }
         }
-    }
 
+    }
     void SetPlayer()
     {
         Debug.Log("Player num in array: " + _inptPly + " of: " + playerArray.Length);
 
         for(int i = 0; i<playerArray.Length; i++)
         {
+
             if(playerArray[i] == null)
             {
-                return;
+                //return;
             }
             else if(playerArray[i].GetComponent<Characters>())
             {
@@ -134,7 +136,7 @@ public class PlayerMangr : MonoBehaviour
             }
             else
             {
-                return;
+                //return;
             }
         }
     }

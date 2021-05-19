@@ -13,6 +13,7 @@ public class Characters : Entities
     private Vector3 playerInput;
     private bool cooldownActive;
     private float atkCDTimer;
+    private RaycastHit _frontHit;
 
 
     public Camera myCamera;
@@ -50,11 +51,14 @@ public class Characters : Entities
     [HideInInspector]
     public bool afkMode;
 
-
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        cmp_agent = gameObject.GetComponent<NavMeshAgent>();
+    }
     public override void Start()
     {
-        base.Start();
-        cmp_agent = gameObject.GetComponent<NavMeshAgent>();
+
         //cmp_agent.autoTraverseOffMeshLink = false;
         //cmp_agent.destination = AFKtarget.position;
     }
@@ -127,7 +131,9 @@ public class Characters : Entities
     public void Move_in_transform(float speed)
     {
         //cmp_rb.velocity = transform.forward * speed * Time.deltaTime;
+        //Vector3 vctMov = new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime);
         cmp_rb.velocity = new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime);
+        //cmp_rb.AddForce(new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime));
         //cmp_rb.velocity = new Vector3(transform.forward.x + speed, transform.forward.y, transform.forward.z + speed);
     }
 
@@ -169,10 +175,11 @@ public class Characters : Entities
             ver = -1;
             Move_in_transform(movSpd);
         }
-        else if (Input.GetKey(key_up))
+        else if (Input.GetKey(key_up) && Physics.BoxCast(transform.position, transform.localScale, transform.forward, transform.rotation, 1.5f, groundLayer) == false)
         {
             ver = 1;
             Move_in_transform(movSpd);
+
         }
         else
         {
