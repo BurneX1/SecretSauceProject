@@ -23,20 +23,27 @@ public class EnemyTwoCtrl : MonoBehaviour
         _cmp_mod = gameObject.GetComponent<EnemyTwoModl>();
         _cmp_view = gameObject.GetComponent<EnemyTwoView>();
         meleHitCollider.gameObject.SetActive(false);
+        _cmp_mod.waypointIndex = 0;
+        transform.LookAt(_cmp_mod.waypoints[_cmp_mod.waypointIndex].position);
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         _cmp_mod.DetectPlayer();
         CDTimer(meleCD);
         if(_cmp_mod.activateShoot == true)
         {
+            _cmp_mod.FollowPlayer();
             _cmp_mod.FaceTarget();
         }
         if(_cmp_mod.activateAttack == true)
         {
             HitBoxAtk(1, true, meleHitCollider);           
+        }
+        if(_cmp_mod.activatePatrol == true)
+        {
+            _cmp_mod.ChangeTarget();
         }
 
     }

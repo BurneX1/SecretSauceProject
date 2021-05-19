@@ -18,6 +18,11 @@ public class Enemies : Entities
     public bool activateShoot;
     public bool activateAttack;
 
+    public Transform[] waypoints;
+    public int waypointIndex;
+    public float dist;
+    public bool activatePatrol = true;
+
     public Enemies() : base()
     {
 
@@ -45,13 +50,16 @@ public class Enemies : Entities
         {
             Debug.Log("te veo bb");
             activateShoot = true;
+            activatePatrol = false;
         }
         else
         {
             activateShoot = false;
+            activatePatrol = true;
+
         }
         float distanciaAttack = Vector3.Distance(target.position, sphere.position);
-        if(distanciaAttack <= attackRadius)
+        if (distanciaAttack <= attackRadius)
         {
             activateAttack = true;
         }
@@ -76,6 +84,37 @@ public class Enemies : Entities
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
         sphere.rotation = Quaternion.Slerp(sphere.rotation, lookRotation, Time.deltaTime * 5f);
 
+    }
+
+    public void ChangeTarget()
+    {       
+        dist = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
+        if (dist < 1f)
+        {
+            IncreaseIndex();
+        }
+        Patrol();
+    }
+ 
+
+    public void Patrol()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].position, movSpd * Time.deltaTime);
+    }
+
+    public void IncreaseIndex()
+    {
+        waypointIndex++;
+        if (waypointIndex >= waypoints.Length)
+        {
+            waypointIndex = 0;
+        }
+        transform.LookAt(waypoints[waypointIndex].position);
+    }
+
+    public void FollowPlayer()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, movSpd * Time.deltaTime);
     }
 
 }
