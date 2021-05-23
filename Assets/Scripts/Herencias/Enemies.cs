@@ -13,10 +13,12 @@ public class Enemies : Entities
 
     public float sightRadius;
     public float attackRadius;
-    public Transform target;
+    public Transform[] target;
     public Transform sphere;
     public bool activateShoot;
     public bool activateAttack;
+    public int targetIndex;
+    public KeyCode key_change;
 
     public Transform[] waypoints;
     public int waypointIndex;
@@ -45,7 +47,7 @@ public class Enemies : Entities
 
     public void DetectPlayer()
     {
-        float distancePlayer = Vector3.Distance(target.position, sphere.position);
+        float distancePlayer = Vector3.Distance(target[targetIndex].position, sphere.position);
         if (distancePlayer <= sightRadius)
         {
             Debug.Log("te veo bb");
@@ -58,7 +60,7 @@ public class Enemies : Entities
             activatePatrol = true;
 
         }
-        float distanciaAttack = Vector3.Distance(target.position, sphere.position);
+        float distanciaAttack = Vector3.Distance(target[targetIndex].position, sphere.position);
         if (distanciaAttack <= attackRadius)
         {
             activateAttack = true;
@@ -80,13 +82,24 @@ public class Enemies : Entities
 
     public void FaceTarget()
     {
-        Vector3 direction = (target.position - sphere.position).normalized;
+        Vector3 direction = (target[targetIndex].position - sphere.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
         sphere.rotation = Quaternion.Slerp(sphere.rotation, lookRotation, Time.deltaTime * 5f);
 
     }
-
     public void ChangeTarget()
+    {
+        if (Input.GetKeyDown(key_change))
+        {
+            targetIndex++;
+            if (targetIndex >= target.Length)
+            {
+                targetIndex = 0;
+            }
+        }
+    }
+
+    public void ChangeDirection()
     {       
         dist = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
         if (dist < 1f)
@@ -114,7 +127,7 @@ public class Enemies : Entities
 
     public void FollowPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, movSpd * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target[targetIndex].transform.position, movSpd * Time.deltaTime);
     }
 
 }
