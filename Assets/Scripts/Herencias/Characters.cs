@@ -297,6 +297,11 @@ public class Characters : Entities
         }
         //cmp_agent.CompleteOffMeshLink();
     }
+
+    public virtual void Die()
+    {
+
+    }
     
 
 }
