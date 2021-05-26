@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Characters : Entities
@@ -14,6 +15,8 @@ public class Characters : Entities
     private bool cooldownActive;
     private float atkCDTimer;
     private RaycastHit _frontHit;
+    public GameObject icono;
+    public bool activateIcono;
 
 
     public Camera myCamera;
@@ -71,9 +74,17 @@ public class Characters : Entities
     {
         grounded = GroundDetect(groundLayer, 1.1f);
         CDTimer(meleCD);
-        
-    }
+        icono.gameObject.SetActive(false);
+        ActivateIcon();
 
+    }
+    void ActivateIcon()
+    {
+        if (activateIcono == true)
+        {
+            icono.gameObject.SetActive(true);
+        }
+    }
     void CDTimer(float cooldownTime)
     {
         if (cooldownActive == true)
