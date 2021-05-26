@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharOneModl : Characters
 {
+    public GameObject lifeMngObj;
     public CharOneModl() : base ()
     {
 
@@ -11,6 +12,12 @@ public class CharOneModl : Characters
 
     public void SpcRangeAtck()
     {
+
+    }
+    public override void SelfDmg(int dmg)
+    {
+        base.SelfDmg(dmg);
+        lifeMngObj.GetComponent<LifeManager>().Damage(dmg);
 
     }
 }
