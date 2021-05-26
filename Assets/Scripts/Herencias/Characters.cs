@@ -17,6 +17,9 @@ public class Characters : Entities
     private RaycastHit _frontHit;
     public GameObject icono;
     public bool activateIcono;
+    public float life;
+    public float maxLife;
+    public Image barLife;
 
 
     public Camera myCamera;
@@ -76,6 +79,7 @@ public class Characters : Entities
         CDTimer(meleCD);
         icono.gameObject.SetActive(false);
         ActivateIcon();
+        ManageLife();
 
     }
     void ActivateIcon()
@@ -161,7 +165,11 @@ public class Characters : Entities
 
         }
     }
-
+    public void ManageLife()
+    {
+        float valueLife = life / maxLife;
+        barLife.fillAmount = Mathf.Lerp(barLife.fillAmount, valueLife, 0.2f);
+    }
     private void Walk()
     {
         float hor;

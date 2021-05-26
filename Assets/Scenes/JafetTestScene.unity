@@ -897,7 +897,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170363622}
-  m_LocalRotation: {x: -0.00000001280782, y: 0.98657185, z: -0.16332795, w: -0.00000007736482}
+  m_LocalRotation: {x: -0.0000000071872552, y: 0.98657185, z: -0.16332795, w: -0.000000043414154}
   m_LocalPosition: {x: 10.650001, y: 10.64, z: -18.529999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1006,7 +1006,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh44286
+  m_Name: pb_Mesh16386
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1480,7 +1480,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239969564}
-  m_LocalRotation: {x: -0.000000011402679, y: 0.98657185, z: -0.16332793, w: -0.00000006887714}
+  m_LocalRotation: {x: -0.000000008592396, y: 0.98657185, z: -0.16332793, w: -0.000000051901814}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9107,6 +9107,81 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1080230007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1080230008}
+  - component: {fileID: 1080230010}
+  - component: {fileID: 1080230009}
+  m_Layer: 5
+  m_Name: Life
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1080230008
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080230007}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1154874488}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -299.6, y: 132.8}
+  m_SizeDelta: {x: 172, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1080230009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080230007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.33263615, g: 0.764151, b: 0.27033645, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e1d372887d19af240b8829f83ce62bfa, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1080230010
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080230007}
+  m_CullTransparentMesh: 1
 --- !u!1 &1154874487
 GameObject:
   m_ObjectHideFlags: 0
@@ -9140,6 +9215,7 @@ RectTransform:
   m_Children:
   - {fileID: 1827500630}
   - {fileID: 1271129131}
+  - {fileID: 1080230008}
   m_Father: {fileID: 1864955407}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9404,7 +9480,7 @@ GameObject:
   - component: {fileID: 1271129133}
   - component: {fileID: 1271129132}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10211,6 +10287,9 @@ MonoBehaviour:
   cmp_rb: {fileID: 0}
   icono: {fileID: 0}
   activateIcono: 0
+  life: 0
+  maxLife: 0
+  barLife: {fileID: 0}
   myCamera: {fileID: 170363623}
   AFKtarget: {fileID: 0}
   cmp_agent: {fileID: 0}
@@ -12114,6 +12193,9 @@ MonoBehaviour:
   cmp_rb: {fileID: 0}
   icono: {fileID: 1271129130}
   activateIcono: 0
+  life: 3
+  maxLife: 3
+  barLife: {fileID: 1080230009}
   myCamera: {fileID: 170363623}
   AFKtarget: {fileID: 0}
   cmp_agent: {fileID: 0}
