@@ -625,7 +625,7 @@ RectTransform:
   m_GameObject: {fileID: 2038614373}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.95238096, y: 0.95238096, z: 0.95238096}
+  m_LocalScale: {x: 0.9523809, y: 0.9523809, z: 0.9523809}
   m_Children:
   - {fileID: 1219108331}
   m_Father: {fileID: 116672687}
@@ -633,7 +633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.7619047, y: -3.9252174}
+  m_AnchoredPosition: {x: 4.7619324, y: -3.9251862}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2038614375
@@ -681,9 +681,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2038614378}
-        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
-        m_MethodName: Change
-        m_Mode: 5
+        m_TargetAssemblyTypeName: Exit, Assembly-CSharp
+        m_MethodName: Escape
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2038614373}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760956f4528e8e1478b47c0918ef71cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 20d3e0c91720d4345822c6df229e730f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 116672683}
