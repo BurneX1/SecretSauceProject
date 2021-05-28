@@ -14,6 +14,9 @@ public class Sound
     [Range(0f, 1f)]
     public float pitch;
 
+    [Range(0f, 1f)]
+    public float effect3D;
+
     [HideInInspector]
     public AudioSource source;
 }

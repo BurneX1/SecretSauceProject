@@ -30,6 +30,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume * globalVolume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.spatialBlend = s.effect3D;
         }
         
     }
@@ -49,8 +50,9 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(soundsArray, sound => sound.name == name);
         if (s == null)
         {
+            Debug.Log("El sonido " + name + " no se ha encontrado");    
             return;
-            Debug.Log("El sonido " + name + " no se ha encontrado");
+            
         }
         s.source.Play();
     }
