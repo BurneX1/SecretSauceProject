@@ -7,6 +7,10 @@ public class Enemies : Entities
     private int _vida;
     private int _atkDmg;
 
+    public bool sigthRad;
+    public bool atkRad;
+    public bool taunted;
+
     public float movSpd;
 
     public GameObject targetObj;
@@ -47,28 +51,37 @@ public class Enemies : Entities
 
     public void DetectPlayer()
     {
-        float distancePlayer = Vector3.Distance(target[targetIndex].position, sphere.position);
+        float distancePlayer = Vector3.Distance(target[0].position, /*sphere.position*/transform.position);
         if (distancePlayer <= sightRadius)
         {
-            Debug.Log("te veo bb");
+            /*Debug.Log("te veo bb");
             activateShoot = true;
-            activatePatrol = false;
+            activatePatrol = false;*/
+            sigthRad = true;
         }
         else
         {
-            activateShoot = false;
-            activatePatrol = true;
+            sigthRad = false;
+            /*activateShoot = false;
+            activatePatrol = true;*/
 
         }
-        float distanciaAttack = Vector3.Distance(target[targetIndex].position, sphere.position);
-        if (distanciaAttack <= attackRadius)
+        if (targetObj != null)
         {
-            activateAttack = true;
+            float distanciaAttack = Vector3.Distance(targetObj.transform.position, /*sphere.position*/transform.position);
+            if (distanciaAttack <= attackRadius)
+            {
+                atkRad = true;
+                //activateAttack = true;
+            }
+            else
+            {
+                atkRad = false;
+                //activateAttack = false;
+            }
+
         }
-        else
-        {
-            activateAttack = false;
-        }
+        
     }
 
     void OnDrawGizmosSelected()
@@ -82,21 +95,25 @@ public class Enemies : Entities
 
     public void FaceTarget()
     {
-        Vector3 direction = (target[targetIndex].position - sphere.position).normalized;
+        /*Vector3 direction = (target[targetIndex].position - sphere.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
-        sphere.rotation = Quaternion.Slerp(sphere.rotation, lookRotation, Time.deltaTime * 5f);
+        sphere.rotation = Quaternion.Slerp(sphere.rotation, lookRotation, Time.deltaTime * 5f);*/
 
+    }
+
+    public void RotateTo(Transform targetPos)
+    {
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(new Vector3(targetPos.position.x, transform.position.y, targetPos.position.z) - transform.position), 0.01f);
     }
     public void ChangeTarget()
     {
-        if (Input.GetKeyDown(key_change))
+
+        targetIndex++;
+        if (targetIndex >= target.Length)
         {
-            targetIndex++;
-            if (targetIndex >= target.Length)
-            {
-                targetIndex = 0;
-            }
+            targetIndex = 0;
         }
+
     }
 
     public void ChangeDirection()
@@ -112,7 +129,13 @@ public class Enemies : Entities
 
     public void Patrol()
     {
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].position, movSpd * Time.deltaTime);
+        MoveTo(waypoints[waypointIndex].position);
+        RotateTo(waypoints[waypointIndex]);
+    }
+
+    public void MoveTo(Vector3 pos)
+    {
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(pos.x,transform.position.y, pos.z), movSpd * Time.deltaTime);
     }
 
     public void IncreaseIndex()
@@ -122,7 +145,7 @@ public class Enemies : Entities
         {
             waypointIndex = 0;
         }
-        transform.LookAt(waypoints[waypointIndex].position);
+        //transform.LookAt(waypoints[waypointIndex].position);
     }
 
     public void FollowPlayer()

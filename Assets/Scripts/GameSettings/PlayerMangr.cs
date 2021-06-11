@@ -94,6 +94,13 @@ public class PlayerMangr : MonoBehaviour
                     {
                         playerArray[i].GetComponent<Characters>().cmp_agent.enabled = true;
                         playerArray[i].GetComponent<Characters>().AFKtarget = playerArray[_inptPly].transform;
+                        playerArray[i].GetComponent<Characters>().key_up = key_up;
+                        playerArray[i].GetComponent<Characters>().key_down = key_down;
+                        playerArray[i].GetComponent<Characters>().key_left = key_left;
+                        playerArray[i].GetComponent<Characters>().key_rigth = key_rigth;
+                        playerArray[i].GetComponent<Characters>().key_jump = key_jump;
+                        playerArray[i].GetComponent<Characters>().key_atk = key_atk;
+                        playerArray[i].GetComponent<Characters>().keyArray_extrAct = keyArray_extrAct;
                     }
 
                 }
