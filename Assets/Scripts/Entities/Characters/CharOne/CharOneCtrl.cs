@@ -8,6 +8,9 @@ public class CharOneCtrl : MonoBehaviour
 {
     private CharOneModl _cmp_mod;
     private CharOneView _cmp_view;
+    private bool _atacking;
+    private float _tauntTime;
+    private float _cdTime;
 
     private Vector3 rotatioProves;
     // Start is called before the first frame update
@@ -43,7 +46,41 @@ public class CharOneCtrl : MonoBehaviour
         else
         {
             _cmp_mod.HitBoxAtk(1, true, _cmp_mod.meleHitCollider);
+            Shoot();
         }
     }
-   
+
+    public void Shoot()
+    {
+        if (_atacking == false)
+        {
+         
+            _cdTime += Time.deltaTime;
+            if (_cdTime >= _cmp_mod.coldTime)
+            {
+                _cdTime = _cmp_mod.coldTime;
+                if (Input.GetKeyDown(_cmp_mod.keyArray_extrAct[0]))
+                {
+                    _atacking = true;
+                    _cdTime = 0;
+                    Debug.Log("a");
+
+                }
+            }
+        }
+        else
+        {
+
+
+            _tauntTime += Time.deltaTime;
+            if (_tauntTime >= _cmp_mod.atkTime)
+            {
+                _cmp_mod.SpcRangeAtck();
+                _atacking = false;
+                _tauntTime = 0;
+
+            }
+        }
+    }
+
 }

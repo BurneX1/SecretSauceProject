@@ -111,7 +111,8 @@ public class Characters : Entities
     /////////////////////////////////////////////////////////////////////////////////
     public override void SelfDmg(int dmg)
     {
-        lifeMng.Damage(dmg);
+        //lifeMng.Damage(dmg);
+        Debug.Log("Hit");
     }
     public void Move()
     {
@@ -156,15 +157,32 @@ public class Characters : Entities
     ////////////////////////////////////////////////////////////////////
     public void Move_in_transform(float speed)
     {
+
+        //vAxis = transform.forward * speed * Time.deltaTime;
+        //Mov();
         //cmp_rb.velocity = transform.forward * speed * Time.deltaTime;
         //Vector3 vctMov = new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime);
-        cmp_rb.velocity = new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime);
+        //cmp_rb.velocity = new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime);
         //cmp_rb.AddForce(new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime));
         //cmp_rb.velocity = new Vector3(transform.forward.x + speed, transform.forward.y, transform.forward.z + speed);
     }
-    public void Move_Towards(Transform target, float spd)
+    public void LateralMovement(float spd)
     {
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, new Vector3(target.position.x, transform.position.y, target.position.z), spd * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(gameObject.transform.position, new Vector3(target.position.x, transform.position.y, target.position.z), spd * Time.deltaTime);
+        //cmp_rb.MovePosition(new Vector3(transform.position.x + 0.01f, transform.position.y, transform.position.z + 0.01f));
+        //hAxis = transform.right * spd * Time.deltaTime;
+
+        //Mov();
+        //cmp_rb.velocity = new Vector3(hAxis.x + vAxis.x, hAxis.y + vAxis.y, hAxis.z + vAxis.z);
+        //new Vector3(transform.right.x * spd * Time.deltaTime, cmp_rb.velocity.y, transform.right.z * spd * Time.deltaTime)
+
+    }
+
+    void CompleteFPMovement(float hSpd, float vSpd)
+    {
+        Vector3 mv = new Vector3((transform.forward.x * vSpd + transform.right.x * hSpd) * Time.deltaTime, 0, (transform.forward.z * vSpd + transform.right.z * hSpd) * Time.deltaTime);
+        
+        cmp_rb.velocity = new Vector3(mv.x, cmp_rb.velocity.y, mv.z);
     }
 
     public void Rote_in_Y(Vector3 move)
@@ -192,12 +210,14 @@ public class Characters : Entities
         if (Input.GetKey(key_left))
         {
             hor = -1;
-            Move_Towards(izq,movSpd);
+            //LateralMovement(-movSpd);
+            
         }
         else if (Input.GetKey(key_rigth))
         {
             hor = 1;
-            Move_Towards(der,movSpd);
+            //LateralMovement(movSpd);
+            
         }
         else
         {
@@ -207,12 +227,14 @@ public class Characters : Entities
         if (Input.GetKey(key_down))
         {
             ver = -1;
-            Move_in_transform(-movSpd);
+            //Move_in_transform(-movSpd);
+            
         }
-        else if (Input.GetKey(key_up) && Physics.BoxCast(transform.position, transform.localScale, transform.forward, transform.rotation, 1.5f, groundLayer) == false)
+        else if (Input.GetKey(key_up) /*&& Physics.BoxCast(transform.position, transform.localScale, transform.forward, transform.rotation, 1.5f, groundLayer) == false*/)
         {
             ver = 1;
-            Move_in_transform(movSpd);
+            //Move_in_transform(movSpd);
+            
 
         }
         else
@@ -220,6 +242,16 @@ public class Characters : Entities
             ver = 0;
         }
 
+        if(hor != 0 && ver != 0)
+        {
+            CompleteFPMovement(movSpd * hor/1.5f, movSpd * ver/1.5f);
+        }
+        else if(hor != 0 || ver != 0)
+        {
+            CompleteFPMovement(movSpd * hor, movSpd * ver);
+        }
+
+        //Mov();
         playerInput = new Vector3(myCamera.transform.rotation.eulerAngles.x, 0, myCamera.transform.rotation.eulerAngles.z);
         Rote_in_Y(playerInput);
 

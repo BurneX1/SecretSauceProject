@@ -8,15 +8,21 @@ public class CharTwoCtrl : MonoBehaviour
 {
     private CharTwoModl _cmp_mod;
     private CharTwoView _cmp_view;
+    private float _cdTime;
+    private float _tauntTime;
 
     private Vector3 rotatioProves;
     //[HideInInspector]
     public bool atacking;
+    public bool battery;
+    public GameObject tempFeedback;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _cdTime = 0;
+        _tauntTime = 0;
         atacking = false;
 
         _cmp_mod = gameObject.GetComponent<CharTwoModl>();
@@ -59,7 +65,7 @@ public class CharTwoCtrl : MonoBehaviour
     {
         if (_cmp_mod.afkMode == true)
         {
-
+            TauntTime();
         }
         else
         {
@@ -113,4 +119,45 @@ public class CharTwoCtrl : MonoBehaviour
             }
         }
     }
+
+    public void TauntTime()
+    {
+        if (atacking == false)
+        {
+            if (tempFeedback != null)
+            {
+                tempFeedback.SetActive(false);
+            }//Temp Feedback
+
+            _cdTime += Time.deltaTime;
+            if( _cdTime >= _cmp_mod.coldTime)
+            {
+                _cdTime = _cmp_mod.coldTime;
+                if(Input.GetKeyDown(_cmp_mod.keyArray_extrAct[2]) && battery == true)
+                {
+                    atacking = true;
+                    _cdTime = 0;
+                    battery = false;
+                }
+            }
+        }
+        else
+        {
+            if(tempFeedback != null)
+            {
+                tempFeedback.SetActive(true);
+            }//Temp Feedback
+
+
+            _tauntTime += Time.deltaTime;
+            if(_tauntTime >= _cmp_mod.atkDur)
+            {
+                atacking = false;
+                battery = true;//Borrar esta linea cuando se implementen las baterias
+                _tauntTime = 0;
+
+            }
+        }
+    }
+
 }

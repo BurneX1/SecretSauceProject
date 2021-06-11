@@ -33,8 +33,32 @@ public class EnemyTwoCtrl : MonoBehaviour
     {        
         _cmp_mod.DetectPlayer();
         CDTimer(meleCD);
-        _cmp_mod.ChangeTarget();
-        if(_cmp_mod.activateShoot == true)
+        //_cmp_mod.ChangeTarget();
+
+        if (_cmp_mod.atkRad == true)
+        {
+            HitBoxAtk(1, true, meleHitCollider);
+            _cmp_mod.RotateTo(_cmp_mod.targetObj.transform);
+        }
+        else if (_cmp_mod.taunted == true)
+        {
+            _cmp_mod.targetObj = _cmp_mod.target[1].gameObject;
+            _cmp_mod.RotateTo(_cmp_mod.targetObj.transform);
+            _cmp_mod.MoveTo(_cmp_mod.targetObj.transform.position);
+        }
+        else if (_cmp_mod.sigthRad == true)
+        {
+            _cmp_mod.targetObj = _cmp_mod.target[0].gameObject;
+            _cmp_mod.RotateTo(_cmp_mod.targetObj.transform);
+            _cmp_mod.MoveTo(_cmp_mod.targetObj.transform.position);
+        }
+        else
+        {
+            _cmp_mod.ChangeDirection();
+        }
+
+
+        /*if(_cmp_mod.activateShoot == true)
         {
             _cmp_mod.FollowPlayer();
             _cmp_mod.FaceTarget();
@@ -46,7 +70,7 @@ public class EnemyTwoCtrl : MonoBehaviour
         if (_cmp_mod.activatePatrol == true)
         {
             _cmp_mod.ChangeDirection();
-        }
+        }*/
 
     }
     void CDTimer(float cooldownTime)
@@ -68,9 +92,13 @@ public class EnemyTwoCtrl : MonoBehaviour
         {
             cooldownActive = true;
             hitBox.gameObject.GetComponent<HitElements>().dmg = dmg;
-            hitBox.gameObject.GetComponent<HitElements>().hitDetect = false;
+            //hitBox.gameObject.GetComponent<HitElements>().hitDetect = false;
             hitBox.gameObject.GetComponent<HitElements>().despOnCollision = oneHitatk;
             hitBox.gameObject.SetActive(true);
+        }
+        else
+        {
+            //hitBox.gameObject.GetComponent<HitElements>().hitDetect = false;
         }
     }
 

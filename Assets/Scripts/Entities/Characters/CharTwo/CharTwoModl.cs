@@ -10,6 +10,8 @@ public class CharTwoModl : Characters
 
     public GameObject restoreTargt;
     public SphereCollider sphColl;
+    public float coldTime;
+    public float atkDur;
     public CharTwoModl() : base()
     {
 
@@ -17,7 +19,12 @@ public class CharTwoModl : Characters
 
     public void SpcTauntAtck(Collider other)
     {
-        for (int i = 0; i < other.GetComponent<Enemies>().target.Length; i++)
+        if (other.GetComponent<Enemies>())
+        {
+            other.GetComponent<Enemies>().taunted = true;
+
+        }
+        /*for (int i = 0; i < other.GetComponent<Enemies>().target.Length; i++)
         {
             Debug.Log(other);
             if (other.GetComponent<Enemies>().target[i] != gameObject.transform)
@@ -25,7 +32,7 @@ public class CharTwoModl : Characters
                 other.GetComponent<Enemies>().target[i] = gameObject.transform;
                 other.GetComponent<Enemies>().activateShoot = true;
             }
-        }
+        }*/
         //Debug.Log(other);
     }
 
@@ -34,7 +41,8 @@ public class CharTwoModl : Characters
         //Debug.Log(other);
         if (other.GetComponent<Enemies>())
         {
-            for (int i = 0; i < other.GetComponent<Enemies>().target.Length; i++)
+            other.GetComponent<Enemies>().taunted = false;
+            /*for (int i = 0; i < other.GetComponent<Enemies>().target.Length; i++)
             {
                 if (other.GetComponent<Enemies>().target[i] != restoreTargt.transform)
                 {
@@ -42,7 +50,7 @@ public class CharTwoModl : Characters
                     other.GetComponent<Enemies>().target[i] = restoreTargt.transform;
                     other.GetComponent<Enemies>().activateShoot = false;
                 }
-            }
+            }*/
         }
     }
 
