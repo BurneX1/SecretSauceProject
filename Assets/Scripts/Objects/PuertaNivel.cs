@@ -26,6 +26,7 @@ public class PuertaNivel : InteractableAction
         if (open == false)
         {
             open = true;
+            //gameObject.
         }
     }
     private void OnTriggerEnter(Collider other)

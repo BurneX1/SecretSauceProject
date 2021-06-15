@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1329,6 +1329,9 @@ MonoBehaviour:
     m_Bits: 0
   grndDistance: 0
   cmp_rb: {fileID: 0}
+  sigthRad: 0
+  atkRad: 0
+  taunted: 0
   movSpd: 0
   targetObj: {fileID: 0}
   sightRadius: 10
@@ -1399,6 +1402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7927b99b6c4204289ca5971ccc361e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouse_key: 0
   msLock: 1
 --- !u!4 &214870837
 Transform:
@@ -1948,7 +1952,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 2987ecd276cf90d4eafed3f980ae07c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2499,7 +2503,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 81e1c9efc1c3ea84aa2370fe9038534c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5837,7 +5841,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aaa623ec1a2dcc740b502bbfa2d9f221, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6611,7 +6615,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 81e1c9efc1c3ea84aa2370fe9038534c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7984,7 +7988,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 81e1c9efc1c3ea84aa2370fe9038534c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9768,6 +9772,9 @@ MonoBehaviour:
     m_Bits: 0
   grndDistance: 0
   cmp_rb: {fileID: 0}
+  sigthRad: 0
+  atkRad: 0
+  taunted: 0
   movSpd: 3
   targetObj: {fileID: 0}
   sightRadius: 10
@@ -9834,7 +9841,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aaa623ec1a2dcc740b502bbfa2d9f221, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10415,6 +10422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ddcabd877078d47863a0c44a14bc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atacking: 0
+  battery: 0
+  tempFeedback: {fileID: 0}
 --- !u!114 &1377833057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10438,6 +10448,7 @@ MonoBehaviour:
   life: 0
   maxLife: 0
   barLife: {fileID: 0}
+  lifeMng: {fileID: 0}
   myCamera: {fileID: 170363623}
   AFKtarget: {fileID: 0}
   cmp_agent: {fileID: 0}
@@ -10454,6 +10465,14 @@ MonoBehaviour:
   movSpd: 332
   smoothVel: 0
   afkMode: 0
+  der: {fileID: 0}
+  izq: {fileID: 0}
+  spcRange: 0
+  intrcTagsArray: []
+  restoreTargt: {fileID: 0}
+  sphColl: {fileID: 0}
+  coldTime: 0
+  atkDur: 0
 --- !u!54 &1377833058
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10748,7 +10767,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 81e1c9efc1c3ea84aa2370fe9038534c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12282,7 +12301,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568975572}
-  m_LocalRotation: {x: -0.00000000881794, y: 0.98170465, z: -0.19040999, w: -0.000000045463025}
+  m_LocalRotation: {x: -0.000000011655268, y: 0.98170465, z: -0.19040997, w: -0.00000006009156}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12418,6 +12437,7 @@ MonoBehaviour:
   life: 3
   maxLife: 3
   barLife: {fileID: 1080230009}
+  lifeMng: {fileID: 0}
   myCamera: {fileID: 170363623}
   AFKtarget: {fileID: 0}
   cmp_agent: {fileID: 0}
@@ -12434,7 +12454,14 @@ MonoBehaviour:
   movSpd: 332
   smoothVel: 1
   afkMode: 0
+  der: {fileID: 0}
+  izq: {fileID: 0}
   lifeMngObj: {fileID: 0}
+  gun: {fileID: 0}
+  plyBullet: {fileID: 0}
+  pointer: {fileID: 0}
+  coldTime: 0
+  atkTime: 0
 --- !u!195 &1602044973
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12532,7 +12559,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 980c24c5a501a9a429356d191ad356a9, type: 2}
+  - {fileID: 2100000, guid: 2987ecd276cf90d4eafed3f980ae07c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
