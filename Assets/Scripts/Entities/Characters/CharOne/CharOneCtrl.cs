@@ -11,12 +11,15 @@ public class CharOneCtrl : MonoBehaviour
     private bool _atacking;
     private float _tauntTime;
     private float _cdTime;
+    private Pause _cmp_ps;
 
     private Vector3 rotatioProves;
+
+    public GameObject gmMng;
     // Start is called before the first frame update
     void Start()
     {
-
+        _cmp_ps = gmMng.GetComponent<Pause>();
         _cmp_mod = gameObject.GetComponent<CharOneModl>();
         _cmp_view = gameObject.GetComponent<CharOneView>();
         _cmp_mod.grndDistance = 7;
@@ -26,27 +29,34 @@ public class CharOneCtrl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_cmp_mod.afkMode == true)
+        if (_cmp_ps.paused == false)
         {
+            if (_cmp_mod.afkMode == true)
+            {
 
-            _cmp_mod.AFKmove();
-        }
-        else
-        {
-            _cmp_mod.cmp_agent.enabled = false;
-            _cmp_mod.Move();
+                _cmp_mod.AFKmove();
+            }
+            else
+            {
+                _cmp_mod.cmp_agent.enabled = false;
+                _cmp_mod.Move();
+            }
         }
     }
     void Update()
     {
-        if (_cmp_mod.afkMode == true)
+        if (_cmp_ps.paused == false)
         {
-           
-        }
-        else
-        {
-            _cmp_mod.HitBoxAtk(1, true, _cmp_mod.meleHitCollider);
-            Shoot();
+
+            if (_cmp_mod.afkMode == true)
+            {
+
+            }
+            else
+            {
+                _cmp_mod.HitBoxAtk(1, true, _cmp_mod.meleHitCollider);
+                Shoot();
+            }
         }
     }
 

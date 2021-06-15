@@ -10,8 +10,11 @@ public class CharTwoCtrl : MonoBehaviour
     private CharTwoView _cmp_view;
     private float _cdTime;
     private float _tauntTime;
+    private Pause _cmp_ps;
+    
 
     private Vector3 rotatioProves;
+    public GameObject gmMng;
     //[HideInInspector]
     public bool atacking;
     public bool battery;
@@ -21,6 +24,7 @@ public class CharTwoCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _cmp_ps = gmMng.GetComponent<Pause>();
         _cdTime = 0;
         _tauntTime = 0;
         atacking = false;
@@ -49,27 +53,33 @@ public class CharTwoCtrl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_cmp_mod.afkMode == true)
+        if (_cmp_ps.paused == false)
         {
-            if (atacking == false)
+            if (_cmp_mod.afkMode == true)
             {
-                _cmp_mod.AFKmove();
+                if (atacking == false)
+                {
+                    _cmp_mod.AFKmove();
+                }
             }
-        }
-        else
-        {
-            _cmp_mod.Move();
+            else
+            {
+                _cmp_mod.Move();
+            }
         }
     }
     void Update()
     {
-        if (_cmp_mod.afkMode == true)
+        if (_cmp_ps.paused == false)
         {
-            TauntTime();
-        }
-        else
-        {
-            _cmp_mod.HitBoxAtk(1, false, _cmp_mod.meleHitCollider);
+            if (_cmp_mod.afkMode == true)
+            {
+                TauntTime();
+            }
+            else
+            {
+                _cmp_mod.HitBoxAtk(1, false, _cmp_mod.meleHitCollider);
+            }
         }
     }
 
