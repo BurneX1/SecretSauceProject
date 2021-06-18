@@ -5,28 +5,36 @@ using Cinemachine;
 
 public class CameraOptions : MonoBehaviour
 {
+    private bool enumeratorAct;
     public int camType;
     public CinemachineBrain cmBrain;
     public GameObject target;
+
+
+    [Header("FocusValues")]
     public GameObject actualFocus;
+    public float transitionTime;
+    public float nearDist;
+    public Vector3 focusOffset;
+
+    private Camera myCamera;
 
 
 
     //----------------------------------------//
     //Por mientras dejoe sta webada, borrar mas tarde :3
-    public float zoomSpeed;
+    /*public float zoomSpeed;
     public float orthographicSizeMin;
     public float orthographicSizeMax;
     public float fovMin;
     public float fovMax;
-    private Camera myCamera;
+
 
     public float sensitivity;
 
-    //public GameObject target;//the target object
 
-    public float speedMod = 10.0f;//a speed modifier
-    private Vector3 point;//the coord to the point where the camera looks at
+    public float speedMod = 10.0f;
+    private Vector3 point;
 
 
     public Vector3 offset = new Vector3(0, 0, 1);
@@ -36,12 +44,13 @@ public class CameraOptions : MonoBehaviour
 
 
     private float currentZoom = 10f;
-    public Vector3 consDir;
+    public Vector3 consDir;*/
 
     //----------------------------------------//
 
     private void OnEnable()
     {
+        enumeratorAct = false;
         myCamera = GetComponent<Camera>();
         cmBrain = GetComponent<CinemachineBrain>();
         
@@ -56,7 +65,7 @@ public class CameraOptions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CamTypes();
     }
 
     void CamTypes()
@@ -86,7 +95,10 @@ public class CameraOptions : MonoBehaviour
     {
         cmBrain.enabled = false;
         myCamera.transform.LookAt(obj.transform);
-        myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, obj.transform.position, Time.deltaTime);
+        if(Vector3.Distance(myCamera.transform.position, obj.transform.position + focusOffset) >= nearDist)
+        myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, obj.transform.position + focusOffset, Time.deltaTime);
+        StartCoroutine(BackToDefault(transitionTime, 1));
+        
     }
 
     void FixedCam(GameObject obj)
@@ -102,13 +114,29 @@ public class CameraOptions : MonoBehaviour
 
     public IEnumerator BackToDefault(float delayTime, int changeType)
     {
-
-        yield return new WaitForSeconds(delayTime);
-
-        if (changeType <= 0)
+        if (enumeratorAct == true)
         {
-            changeType = 1;
+            yield return 0;
         }
-        camType = changeType;
+        else
+        {
+            enumeratorAct = true;
+            yield return new WaitForSeconds(delayTime);
+
+            if (changeType <= 0)
+            {
+                changeType = 1;
+            }
+            camType = changeType;
+            enumeratorAct = false;
+        }
+    }
+
+
+    public void ChangeToFocus(GameObject obj,float moveTime)
+    {
+        actualFocus = obj;
+        transitionTime = moveTime;
+        camType = 2;
     }
 }

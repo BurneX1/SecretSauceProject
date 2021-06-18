@@ -195,7 +195,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2487974722778802325}
-  m_LocalRotation: {x: 0.19009182, y: 0.056727294, z: -0.011002742, w: 0.98006433}
+  m_LocalRotation: {x: 0.1900918, y: 0.05672731, z: -0.011002744, w: 0.98006433}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -885,8 +885,8 @@ MonoBehaviour:
   - Enemy
   restoreTargt: {fileID: 2487974722805472995}
   sphColl: {fileID: 0}
-  coldTime: 5
-  atkDur: 2
+  coldTime: 2
+  atkDur: 5
 --- !u!114 &2487974723199748783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2779,8 +2779,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5348439750747041720}
-  m_LocalRotation: {x: -0.2387279, y: -0.6623186, z: 0.2355393, w: -0.6699734}
-  m_LocalPosition: {x: -21.522247, y: 19.161625, z: -9.676746}
+  m_LocalRotation: {x: 0.163055, y: 0.057008587, z: -0.009437826, w: 0.98492336}
+  m_LocalPosition: {x: 2.3712215, y: 4.24, z: -1.487978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2487974723622616018}
@@ -2919,17 +2919,9 @@ MonoBehaviour:
   cmBrain: {fileID: 0}
   target: {fileID: 2487974722805472995}
   actualFocus: {fileID: 0}
-  zoomSpeed: 0
-  orthographicSizeMin: 0
-  orthographicSizeMax: 0
-  fovMin: 0
-  fovMax: 0
-  sensitivity: 0
-  speedMod: 10
-  offset: {x: 0, y: 0, z: 1}
-  minZoom: 5
-  maxZoom: 15
-  consDir: {x: 0, y: 0, z: 0}
+  transitionTime: 3
+  nearDist: 4
+  focusOffset: {x: 0, y: 3, z: 0}
 --- !u!1 &6387593569427077957
 GameObject:
   m_ObjectHideFlags: 0
