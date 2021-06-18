@@ -163,7 +163,7 @@ public class CharTwoCtrl : MonoBehaviour
             if(_tauntTime >= _cmp_mod.atkDur)
             {
                 atacking = false;
-                battery = true;//Borrar esta linea cuando se implementen las baterias
+                //battery = true;//Borrar esta linea cuando se implementen las baterias
                 _tauntTime = 0;
 
             }
