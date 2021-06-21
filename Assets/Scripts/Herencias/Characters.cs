@@ -14,11 +14,7 @@ public class Characters : Entities
     private bool cooldownActive;
     private float atkCDTimer;
     private RaycastHit _frontHit;
-    public GameObject icono;
-    public bool activateIcono;
-    public float life;
-    public float maxLife;
-    public Image barLife;
+
 
     public LifeManager lifeMng;
     public Camera myCamera;
@@ -79,21 +75,9 @@ public class Characters : Entities
     {
         grounded = GroundDetect(groundLayer, 1.1f);
         CDTimer(meleCD);
-        if (icono.gameObject)
-        {
-            icono.gameObject.SetActive(false);
-        }
-        ActivateIcon();
-        ManageLife();
 
     }
-    void ActivateIcon()
-    {
-        if (activateIcono == true)
-        {
-            icono.gameObject.SetActive(true);
-        }
-    }
+    
     void CDTimer(float cooldownTime)
     {
         if (cooldownActive == true)
@@ -198,11 +182,7 @@ public class Characters : Entities
 
         }
     }
-    public void ManageLife()
-    {
-        /*float valueLife = life / maxLife;
-        barLife.fillAmount = Mathf.Lerp(barLife.fillAmount, valueLife, 0.2f);*/
-    }
+
     private void Walk()
     {
         float hor;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharTwoModl))]
 [RequireComponent(typeof(CharTwoView))]
@@ -11,8 +12,7 @@ public class CharTwoCtrl : MonoBehaviour
     private float _cdTime;
     private float _tauntTime;
     private Pause _cmp_ps;
-    
-
+    public GameObject iconoRobot;
     private Vector3 rotatioProves;
     public GameObject gmMng;
     //[HideInInspector]
@@ -80,6 +80,18 @@ public class CharTwoCtrl : MonoBehaviour
             {
                 _cmp_mod.HitBoxAtk(1, false, _cmp_mod.meleHitCollider);
             }
+        }
+        ActivateIcon();
+    }
+    void ActivateIcon()
+    {
+        if (iconoRobot.gameObject)
+        {
+            iconoRobot.gameObject.SetActive(false);
+        }
+        if (battery == true)
+        {
+            iconoRobot.gameObject.SetActive(true);
         }
     }
 
@@ -149,6 +161,7 @@ public class CharTwoCtrl : MonoBehaviour
                     _cdTime = 0;
                     battery = false;
                 }
+
             }
         }
         else

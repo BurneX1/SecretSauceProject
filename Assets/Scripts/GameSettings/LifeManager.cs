@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LifeManager : MonoBehaviour
 {
     [SerializeField]
     [Range(1,20)]
-    private int maxLive;
-    private int actLive;
+    private float maxLive;
+    private float actLive;
+    public Image barLife;
 
     public GameObject player;
 
@@ -21,7 +23,13 @@ public class LifeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ManageLife();
+    }
+
+    public void ManageLife()
+    {
+        float valueLife = actLive / maxLive;
+        barLife.fillAmount = Mathf.Lerp(barLife.fillAmount, valueLife, 0.1f);
     }
 
     public void Damage(int dmg)
