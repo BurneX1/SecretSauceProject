@@ -6,6 +6,7 @@ using Cinemachine;
 public class CameraOptions : MonoBehaviour
 {
     private bool enumeratorAct;
+    public GameObject gmManager;
     public int camType;
     public CinemachineBrain cmBrain;
     public GameObject target;
@@ -93,6 +94,7 @@ public class CameraOptions : MonoBehaviour
 
     void FocusObj(GameObject obj)
     {
+        gmManager.GetComponent<PlayerMangr>().NonActionPly();
         cmBrain.enabled = false;
         myCamera.transform.LookAt(obj.transform);
         if(Vector3.Distance(myCamera.transform.position, obj.transform.position + focusOffset) >= nearDist)
@@ -126,6 +128,7 @@ public class CameraOptions : MonoBehaviour
             if (changeType <= 0)
             {
                 changeType = 1;
+                gmManager.GetComponent<PlayerMangr>().EnableActionPlayer();
             }
             camType = changeType;
             enumeratorAct = false;

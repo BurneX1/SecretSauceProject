@@ -23,14 +23,19 @@ public class PlayerMangr : MonoBehaviour
     public GameObject[] playerArray;
     public GameObject vrtCam;
 
-
-    // Start is called before the first frame update
-
-    void Start()
+    private void OnEnable()
     {
         _inptPly = 0;
         _befInp = -1;
         SetPlayer();
+    }
+    // Start is called before the first frame update
+
+    void Start()
+    {
+        /*_inptPly = 0;
+        _befInp = -1;
+        SetPlayer();*/
     }
 
     // Update is called once per frame
@@ -144,6 +149,36 @@ public class PlayerMangr : MonoBehaviour
             else
             {
                 //return;
+            }
+        }
+    }
+
+    public void NonActionPly()
+    {
+        for (int i = 0; i < playerArray.Length; i++)
+        {
+            if(playerArray[i].GetComponent<CharOneCtrl>())
+            {
+                playerArray[i].GetComponent<CharOneCtrl>().enabled = false;
+            }
+            else if(playerArray[i].GetComponent<CharTwoCtrl>())
+            {
+                playerArray[i].GetComponent<CharTwoCtrl>().enabled = false;
+            }
+        }
+    }
+
+    public void EnableActionPlayer()
+    {
+        for (int i = 0; i < playerArray.Length; i++)
+        {
+            if (playerArray[i].GetComponent<CharOneCtrl>())
+            {
+                playerArray[i].GetComponent<CharOneCtrl>().enabled = true;
+            }
+            else if (playerArray[i].GetComponent<CharTwoCtrl>())
+            {
+                playerArray[i].GetComponent<CharTwoCtrl>().enabled = true;
             }
         }
     }

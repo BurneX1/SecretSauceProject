@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractCaller : MonoBehaviour
 {
     private bool _nearPly;
+    private bool onKey;
 
     public KeyCode key_intrc;
     public GameObject InteractObj;
@@ -13,7 +14,15 @@ public class InteractCaller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
+        if(key_intrc != KeyCode.None)
+        {
+            onKey = true;
+        }
+        else
+        {
+            onKey = false;
+        }
     }
 
     // Update is called once per frame
@@ -21,10 +30,19 @@ public class InteractCaller : MonoBehaviour
     {
         if (_nearPly == true)
         {
-            if (Input.GetKeyDown(key_intrc))
+            //Si el interact Caller no tiene ninguna letra seleccionada, defrente se activa con collisiones uwu
+            if(onKey == true)
+            {
+                if (Input.GetKeyDown(key_intrc))
+                {
+                    Interact();
+                }
+            }
+            else
             {
                 Interact();
-            }
+            }    
+            
         }
     }
 
