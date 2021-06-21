@@ -23,19 +23,19 @@ public class PlayerMangr : MonoBehaviour
     public GameObject[] playerArray;
     public GameObject vrtCam;
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         _inptPly = 0;
         _befInp = -1;
         SetPlayer();
-    }
+    }*/
     // Start is called before the first frame update
 
     void Start()
     {
-        /*_inptPly = 0;
+        _inptPly = 0;
         _befInp = -1;
-        SetPlayer();*/
+        SetPlayer();
     }
 
     // Update is called once per frame

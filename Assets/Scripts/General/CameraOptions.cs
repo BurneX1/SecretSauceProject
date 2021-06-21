@@ -128,8 +128,9 @@ public class CameraOptions : MonoBehaviour
             if (changeType <= 0)
             {
                 changeType = 1;
-                gmManager.GetComponent<PlayerMangr>().EnableActionPlayer();
+                
             }
+            gmManager.GetComponent<PlayerMangr>().EnableActionPlayer();
             camType = changeType;
             enumeratorAct = false;
         }
