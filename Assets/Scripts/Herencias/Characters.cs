@@ -24,19 +24,19 @@ public class Characters : Entities
     public NavMeshAgent cmp_agent;
 
     //-----Escoger Teclas------//
-    [HideInInspector]
+    //[HideInInspector]
     public KeyCode key_up;
-    [HideInInspector]
+    //[HideInInspector]
     public KeyCode key_down;
-    [HideInInspector]
+    //[HideInInspector]
     public KeyCode key_rigth;
-    [HideInInspector]
+    //[HideInInspector]
     public KeyCode key_left;
-    [HideInInspector]
+    //[HideInInspector]
     public KeyCode key_jump;
-    [HideInInspector]
+    //[HideInInspector]
     public KeyCode key_atk;
-    [HideInInspector]
+    //[HideInInspector]
     public KeyCode[] keyArray_extrAct;
     //-------------------------//
 
