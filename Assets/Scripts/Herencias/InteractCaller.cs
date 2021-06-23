@@ -8,7 +8,7 @@ public class InteractCaller : MonoBehaviour
     private bool onKey;
 
     public KeyCode key_intrc;
-    public GameObject InteractObj;
+    public GameObject[] InteractObj;
     public bool onlyOneUse;
     
     // Start is called before the first frame update
@@ -48,12 +48,17 @@ public class InteractCaller : MonoBehaviour
 
     public virtual void Interact()
     {
-        InteractObj.GetComponent<InteractableAction>().Action();
+        for (int i = 0; i < InteractObj.Length; i++)
+        {
+            InteractObj[i].GetComponent<InteractableAction>().Action();
 
+            
+        }
         if (onlyOneUse == true)
         {
             gameObject.SetActive(false);
         }
+        _nearPly = false;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -96,7 +96,14 @@ public class CameraOptions : MonoBehaviour
     {
         gmManager.GetComponent<PlayerMangr>().NonActionPly();
         cmBrain.enabled = false;
-        myCamera.transform.LookAt(obj.transform);
+        Vector3 tmp = obj.transform.position - myCamera.transform.position;
+        Vector3 rotDif = new Vector3(myCamera.transform.rotation.x - Quaternion.LookRotation(tmp).x, 
+            myCamera.transform.rotation.y - Quaternion.LookRotation(tmp).y, 
+            myCamera.transform.rotation.z - Quaternion.LookRotation(tmp).z);
+        float tempTime = 0; 
+        tempTime += Time.deltaTime;
+        myCamera.transform.rotation = Quaternion.RotateTowards(myCamera.transform.rotation, Quaternion.LookRotation(tmp), (Mathf.Abs(rotDif.x + rotDif.y + rotDif.z) * Time.deltaTime * 180)  /  (transitionTime*Time.deltaTime * 50));
+        //myCamera.transform.LookAt(Vector3.Lerp(myCamera.transform.right, obj.transform.position + focusOffset, Time.deltaTime));
         if(Vector3.Distance(myCamera.transform.position, obj.transform.position + focusOffset) >= nearDist)
         myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, obj.transform.position + focusOffset, Time.deltaTime);
         StartCoroutine(BackToDefault(transitionTime, 1));
