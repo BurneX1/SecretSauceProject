@@ -56,9 +56,11 @@ public class InteractCaller : MonoBehaviour
         }
         if (onlyOneUse == true)
         {
+            _nearPly = false;
             gameObject.SetActive(false);
+
         }
-        _nearPly = false;
+        
     }
 
     private void OnTriggerEnter(Collider other)
