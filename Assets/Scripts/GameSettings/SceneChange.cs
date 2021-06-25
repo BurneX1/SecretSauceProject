@@ -9,7 +9,6 @@ public class SceneChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -17,6 +16,7 @@ public class SceneChange : MonoBehaviour
     {
 
     }
+
     public void Change(string sceneName)
     {
         StartCoroutine(TransitionLoadScene(sceneName));

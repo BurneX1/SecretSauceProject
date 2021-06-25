@@ -13,7 +13,7 @@ public class Characters : Entities
     private Vector3 playerInput;
     private bool cooldownActive;
     private float atkCDTimer;
-    private RaycastHit _frontHit;
+    private RaycastHit _frontHit; 
 
 
     public LifeManager lifeMng;
