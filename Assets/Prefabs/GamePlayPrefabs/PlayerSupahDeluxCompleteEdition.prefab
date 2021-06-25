@@ -963,7 +963,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2886189670097892181}
-  m_LocalRotation: {x: 0.14421213, y: -0.43922016, z: 0.071666494, w: 0.88382834}
+  m_LocalRotation: {x: 0.14421213, y: -0.43922016, z: 0.07166648, w: 0.88382834}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4464,6 +4464,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 87384357129853536, guid: d11286fca511b06439974bd9c9db1fe4,
         type: 3}
+      propertyPath: m_Colors.m_FadeDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 87384357129853536, guid: d11286fca511b06439974bd9c9db1fe4,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 48754906012684268}
@@ -4482,6 +4487,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PauseOpt
       objectReference: {fileID: 0}
+    - target: {fileID: 87384357129853536, guid: d11286fca511b06439974bd9c9db1fe4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: "PantallaDeMen\xFA"
+      objectReference: {fileID: 0}
     - target: {fileID: 87384357129853538, guid: d11286fca511b06439974bd9c9db1fe4,
         type: 3}
       propertyPath: m_IsActive
@@ -4491,6 +4501,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 87384357129853543, guid: d11286fca511b06439974bd9c9db1fe4,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 87384357176967649, guid: d11286fca511b06439974bd9c9db1fe4,
         type: 3}
