@@ -59,13 +59,13 @@ public class Enemies : Entities
             activatePatrol = false;*/
             sigthRad = true;
         }
-        else
+        /*else
         {
             sigthRad = false;
-            /*activateShoot = false;
-            activatePatrol = true;*/
+            activateShoot = false;
+            activatePatrol = true;
 
-        }
+        }*/
         if (targetObj != null)
         {
             float distanciaAttack = Vector3.Distance(targetObj.transform.position, /*sphere.position*/transform.position);

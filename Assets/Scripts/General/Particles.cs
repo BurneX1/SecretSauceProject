@@ -11,6 +11,7 @@ public class Particles : MonoBehaviour
     void Start()
     {
         Particulas.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -19,18 +20,19 @@ public class Particles : MonoBehaviour
         if (ActiveParticles == true)
         {
             Particulas.gameObject.SetActive(true);
+            Particulas.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 3);
+            Particulas.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
-        else
-        {
-            Particulas.gameObject.SetActive(false);
-        }
+
     }
     public void pointerEnter()
     {
         ActiveParticles = true;
+        
     }
     public void pointerExit()
     {
         ActiveParticles = false;
+        Particulas.gameObject.SetActive(false);
     }
 }

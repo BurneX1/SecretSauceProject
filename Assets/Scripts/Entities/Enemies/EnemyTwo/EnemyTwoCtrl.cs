@@ -15,6 +15,8 @@ public class EnemyTwoCtrl : MonoBehaviour
     public float meleCD;
     public Collider meleHitCollider;
 
+    public GameObject nextBody;
+    public bool ActivateChange;
 
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class EnemyTwoCtrl : MonoBehaviour
         _cmp_mod.waypointIndex = 0;
         _cmp_mod.targetIndex = 0;
         transform.LookAt(_cmp_mod.waypoints[_cmp_mod.waypointIndex].position);
+        nextBody.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,7 +59,7 @@ public class EnemyTwoCtrl : MonoBehaviour
         {
             _cmp_mod.ChangeDirection();
         }
-
+        ChangeBody();
 
         /*if(_cmp_mod.activateShoot == true)
         {
@@ -101,5 +104,16 @@ public class EnemyTwoCtrl : MonoBehaviour
             //hitBox.gameObject.GetComponent<HitElements>().hitDetect = false;
         }
     }
-
+    public void ChangeBody()
+    {       
+        if (ActivateChange == true)
+        {
+            if (nextBody != null)
+            {
+                nextBody.transform.position = transform.position;
+                nextBody.gameObject.SetActive(true);    
+            }
+            Destroy(gameObject);
+        }
+    }
 }
