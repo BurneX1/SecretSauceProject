@@ -59,7 +59,7 @@ public class EnemyTwoCtrl : MonoBehaviour
         {
             _cmp_mod.ChangeDirection();
         }
-        ChangeBody();
+        //ChangeBody();
 
         /*if(_cmp_mod.activateShoot == true)
         {
@@ -113,7 +113,11 @@ public class EnemyTwoCtrl : MonoBehaviour
                 nextBody.transform.position = transform.position;
                 nextBody.gameObject.SetActive(true);    
             }
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(false);
         }
     }
 }

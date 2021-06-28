@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class HitBoxes : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public bool despOnCollision;
     public bool hitDetect;
     public float shtSpd;
     public int dmg;
     public string[] dmgTagsArray;
     public string[] intrcTagsArray;
+    public string[] dstroyTagsArray;
     [HideInInspector]
     public Rigidbody cmp_rb;
+
+    public bool destroyOnTime;
+    public float timeToDstry;
+    public float tim = 0;
 
 
     public HitBoxes()
@@ -35,7 +40,17 @@ public class HitBoxes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (destroyOnTime == true)
+        {
+            tim += Time.deltaTime;
 
+
+            if (tim >= timeToDstry)
+            {
+                Destroy(gameObject);
+            }
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,7 +61,14 @@ public class HitBoxes : MonoBehaviour
             {
                 CallToDamage(other);
                 hitDetect = true;
+
+                if (despOnCollision == true)
+                {
+                    Destroy(gameObject);
+                }
+
             }
+            
         }
 
         for (int i = 0; i < intrcTagsArray.Length; i++)
@@ -55,6 +77,20 @@ public class HitBoxes : MonoBehaviour
             {
                 CallToInteract(other);
                 hitDetect = true;
+                if (despOnCollision == true)
+                {
+                    Destroy(gameObject);
+                }
+            }
+            
+        }
+
+        for (int i = 0; i < dstroyTagsArray.Length; i++)
+        {
+            if (other.gameObject.CompareTag(dstroyTagsArray[i]))
+            {
+                hitDetect = true;
+                Destroy(gameObject);
             }
         }
     }

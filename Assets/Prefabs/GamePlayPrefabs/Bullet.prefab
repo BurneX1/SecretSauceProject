@@ -109,14 +109,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e9c2f189dbc70498fa489a53bd3dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despOnCollision: 0
+  despOnCollision: 1
   hitDetect: 0
   shtSpd: 5
   dmg: 1
   dmgTagsArray:
   - Enemy
   intrcTagsArray: []
+  dstroyTagsArray:
+  - Wall
   cmp_rb: {fileID: 0}
+  destroyOnTime: 1
+  timeToDstry: 10
 --- !u!54 &3539710996946217242
 Rigidbody:
   m_ObjectHideFlags: 0
