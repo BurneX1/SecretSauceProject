@@ -19,7 +19,9 @@ public class CharTwoCtrl : MonoBehaviour
     public bool atacking;
     public bool battery;
     public GameObject tempFeedback;
-
+    public Material mymat;
+    public float timerEmission;
+    public float maxTimerEmission;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,9 @@ public class CharTwoCtrl : MonoBehaviour
 
         _cmp_mod.grndDistance = 7;
         _cmp_mod.meleHitCollider.gameObject.SetActive(false);
+
+        
+        mymat.SetColor("_EmissionColor", Color.white);
 
     }
 
@@ -88,10 +93,21 @@ public class CharTwoCtrl : MonoBehaviour
         if (iconoRobot.gameObject)
         {
             iconoRobot.gameObject.SetActive(false);
+            mymat.SetColor("_EmissionColor", Color.white);
         }
         if (battery == true)
         {
             iconoRobot.gameObject.SetActive(true);
+            timerEmission += Time.deltaTime;
+            if(timerEmission >= maxTimerEmission)
+            {
+                mymat.SetColor("_EmissionColor", Color.red);
+            }
+            if(timerEmission >= 0.5)
+            {
+                
+                timerEmission = 0;
+            }
         }
     }
 
