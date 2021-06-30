@@ -14,9 +14,16 @@ public class BossCtrl : MonoBehaviour
     public float atkCDTimer;
     public Collider hitColl;
     public float hitCD;
+
+
+    public GameObject[] tables;
+    public Transform lookTable;
+    public float smoothVel;
     // Start is called before the first frame update
     void Start()
     {
+
+
         _cmp_mod = gameObject.GetComponent<BossMdl>();
         _cmp_view = gameObject.GetComponent<BossView>();
         hitColl.gameObject.SetActive(false);
@@ -31,6 +38,10 @@ public class BossCtrl : MonoBehaviour
         _cmp_mod.DetectPlayer();
         CDTimer(hitCD);
 
+        if (lookTable != null)
+        {
+            Rote_in_Y(lookTable.position);
+        }
         if (_cmp_mod.atkRad == true)
         {
             HitBoxAtk(1, true, hitColl);
@@ -80,6 +91,23 @@ public class BossCtrl : MonoBehaviour
         else
         {
             //hitBox.gameObject.GetComponent<HitElements>().hitDetect = false;
+        }
+    }
+    public void SetLook(Transform platPos)
+    {
+        lookTable = platPos;
+    }
+
+    public void Rote_in_Y(Vector3 move)
+    {
+        if (move.magnitude >= 0.1f)
+        {
+            Vector3 lookCamPs = transform.position.x * /*camRight + playerInput.z * */move;
+
+            float targetAngle = Mathf.Atan2(lookCamPs.x, lookCamPs.z) * Mathf.Rad2Deg;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothVel, 0.1f);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
         }
     }
 }

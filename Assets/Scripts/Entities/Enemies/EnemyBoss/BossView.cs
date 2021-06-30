@@ -6,7 +6,7 @@ public class BossView : MonoBehaviour
 {
     private BossMdl _cmp_mod;
     private BossCtrl _cmp_ctrl;
-    private Animator _cmp_anim;
+    public Animator _cmp_anim;
     public bool onAtack;
     public bool onPanic;
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class BossView : MonoBehaviour
     {
         _cmp_mod = gameObject.GetComponent<BossMdl>();
         _cmp_ctrl = gameObject.GetComponent<BossCtrl>();
-        _cmp_anim = gameObject.GetComponent<Animator>();
+        //_cmp_anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
