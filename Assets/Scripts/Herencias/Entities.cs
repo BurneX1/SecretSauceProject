@@ -9,7 +9,7 @@ public class Entities : MonoBehaviour
     //[HideInInspector]
     public bool grounded;
     public LayerMask groundLayer;
-    [HideInInspector]
+    //[HideInInspector]
     public float grndDistance;
     [HideInInspector]
     public Rigidbody cmp_rb;

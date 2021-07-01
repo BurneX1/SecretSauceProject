@@ -43,7 +43,7 @@ public class Characters : Entities
     [Range(0.0f,3)]
     public float meleCD;
     public Collider meleHitCollider;
-    [Range(0.0f, 1000)]
+    [Range(0.0f, 1500)]
     public float jmpForce;
     [Range(0.0f, 500)]
     public float movSpd;
@@ -73,7 +73,7 @@ public class Characters : Entities
 
     public void Update()
     {
-        grounded = GroundDetect(groundLayer, 1.1f);
+        grounded = GroundDetect(groundLayer, grndDistance);
         CDTimer(meleCD);
 
     }
