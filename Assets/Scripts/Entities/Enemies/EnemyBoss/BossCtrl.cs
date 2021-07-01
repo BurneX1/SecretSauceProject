@@ -19,6 +19,8 @@ public class BossCtrl : MonoBehaviour
     public GameObject[] tables;
     public Transform lookTable;
     public float smoothVel;
+    Quaternion rot;
+    Vector3 dir;
     // Start is called before the first frame update
     void Start()
     {
@@ -100,14 +102,9 @@ public class BossCtrl : MonoBehaviour
 
     public void Rote_in_Y(Vector3 move)
     {
-        if (move.magnitude >= 0.1f)
-        {
-            Vector3 lookCamPs = transform.position.x * /*camRight + playerInput.z * */move;
+        dir = (new Vector3(lookTable.position.x,transform.position.y, lookTable.position.z) - transform.position).normalized;
+        rot = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, smoothVel);
 
-            float targetAngle = Mathf.Atan2(lookCamPs.x, lookCamPs.z) * Mathf.Rad2Deg;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothVel, 0.1f);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-        }
     }
 }
