@@ -46,7 +46,12 @@ public class TextInteract : InteractableAction
             }
             else
             {
-                if (cmp_txtMng.writtingTxt != cmp_txtMng.actTxt.text)
+                if (_txtIndx <= 0)
+                {
+                    cmp_txtMng.WritteText(textLines[_txtIndx], delayTxt);
+                    _txtIndx++;
+                }
+                else if (cmp_txtMng.writtingTxt != cmp_txtMng.actTxt.text)
                 {
                     cmp_txtMng.InstantWrite();
                 }
@@ -54,7 +59,7 @@ public class TextInteract : InteractableAction
                 {
                     cmp_txtMng.WritteText(textLines[_txtIndx], delayTxt);
                     _txtIndx++;
-                }  
+                }
             }
         }
 

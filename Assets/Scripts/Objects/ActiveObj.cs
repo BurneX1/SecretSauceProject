@@ -7,13 +7,14 @@ public class ActiveObj : InteractableAction
     public GameObject activeObj;
     public bool activeStartBy;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         if(activeObj.activeSelf != activeStartBy)
         {
             activeObj.SetActive(activeStartBy);
         }
     }
+    
 
     // Update is called once per frame
     void Update()

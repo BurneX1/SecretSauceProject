@@ -10,6 +10,8 @@ public class CameraOptions : MonoBehaviour
     public int camType;
     public CinemachineBrain cmBrain;
     public GameObject target;
+    Quaternion rot;
+    Vector3 dir;
 
 
     [Header("FocusValues")]
@@ -96,16 +98,22 @@ public class CameraOptions : MonoBehaviour
     {
         gmManager.GetComponent<PlayerMangr>().NonActionPly();
         cmBrain.enabled = false;
-        Vector3 tmp = obj.transform.position - myCamera.transform.position;
+        /*Vector3 tmp = obj.transform.position - myCamera.transform.position;
         Vector3 rotDif = new Vector3(myCamera.transform.rotation.x - Quaternion.LookRotation(tmp).x, 
             myCamera.transform.rotation.y - Quaternion.LookRotation(tmp).y, 
             myCamera.transform.rotation.z - Quaternion.LookRotation(tmp).z);
         float tempTime = 0; 
-        tempTime += Time.deltaTime;
-        myCamera.transform.rotation = Quaternion.RotateTowards(myCamera.transform.rotation, Quaternion.LookRotation(tmp), (Mathf.Abs(rotDif.x + rotDif.y + rotDif.z) * Time.deltaTime * 180)  /  (transitionTime*Time.deltaTime * 50));
+        tempTime += Time.deltaTime;*/
+        //myCamera.transform.rotation = Quaternion.RotateTowards(myCamera.transform.rotation, Quaternion.LookRotation(tmp), (Mathf.Abs(rotDif.x + rotDif.y + rotDif.z) * Time.deltaTime * 180)  /  (transitionTime*Time.deltaTime * 50));
         //myCamera.transform.LookAt(Vector3.Lerp(myCamera.transform.right, obj.transform.position + focusOffset, Time.deltaTime));
         if(Vector3.Distance(myCamera.transform.position, obj.transform.position + focusOffset) >= nearDist)
         myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, obj.transform.position + focusOffset, Time.deltaTime);
+        //---------------------//
+        dir = (new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z) - transform.position).normalized;
+        rot = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 0.05f);
+
+
         StartCoroutine(BackToDefault(transitionTime, 1));
         
     }
