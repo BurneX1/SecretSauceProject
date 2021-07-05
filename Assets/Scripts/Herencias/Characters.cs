@@ -55,6 +55,11 @@ public class Characters : Entities
     public Transform der;
     public Transform izq;
 
+    public float hor;
+    public float ver;
+
+    public bool caminar;
+
     public override void OnEnable()
     {
         base.OnEnable();
@@ -185,8 +190,7 @@ public class Characters : Entities
 
     private void Walk()
     {
-        float hor;
-        float ver;
+        
         if (Input.GetKey(key_left))
         {
             hor = -1;
