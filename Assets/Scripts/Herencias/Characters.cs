@@ -251,7 +251,7 @@ public class Characters : Entities
 
     public void AFKmove()
     {
-        if (Vector3.Distance(AFKtarget.transform.position, transform.position) > 30.5f)
+        if (Vector3.Distance(AFKtarget.transform.position, transform.position) > 70.5f)
         {
             
 
@@ -291,7 +291,7 @@ public class Characters : Entities
             }
 
 
-            Vector3 targ = new Vector3(AFKtarget.position.x + (2.5f*xValue), AFKtarget.position.y, AFKtarget.position.z + (2.5f * zValue));
+            Vector3 targ = new Vector3(AFKtarget.position.x + (2.5f*xValue), transform.position.y, AFKtarget.position.z + (2.5f * zValue));
             if (cmp_agent.enabled)
             {
                 cmp_agent.destination = targ;

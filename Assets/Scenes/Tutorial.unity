@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f820bfcce7f4740bb6b8c090af955e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 6
+  delayTime: 4.5
   activeObj: {fileID: 1161074125}
   activeStartBy: 0
 --- !u!1001 &188040042
@@ -1830,7 +1830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f822c6390f81a641b10a2ea6c2ec95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key_intrc: 102
+  key_intrc: 101
   InteractObj:
   - {fileID: 300520153}
   onlyOneUse: 0
@@ -2050,7 +2050,7 @@ Transform:
   m_LocalScale: {x: 0.1346803, y: 0.43, z: 0.43}
   m_Children: []
   m_Father: {fileID: 1815048163}
-  m_RootOrder: 78
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!64 &307733277
 MeshCollider:
@@ -3345,7 +3345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f822c6390f81a641b10a2ea6c2ec95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key_intrc: 102
+  key_intrc: 101
   InteractObj:
   - {fileID: 468759104}
   onlyOneUse: 0
@@ -3846,7 +3846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f820bfcce7f4740bb6b8c090af955e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 6
+  delayTime: 4.5
   activeObj: {fileID: 322353014}
   activeStartBy: 0
 --- !u!1 &550207666
@@ -3899,7 +3899,7 @@ MonoBehaviour:
   delayTime: 0
   noLoopable: 1
   textLines:
-  - 'Puedes interactuar con algunos objetos presionando [F] al acercarte a ellos '
+  - 'Puedes interactuar con algunos objetos presionando [E] al acercarte a ellos '
   delayTxt: 0.1
   cmp_txtMng: {fileID: 1591988808}
 --- !u!114 &550207669
@@ -3914,7 +3914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f822c6390f81a641b10a2ea6c2ec95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key_intrc: 102
+  key_intrc: 101
   InteractObj:
   - {fileID: 550207666}
   onlyOneUse: 0
@@ -5661,7 +5661,7 @@ Transform:
   m_LocalScale: {x: 0.1346803, y: 0.43, z: 0.43}
   m_Children: []
   m_Father: {fileID: 1815048163}
-  m_RootOrder: 53
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!64 &721591817
 MeshCollider:
@@ -7126,12 +7126,12 @@ PrefabInstance:
     - target: {fileID: 80804203839052084, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000042738093
+      value: -0.000000004236907
       objectReference: {fileID: 0}
     - target: {fileID: 80804203839052084, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.8813653e-10
+      value: 4.8392174e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1412601306867710687, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
@@ -7161,12 +7161,12 @@ PrefabInstance:
     - target: {fileID: 1659661487340181637, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017127922
+      value: -0.000000017128063
       objectReference: {fileID: 0}
     - target: {fileID: 1659661487340181637, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000016412695
+      value: 0.0000000016412828
       objectReference: {fileID: 0}
     - target: {fileID: 2296677672361991523, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
@@ -7561,12 +7561,12 @@ PrefabInstance:
     - target: {fileID: 8131113739609176079, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017154882
+      value: -0.000000017153614
       objectReference: {fileID: 0}
     - target: {fileID: 8131113739609176079, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000013302738
+      value: 0.0000000013301756
       objectReference: {fileID: 0}
     - target: {fileID: 8268499890873639526, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
@@ -7596,12 +7596,12 @@ PrefabInstance:
     - target: {fileID: 8268499890873639526, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000034255844
+      value: -0.000000034255915
       objectReference: {fileID: 0}
     - target: {fileID: 8268499890873639526, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000003282539
+      value: 0.0000000032825456
       objectReference: {fileID: 0}
     - target: {fileID: 8477066156314518176, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
@@ -10465,7 +10465,7 @@ MonoBehaviour:
   noLoopable: 1
   textLines:
   - Cuidado, un enemigo!
-  - Utiliza la habilidad del robot para distraerlo [E]
+  - Utiliza la habilidad del robot para distraerlo [Q]
   - Necesitaras Baterias para usarla.
   delayTxt: 0.1
   cmp_txtMng: {fileID: 1591988808}
@@ -10481,7 +10481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f822c6390f81a641b10a2ea6c2ec95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key_intrc: 102
+  key_intrc: 101
   InteractObj:
   - {fileID: 1161074125}
   onlyOneUse: 0
@@ -17040,6 +17040,7 @@ Transform:
   - {fileID: 820333812}
   - {fileID: 877381506}
   - {fileID: 1708449725}
+  - {fileID: 721591816}
   - {fileID: 424000887}
   - {fileID: 1878638577}
   - {fileID: 1754012658}
@@ -17050,7 +17051,7 @@ Transform:
   - {fileID: 365125991}
   - {fileID: 1197343322}
   - {fileID: 642532363}
-  - {fileID: 721591816}
+  - {fileID: 2018864350}
   - {fileID: 304464582}
   - {fileID: 725859088}
   - {fileID: 722574256}
@@ -17058,7 +17059,7 @@ Transform:
   - {fileID: 1673993903}
   - {fileID: 1507025139}
   - {fileID: 1931246736}
-  - {fileID: 2018864350}
+  - {fileID: 307733276}
   - {fileID: 358981383}
   - {fileID: 1871381046}
   - {fileID: 2037768898}
@@ -17075,7 +17076,6 @@ Transform:
   - {fileID: 5149765113120528263}
   - {fileID: 915052304}
   - {fileID: 1721119169}
-  - {fileID: 307733276}
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18462,7 +18462,7 @@ Transform:
   m_LocalScale: {x: 0.1346803, y: 0.43, z: 0.43}
   m_Children: []
   m_Father: {fileID: 1815048163}
-  m_RootOrder: 61
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!64 &2018864351
 MeshCollider:
@@ -19210,10 +19210,10 @@ MonoBehaviour:
   delayTime: 0
   noLoopable: 1
   textLines:
-  - Introduccion [F to continue]
-  - Expliacion de controles([W]Adelante,[A]Izquierda,[S]Retroceder,[D]Derecha,[Space]
-    Saltar])
-  - 'Buena suerte, muchacho '
+  - Introduccion [E to continue]
+  - Expliacion de controles ([W]Adelante, [A]Izquierda, [S]Retroceder, [D]Derecha,
+    [Space] Saltar])
+  - Dirigete a la puerta para encontrar la salida
   delayTxt: 0.1
   cmp_txtMng: {fileID: 1591988808}
 --- !u!114 &2102280212
@@ -19228,7 +19228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f822c6390f81a641b10a2ea6c2ec95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key_intrc: 102
+  key_intrc: 101
   InteractObj:
   - {fileID: 2102280210}
   onlyOneUse: 0
