@@ -7,13 +7,14 @@ public class CharOneView : MonoBehaviour
 {
     private CharOneModl _cmp_mod;
     private CharOneCtrl _cmp_ctrl;
-    private Animator _cmp_anim;
+    public Animator _cmp_anim;
 
     public bool viewMove;
     public bool viewAttack;
     public bool viewEspecial;
     public bool viewGetDamage;
     public bool viewKnockDown;
+    public float activationMove2;
     public float activationMove;
     public float timer;
 
@@ -41,13 +42,26 @@ public class CharOneView : MonoBehaviour
     void ActivateAnimationMove()
     {
         _cmp_anim.SetFloat("Move", activationMove);
-        if (viewMove == true)
+        _cmp_anim.SetFloat("Move2", activationMove2);
+        if (_cmp_mod.ver >= 1)
         {
             activationMove = 1;
         }
         else
         {
             activationMove = 0;
+        }
+        if (_cmp_mod.hor >= 1)
+        {
+            activationMove2 = 1;
+        }
+        else if(_cmp_mod.hor <= -1)
+        {
+            activationMove2 = -1; 
+        }
+        else
+        {
+            activationMove2 = 0;
         }
     }
     

@@ -7,7 +7,7 @@ public class CharTwoView : MonoBehaviour
 {
     private CharTwoModl _cmp_mod;
     private CharTwoCtrl _cmp_ctrl;
-    private Animator _cmp_anim;
+    public Animator _cmp_anim;
 
     public bool viewMove;
     public bool viewAttack;
