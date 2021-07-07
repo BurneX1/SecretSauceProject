@@ -8,7 +8,7 @@ public class CharOneCtrl : MonoBehaviour
 {
     private CharOneModl _cmp_mod;
     private CharOneView _cmp_view;
-    private bool _atacking;
+    public bool _atacking;
     private float _tauntTime;
     private float _cdTime;
     private Pause _cmp_ps;
