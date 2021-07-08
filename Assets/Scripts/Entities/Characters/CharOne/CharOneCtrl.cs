@@ -55,7 +55,11 @@ public class CharOneCtrl : MonoBehaviour
             else
             {
                 _cmp_mod.HitBoxAtk(1, true, _cmp_mod.meleHitCollider);
-                Shoot();
+                if(_cmp_mod.grounded)
+                {
+                    Shoot();
+                }
+
             }
         }
     }
@@ -86,6 +90,10 @@ public class CharOneCtrl : MonoBehaviour
             if (_tauntTime >= _cmp_mod.atkTime)
             {
                 _cmp_mod.SpcRangeAtck();
+                if (GameObject.Find("SoundManager").GetComponent<AudioManager>())
+                {
+                    GameObject.Find("SoundManager").GetComponent<AudioManager>().Play("Disparo");
+                }
                 _atacking = false;
                 _tauntTime = 0;
 

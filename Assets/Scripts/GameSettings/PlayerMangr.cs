@@ -160,10 +160,12 @@ public class PlayerMangr : MonoBehaviour
             if(playerArray[i].GetComponent<CharOneCtrl>())
             {
                 playerArray[i].GetComponent<CharOneCtrl>().enabled = false;
+                playerArray[i].GetComponent<Animator>().enabled = false;
             }
             else if(playerArray[i].GetComponent<CharTwoCtrl>())
             {
                 playerArray[i].GetComponent<CharTwoCtrl>().enabled = false;
+                playerArray[i].GetComponent<Animator>().enabled = false;
             }
         }
     }
@@ -175,10 +177,12 @@ public class PlayerMangr : MonoBehaviour
             if (playerArray[i].GetComponent<CharOneCtrl>())
             {
                 playerArray[i].GetComponent<CharOneCtrl>().enabled = true;
+                playerArray[i].GetComponent<Animator>().enabled = true;
             }
             else if (playerArray[i].GetComponent<CharTwoCtrl>())
             {
                 playerArray[i].GetComponent<CharTwoCtrl>().enabled = true;
+                playerArray[i].GetComponent<Animator>().enabled = true;
             }
         }
     }

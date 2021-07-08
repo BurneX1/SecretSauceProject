@@ -187,11 +187,18 @@ public class CharTwoCtrl : MonoBehaviour
                 tempFeedback.SetActive(true);
             }//Temp Feedback
 
-
+            if (GameObject.Find("SoundManager").GetComponent<AudioManager>())
+            {
+                GameObject.Find("SoundManager").GetComponent<AudioManager>().Play("AlarmBot");
+            }
             _tauntTime += Time.deltaTime;
             if(_tauntTime >= _cmp_mod.atkDur)
             {
                 atacking = false;
+                if (GameObject.Find("SoundManager").GetComponent<AudioManager>())
+                {
+                    GameObject.Find("SoundManager").GetComponent<AudioManager>().Stop("AlarmBot");
+                }
                 //battery = true;//Borrar esta linea cuando se implementen las baterias
                 _tauntTime = 0;
 
