@@ -26,7 +26,7 @@ public class LifeManager : MonoBehaviour
     void Update()
     {
         ManageLife();
-        gameOver();
+        gameOver(); 
     }
 
     public void ManageLife()

@@ -7,7 +7,9 @@ public class Pause : MonoBehaviour
     public KeyCode escape;
     public bool paused;
     public GameObject Pause_Menu;
+    public GameObject Opt_Menu;
     private MouseLocker cmp_msLck;
+
 
     //public bool Back_Button;
     // Start is called before the first frame update
@@ -30,6 +32,10 @@ public class Pause : MonoBehaviour
         {
             cmp_msLck.msLock = true;
             Pause_Menu.SetActive(false);
+            if(Opt_Menu.activeSelf == true)
+            {
+                Opt_Menu.SetActive(false);
+            }
             Time.timeScale = 1;
         }
         if (paused == true)

@@ -486,6 +486,9 @@ MonoBehaviour:
   afkMode: 0
   der: {fileID: 2487974723776030811}
   izq: {fileID: 2487974724232527795}
+  hor: 0
+  ver: 0
+  caminar: 0
   lifeMngObj: {fileID: 2487974724481053651}
   gun: {fileID: 2487974722569080085}
   plyBullet: {fileID: 3539710996946217216, guid: cfab8014f5dd7c34b99d92f03109bf60,
@@ -505,11 +508,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513aed72606ffe443a45579868119074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cmp_anim: {fileID: 0}
   viewMove: 0
   viewAttack: 0
   viewEspecial: 0
   viewGetDamage: 0
   viewKnockDown: 0
+  activationMove2: 0
   activationMove: 0
   timer: 0
 --- !u!114 &2487974722805472999
@@ -524,6 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0684ee955eeb3004ea978383ad1607da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _atacking: 0
   gmMng: {fileID: 2487974724481053651}
 --- !u!54 &2487974722805472996
 Rigidbody:
@@ -960,6 +966,9 @@ MonoBehaviour:
   afkMode: 0
   der: {fileID: 0}
   izq: {fileID: 0}
+  hor: 0
+  ver: 0
+  caminar: 0
   spcRange: 15
   intrcTagsArray:
   - Enemy
@@ -999,6 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6633a9c867c3c44abff45fce162f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cmp_anim: {fileID: 0}
   viewMove: 0
   viewAttack: 0
   viewEspecial: 0
@@ -1006,6 +1016,7 @@ MonoBehaviour:
   viewKnockDown: 0
   activationMove: 0
   timer: 0
+  prueba: 0
 --- !u!95 &2487974723199748782
 Animator:
   serializedVersion: 3
@@ -1215,7 +1226,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2487974723419964278}
-  m_LocalRotation: {x: -0.11905718, y: 0.48213854, z: -0.06632781, w: -0.86542964}
+  m_LocalRotation: {x: 0.11905718, y: -0.48213857, z: 0.06632782, w: 0.86542964}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2746,6 +2757,8 @@ MonoBehaviour:
   maxLive: 4
   barLife: {fileID: 3622108920157451807}
   player: {fileID: 2487974722805472995}
+  scnMng: {fileID: 0}
+  gameOverScene: 
 --- !u!114 &39805871977265132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3017,8 +3030,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5348439750747041720}
-  m_LocalRotation: {x: 0.11854338, y: -0.000000030800525, z: 0.0000000036771257, w: 0.9929489}
-  m_LocalPosition: {x: 0.15862846, y: 0.90522766, z: 33.729435}
+  m_LocalRotation: {x: 0.14268014, y: -0.48014435, z: 0.07948839, w: 0.86185}
+  m_LocalPosition: {x: 2.8838959, y: 6.408, z: -5.82782}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2487974723622616018}
@@ -3049,7 +3062,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 57.7
   orthographic: 0
   orthographic size: 5
   m_Depth: 0

@@ -29,7 +29,7 @@ public class Opciones : MonoBehaviour
         }
         if (PlayerPrefs.HasKey("SensVal") == false)
         {
-            PlayerPrefs.SetFloat("SensVal", 0.5f);
+            PlayerPrefs.SetFloat("SensVal", 3);
         }
 
         genVolume = PlayerPrefs.GetFloat("GenVol");
