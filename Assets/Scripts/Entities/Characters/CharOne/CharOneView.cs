@@ -47,6 +47,10 @@ public class CharOneView : MonoBehaviour
         {
             activationMove = 1;
         }
+        else if(_cmp_mod.ver <= -1)
+        {
+            activationMove = -1;
+        }
         else
         {
             activationMove = 0;
@@ -67,15 +71,15 @@ public class CharOneView : MonoBehaviour
     
     void ActivateAnimationAttack()
     {
-        if (viewAttack == true)
+        if (_cmp_ctrl._atacking == true)
         {
             _cmp_anim.SetTrigger("Attack");
-            timer += Time.deltaTime;
+            /*timer += Time.deltaTime;
             if (timer >= 0.1f)
             {
                 viewAttack = false;
                 timer = 0;
-            }
+            }*/
         }
     }
 
