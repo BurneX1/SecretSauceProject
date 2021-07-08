@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4937,6 +4937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 139482812}
   - component: {fileID: 139482813}
+  - component: {fileID: 139482814}
   m_Layer: 5
   m_Name: MusicVolume
   m_TagString: Untagged
@@ -5029,6 +5030,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &139482814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139482811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a491989a74520094f87b06768ff069c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sld: {fileID: 0}
 --- !u!1 &173516160
 GameObject:
   m_ObjectHideFlags: 0
@@ -5490,6 +5504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 594455646}
   - component: {fileID: 594455647}
+  - component: {fileID: 594455648}
   m_Layer: 5
   m_Name: SoundVolume
   m_TagString: Untagged
@@ -5582,6 +5597,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &594455648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594455645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a48d1dbfe9e10de49a63def941f995dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sld: {fileID: 0}
 --- !u!1 &601914409
 GameObject:
   m_ObjectHideFlags: 0
@@ -7086,24 +7114,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1418664247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0670b4b21844c54409cceb4d47ccd5e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 404ba469131bfc1489026583af1de08b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1418368218}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  sld: {fileID: 0}
 --- !u!1 &1496531845
 GameObject:
   m_ObjectHideFlags: 0
