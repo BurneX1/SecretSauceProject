@@ -30,6 +30,7 @@ public class CharOneView : MonoBehaviour
     void Update()
     {
         _cmp_anim.SetBool("Grounded", _cmp_mod.grounded);
+        _cmp_anim.SetBool("Attack 0", viewAttack);
 
         ActivateAnimationMove();
         ActivateAnimationAttack();
@@ -73,13 +74,11 @@ public class CharOneView : MonoBehaviour
     {
         if (_cmp_ctrl._atacking == true)
         {
-            _cmp_anim.SetTrigger("Attack");
-            /*timer += Time.deltaTime;
-            if (timer >= 0.1f)
-            {
-                viewAttack = false;
-                timer = 0;
-            }*/
+            viewAttack = true;
+        }
+        else
+        {
+            viewAttack = false;
         }
     }
 

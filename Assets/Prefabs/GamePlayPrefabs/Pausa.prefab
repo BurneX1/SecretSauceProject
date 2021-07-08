@@ -66,7 +66,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c423de0fb106f8246bdf31d491f44552, type: 3}
+    m_Font: {fileID: 12800000, guid: 1fad67f7649ab40489f22a1ddeff37a2, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c423de0fb106f8246bdf31d491f44552, type: 3}
+    m_Font: {fileID: 12800000, guid: 1fad67f7649ab40489f22a1ddeff37a2, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -315,6 +315,8 @@ GameObject:
   - component: {fileID: 87384357176967653}
   - component: {fileID: 87384357176967654}
   - component: {fileID: 87384357176967655}
+  - component: {fileID: 1909914394617936426}
+  - component: {fileID: 3169124453763345645}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -436,6 +438,65 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1909914394617936426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87384357176967649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3169124453763345645}
+          m_TargetAssemblyTypeName: Particles, Assembly-CSharp
+          m_MethodName: pointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3169124453763345645}
+          m_TargetAssemblyTypeName: Particles, Assembly-CSharp
+          m_MethodName: pointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &3169124453763345645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87384357176967649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae4083038e01384fa5fc64ef72b25fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Particulas: {fileID: 0}
+  ActiveParticles: 0
 --- !u!1 &87384357231231140
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +563,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c423de0fb106f8246bdf31d491f44552, type: 3}
+    m_Font: {fileID: 12800000, guid: 1fad67f7649ab40489f22a1ddeff37a2, type: 3}
     m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
@@ -581,7 +642,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c423de0fb106f8246bdf31d491f44552, type: 3}
+    m_Font: {fileID: 12800000, guid: 1fad67f7649ab40489f22a1ddeff37a2, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
