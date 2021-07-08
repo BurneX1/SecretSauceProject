@@ -36,15 +36,15 @@ public class EnemyTwoView : MonoBehaviour
 
     void ActivateAnimationAttack()
     {
-        if (viewAttack == true)
+        if (_cmp_ctrl.cooldownActive == true)
         {
             _cmp_anim.SetTrigger("Attack");
-            timer += Time.deltaTime;
+            /*timer += Time.deltaTime;
             if (timer >= 0.1f)
             {
                 viewAttack = false;
                 timer = 0;
-            }
+            }*/
         }
     }
 
