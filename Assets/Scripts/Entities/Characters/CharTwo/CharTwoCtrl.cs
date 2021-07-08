@@ -101,7 +101,7 @@ public class CharTwoCtrl : MonoBehaviour
             timerEmission += Time.deltaTime;
             if(timerEmission >= maxTimerEmission)
             {
-                mymat.SetColor("_EmissionColor", Color.red);
+                mymat.SetColor("_EmissionColor", Color.green);
             }
             if(timerEmission >= 0.5)
             {

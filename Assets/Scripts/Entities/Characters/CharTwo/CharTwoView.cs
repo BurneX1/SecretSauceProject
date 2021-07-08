@@ -16,7 +16,7 @@ public class CharTwoView : MonoBehaviour
     public bool viewKnockDown;
     public float activationMove;
     public float timer;
-
+    public float prueba;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +29,7 @@ public class CharTwoView : MonoBehaviour
     void Update()
     {
         _cmp_anim.SetBool("Grounded", _cmp_mod.grounded);
+        _cmp_anim.SetBool("Attack", viewAttack);
 
         ActivateAnimationMove();
         ActivateAnimationAttack();
@@ -41,7 +42,7 @@ public class CharTwoView : MonoBehaviour
     void ActivateAnimationMove()
     {
         _cmp_anim.SetFloat("Move", activationMove);
-        if (viewMove == true)
+        if (prueba != _cmp_mod.cmp_agent.remainingDistance)
         {
             activationMove = 1;
         }
@@ -53,11 +54,15 @@ public class CharTwoView : MonoBehaviour
 
     void ActivateAnimationAttack()
     {
-        if (viewAttack == true)
+        
+        if (Input.GetKeyDown(_cmp_mod.keyArray_extrAct[2]) && _cmp_ctrl.battery == true)
         {
-            _cmp_anim.SetTrigger("Attack");
+            viewAttack = true;
+        }
+        if(viewAttack ==true)
+        {
             timer += Time.deltaTime;
-            if (timer >= 0.1f)
+            if (timer >= 7)
             {
                 viewAttack = false;
                 timer = 0;
