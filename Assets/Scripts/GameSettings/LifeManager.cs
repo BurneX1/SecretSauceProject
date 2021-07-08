@@ -12,6 +12,8 @@ public class LifeManager : MonoBehaviour
     public Image barLife;
 
     public GameObject player;
+    public SceneChange scnMng;
+    public string gameOverScene;
 
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class LifeManager : MonoBehaviour
     void Update()
     {
         ManageLife();
+        gameOver();
     }
 
     public void ManageLife()
@@ -41,6 +44,7 @@ public class LifeManager : MonoBehaviour
         if(actLive<0)
         {
             actLive = 0;
+            
         }
     }
 
@@ -61,6 +65,7 @@ public class LifeManager : MonoBehaviour
         if (actLive <= 0)
         {
             player.GetComponent<Characters>().Die();
+            scnMng.Change(gameOverScene);
             //Llamar a la funcion de termianr el nivel
         }
 
