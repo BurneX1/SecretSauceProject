@@ -10,6 +10,8 @@ public class Opciones : MonoBehaviour
     public float genVolume;
     public float mscVolume;
     public float sndVolume;
+    [Header("ShowOnly Sensibility")]
+    public float sensVal;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +27,17 @@ public class Opciones : MonoBehaviour
         {
             PlayerPrefs.SetFloat("SndVol", 0.5f);
         }
+        if (PlayerPrefs.HasKey("SensVal") == false)
+        {
+            PlayerPrefs.SetFloat("SensVal", 0.5f);
+        }
 
         genVolume = PlayerPrefs.GetFloat("GenVol");
         mscVolume = PlayerPrefs.GetFloat("MscVol");
         sndVolume = PlayerPrefs.GetFloat("SndVol");
+        sensVal = PlayerPrefs.GetFloat("SensVal");
 
-        
+
     }
 
     // Update is called once per frame
@@ -56,7 +63,11 @@ public class Opciones : MonoBehaviour
     {
         PlayerPrefs.SetFloat("MscVol", vol);
         mscVolume = PlayerPrefs.GetFloat("MscVol");
+    }
 
-
+    public void SetSenseValue(float val)
+    {
+        PlayerPrefs.SetFloat("SensVal", val);
+        sensVal = PlayerPrefs.GetFloat("SensVal");
     }
 }
