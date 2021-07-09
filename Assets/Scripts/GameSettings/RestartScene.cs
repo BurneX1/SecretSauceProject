@@ -7,6 +7,7 @@ public class RestartScene : MonoBehaviour
     public SceneChange sceneMng;
     public string[] scenes;
     public int toBackScene;
+    public int highScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +29,10 @@ public class RestartScene : MonoBehaviour
         {
             sceneMng.Change(scenes[0]);
         }
+    }
+
+    public void Continue()
+    {
+
     }
 }

@@ -1126,6 +1126,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2045775878307751876, guid: 8b3359893629f204988528186315deb3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2045775879879601305, guid: 8b3359893629f204988528186315deb3,
         type: 3}
       propertyPath: target.Array.data[0]
@@ -1574,7 +1579,7 @@ PrefabInstance:
     - target: {fileID: 1272613236137352022, guid: 09ac6c42ab3921947b19a849a65ad1a7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1272613236137352022, guid: 09ac6c42ab3921947b19a849a65ad1a7,
         type: 3}
@@ -4872,6 +4877,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: RobotEnemigo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: target.Array.data[0]
+      value: 
+      objectReference: {fileID: 1858346193}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: target.Array.data[1]
+      value: 
+      objectReference: {fileID: 1356200604}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: waypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1063905055}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2669ac79c05291541b8f0a35abcedae4, type: 3}
 --- !u!1 &727748654
@@ -5789,7 +5814,6 @@ GameObject:
   m_Component:
   - component: {fileID: 828524271}
   - component: {fileID: 828524270}
-  - component: {fileID: 828524272}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -5828,20 +5852,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &828524272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828524269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4cabf369ec9d6146a226f3832936f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vig: {fileID: 0}
-  vignette: {fileID: 0}
 --- !u!1001 &834337347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8245,6 +8255,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1063880612}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1063905054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1063905055}
+  m_Layer: 0
+  m_Name: Point2 (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1063905055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063905054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.78, y: 1.54, z: 11.06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 58
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1095729109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9342,17 +9382,17 @@ PrefabInstance:
     - target: {fileID: 80804203839052084, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.14732848
+      value: -0.14732851
       objectReference: {fileID: 0}
     - target: {fileID: 80804203839052084, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.11362678
+      value: -0.113626756
       objectReference: {fileID: 0}
     - target: {fileID: 80804203839052084, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.01704052
+      value: -0.017040519
       objectReference: {fileID: 0}
     - target: {fileID: 617195282087481091, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
@@ -9417,17 +9457,17 @@ PrefabInstance:
     - target: {fileID: 1659661487340181637, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.16517332
+      value: -0.16517334
       objectReference: {fileID: 0}
     - target: {fileID: 1659661487340181637, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.11329802
+      value: -0.11329797
       objectReference: {fileID: 0}
     - target: {fileID: 1659661487340181637, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.019104514
+      value: -0.019104507
       objectReference: {fileID: 0}
     - target: {fileID: 2296677672361991523, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
@@ -9609,6 +9649,11 @@ PrefabInstance:
       propertyPath: grndDistance
       value: 0.61
       objectReference: {fileID: 0}
+    - target: {fileID: 2886189670725037767, guid: 764fb05c20513c649a7b704c7ce0c9ab,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 2886189670732830900, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9717,7 +9762,7 @@ PrefabInstance:
     - target: {fileID: 2886189671507954673, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2886189671507954673, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
@@ -9972,12 +10017,12 @@ PrefabInstance:
     - target: {fileID: 8268499890873639526, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.11302956
+      value: -0.11302955
       objectReference: {fileID: 0}
     - target: {fileID: 8268499890873639526, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.020633345
+      value: -0.020633342
       objectReference: {fileID: 0}
     - target: {fileID: 8477066156314518176, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
@@ -10390,6 +10435,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: RobotEnemigo
       objectReference: {fileID: 0}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: target.Array.data[0]
+      value: 
+      objectReference: {fileID: 1858346193}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: target.Array.data[1]
+      value: 
+      objectReference: {fileID: 1356200604}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: waypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 868664850}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2669ac79c05291541b8f0a35abcedae4, type: 3}
 --- !u!1 &1237133885
@@ -12453,7 +12518,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e242a7de2b740b341831e23734818a97,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e242a7de2b740b341831e23734818a97,
         type: 3}
@@ -18956,6 +19021,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: RobotEnemigo (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: target.Array.data[0]
+      value: 
+      objectReference: {fileID: 1858346193}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: target.Array.data[1]
+      value: 
+      objectReference: {fileID: 1356200604}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: waypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 249057398768564117, guid: 2669ac79c05291541b8f0a35abcedae4,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1777384981}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2669ac79c05291541b8f0a35abcedae4, type: 3}
 --- !u!1001 &1766456606491686217
