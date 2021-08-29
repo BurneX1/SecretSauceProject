@@ -6,6 +6,7 @@ using Cinemachine;
 public class CameraOptions : MonoBehaviour
 {
     private bool enumeratorAct;
+    
     public GameObject gmManager;
     public int camType;
     public CinemachineBrain cmBrain;
@@ -13,6 +14,9 @@ public class CameraOptions : MonoBehaviour
     Quaternion rot;
     Vector3 dir;
 
+    [Header("CurveFocusValues")]
+    public float curveSg;
+    public Transform[] segmts;
 
     [Header("FocusValues")]
     public GameObject actualFocus;
@@ -85,7 +89,7 @@ public class CameraOptions : MonoBehaviour
                 break;
 
             case 3:
-
+                CurveFocusObj(segmts, actualFocus);
                 break;
 
             default:
@@ -116,6 +120,37 @@ public class CameraOptions : MonoBehaviour
 
         StartCoroutine(BackToDefault(transitionTime, 1));
         
+    }
+
+    void CurveFocusObj(Transform[] points, GameObject obj)
+    {
+        gmManager.GetComponent<PlayerMangr>().NonActionPly();
+        cmBrain.enabled = false;
+
+        if (Vector3.Distance(myCamera.transform.position, obj.transform.position + focusOffset) >= nearDist)
+        {
+
+            //myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, obj.transform.position + focusOffset, Time.deltaTime);
+
+            int totalSegments = (points.Length - 1) / 2;
+            curveSg += Time.deltaTime / transitionTime;
+            int currentSegment = Mathf.Max(Mathf.CeilToInt(totalSegments * curveSg), 1);
+            float u = (curveSg * totalSegments) - (currentSegment - 1);
+            Vector3 position = MathTools.BezierLerp(
+                    points[(currentSegment - 1) * 2].position,
+                    points[((currentSegment - 1) * 2) + 1].position,
+                    points[((currentSegment - 1) * 2) + 2].position,    
+                    u);
+
+            myCamera.transform.position = position;
+        }
+        //---------------------//
+        dir = (new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z) - transform.position + focusOffset).normalized;
+        rot = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 0.05f / transitionTime);
+
+
+        StartCoroutine(BackToDefault(transitionTime, 1));
     }
 
     void FixedCam(GameObject obj)
