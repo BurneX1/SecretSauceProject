@@ -24,17 +24,22 @@ public class HitBoxes : MonoBehaviour
     {
 
     }
+
     // Start is called before the first frame update
     void Start()
     {
         cmp_rb = GetComponent<Rigidbody>();
-    }
-    private void FixedUpdate()
-    {
         if (shtSpd != 0)
         {
             Movement();
         }
+    }
+    private void FixedUpdate()
+    {
+        /*if (shtSpd != 0)
+        {
+            Movement();
+        }*/
     }
 
     // Update is called once per frame
