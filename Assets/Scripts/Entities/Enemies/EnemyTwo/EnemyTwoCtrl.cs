@@ -53,7 +53,7 @@ public class EnemyTwoCtrl : MonoBehaviour
         {
             _cmp_mod.targetObj = _cmp_mod.target[0].gameObject;
             _cmp_mod.RotateTo(_cmp_mod.targetObj.transform);
-            _cmp_mod.MoveTo(_cmp_mod.targetObj.transform.position);
+            //_cmp_mod.MoveTo(_cmp_mod.targetObj.transform.position);
         }
         else
         {

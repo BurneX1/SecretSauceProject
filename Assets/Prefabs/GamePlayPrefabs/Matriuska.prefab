@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045775878307751899}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.020000458, y: 0.019999953, z: 1.1940002}
+  m_LocalPosition: {x: -0.020000458, y: 0.019999953, z: 0.675}
   m_LocalScale: {x: 0.66611516, y: 0.7070338, z: 0.60078263}
   m_Children: []
   m_Father: {fileID: 2045775879879601284}
@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 2045775879879601310}
   - component: {fileID: 2045775879879601311}
   - component: {fileID: 2045775879879601308}
+  - component: {fileID: 6228097726827842954}
   m_Layer: 0
   m_Name: Capa1
   m_TagString: Enemy
@@ -472,6 +473,7 @@ MonoBehaviour:
   taunted: 0
   movSpd: 3
   targetObj: {fileID: 0}
+  enemigo: {fileID: 6228097726827842954}
   sightRadius: 10
   attackRadius: 2.29
   target:
@@ -544,6 +546,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &6228097726827842954
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045775879879601309}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 3
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.97
+  m_BaseOffset: 0.42
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4968598773968348347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1255,7 @@ GameObject:
   - component: {fileID: 8807795772005812214}
   - component: {fileID: 8807795772005812215}
   - component: {fileID: 8807795772005812212}
+  - component: {fileID: 2475627396007072699}
   m_Layer: 0
   m_Name: Capa2
   m_TagString: Enemy
@@ -1357,6 +1382,7 @@ MonoBehaviour:
   taunted: 0
   movSpd: 3
   targetObj: {fileID: 0}
+  enemigo: {fileID: 2475627396007072699}
   sightRadius: 10
   attackRadius: 1.8
   target:
@@ -1429,6 +1455,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &2475627396007072699
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807795772005812213}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 3
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.97
+  m_BaseOffset: 0.42
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8807795772171796513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,6 +1494,7 @@ GameObject:
   - component: {fileID: 8807795772171796514}
   - component: {fileID: 8807795772171796515}
   - component: {fileID: 8807795772171796512}
+  - component: {fileID: 3231585668561829767}
   m_Layer: 0
   m_Name: Capa3
   m_TagString: Enemy
@@ -1572,6 +1621,7 @@ MonoBehaviour:
   taunted: 0
   movSpd: 3
   targetObj: {fileID: 0}
+  enemigo: {fileID: 3231585668561829767}
   sightRadius: 10
   attackRadius: 1.31
   target:
@@ -1644,6 +1694,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &3231585668561829767
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807795772171796513}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 3
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.97
+  m_BaseOffset: 0.42
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8807795772246092935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +1733,7 @@ GameObject:
   - component: {fileID: 8807795772246092932}
   - component: {fileID: 8807795772246092933}
   - component: {fileID: 8807795772246092934}
+  - component: {fileID: 4678679047689368995}
   m_Layer: 0
   m_Name: Capa4
   m_TagString: Enemy
@@ -1787,6 +1860,7 @@ MonoBehaviour:
   taunted: 0
   movSpd: 3
   targetObj: {fileID: 0}
+  enemigo: {fileID: 4678679047689368995}
   sightRadius: 10
   attackRadius: 0.96
   target:
@@ -1859,6 +1933,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &4678679047689368995
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807795772246092935}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 3
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.97
+  m_BaseOffset: 0.42
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8807795772594887396
 GameObject:
   m_ObjectHideFlags: 0

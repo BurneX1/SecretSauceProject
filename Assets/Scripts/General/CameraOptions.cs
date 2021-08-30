@@ -24,6 +24,11 @@ public class CameraOptions : MonoBehaviour
     public float nearDist;
     public Vector3 focusOffset;
 
+    [Header("ZoomValues")]
+    public float dfltZoom;
+    public float newZoomValue;
+    public float zoomSpd;
+
     private Camera myCamera;
 
 
@@ -92,6 +97,10 @@ public class CameraOptions : MonoBehaviour
                 CurveFocusObj(segmts, actualFocus);
                 break;
 
+            case 4:
+                //ZoomTo(newZoomValue, zoomSpd);
+                break;
+
             default:
                 FixedCam(target);
                 break;
@@ -152,7 +161,6 @@ public class CameraOptions : MonoBehaviour
 
         StartCoroutine(BackToDefault(transitionTime, 1));
     }
-
     void FixedCam(GameObject obj)
     {
         //Cambiar este tipo decamara luego, ta fea xD
@@ -192,5 +200,20 @@ public class CameraOptions : MonoBehaviour
         actualFocus = obj;
         transitionTime = moveTime;
         camType = 2;
+    }
+
+    public void ZoomTo(float zoomLv, float smthVel)
+    {
+        cmBrain.enabled = false;
+        myCamera.fieldOfView = Mathf.Lerp(myCamera.fieldOfView, zoomLv, smthVel * Time.deltaTime);
+    }
+
+    public void DfltZoom(float smthVel)
+    {
+        myCamera.fieldOfView = Mathf.Lerp(myCamera.fieldOfView, dfltZoom, smthVel * Time.deltaTime);
+        if (myCamera.fieldOfView == dfltZoom)
+        {
+            cmBrain.enabled = true;
+        }
     }
 }

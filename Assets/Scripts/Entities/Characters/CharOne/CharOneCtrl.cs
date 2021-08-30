@@ -68,6 +68,16 @@ public class CharOneCtrl : MonoBehaviour
 
     public void Shoot()
     {
+        _cmp_mod.Aim();
+        if(Input.GetKey(_cmp_mod.keyArray_extrAct[1]))
+        {
+            _cmp_mod.aimState = true;
+        }
+        else
+        {
+            _cmp_mod.aimState = false;
+        }
+
         if (_atacking == false)
         {
          
@@ -92,7 +102,9 @@ public class CharOneCtrl : MonoBehaviour
             if (_tauntTime >= _cmp_mod.atkTime)
             {
                 _cmp_mod.SpcRangeAtck();
-                if (GameObject.Find("SoundManager").GetComponent<AudioManager>())
+
+                GameObject sndObj = GameObject.Find("SoundManager");
+                if (sndObj != null)
                 {
                     GameObject.Find("SoundManager").GetComponent<AudioManager>().Play("Disparo");
                 }
