@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemies : Entities
 {
@@ -14,6 +15,10 @@ public class Enemies : Entities
     public float movSpd;
 
     public GameObject targetObj;
+
+    //
+    public NavMeshAgent enemigo;
+    //
 
     public float sightRadius;
     public float attackRadius;
@@ -57,6 +62,8 @@ public class Enemies : Entities
             /*Debug.Log("te veo bb");
             activateShoot = true;
             activatePatrol = false;*/
+
+            enemigo.destination = target[0].position;
             sigthRad = true;
         }
         /*else
