@@ -13,6 +13,8 @@ public class EnemyFourModl : MonoBehaviour
 
     public float movSpd;
 
+    public float chargeTimer;
+
     public GameObject targetObj;
 
     //

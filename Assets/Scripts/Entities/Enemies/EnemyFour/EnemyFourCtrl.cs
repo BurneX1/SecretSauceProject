@@ -28,9 +28,8 @@ public class EnemyFourCtrl : MonoBehaviour
         float distancePlayer = Vector3.Distance(_cmp_modl.target[0].position,transform.position);
         if (distancePlayer <= _cmp_modl.sightRadius)
         {
-            //_cmp_modl.enemigo.destination = _cmp_modl.target[0].position;
             RotateTo(_cmp_modl.targetObj.transform);
-            //_cmp_modl.sigthRad = true;
+            Tackle();
         }
         else
         {
@@ -38,5 +37,12 @@ public class EnemyFourCtrl : MonoBehaviour
         }
     }
 
-
+    public void Tackle()
+    {
+        _cmp_modl.chargeTimer += Time.deltaTime;
+        if(_cmp_modl.chargeTimer >= 4)
+        {
+            Debug.Log("Cagaste");
+        }
+    }
 }
