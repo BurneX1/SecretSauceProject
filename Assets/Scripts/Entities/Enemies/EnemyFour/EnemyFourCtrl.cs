@@ -38,11 +38,16 @@ public class EnemyFourCtrl : MonoBehaviour
     }
 
     public void Tackle()
-    {
+    {       
         _cmp_modl.chargeTimer += Time.deltaTime;
         if(_cmp_modl.chargeTimer >= 4)
         {
-            Debug.Log("Cagaste");
+            _cmp_modl.isTackling = true;
+        }
+
+        if(_cmp_modl.isTackling == true)
+        {
+            gameObject.GetComponent<Rigidbody>().AddForce(new Vector3 (5,0,-2));
         }
     }
 }

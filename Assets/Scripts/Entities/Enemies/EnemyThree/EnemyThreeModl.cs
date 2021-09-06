@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyFourModl : MonoBehaviour
+public class EnemyThreeModl : MonoBehaviour
 {
-    private int _atkDmg;
-
     public bool sigthRad;
     public bool atkRad;
     public bool taunted;
 
     public float movSpd;
-
-    public float chargeTimer;
-
-    public bool isTackling;
 
     public GameObject targetObj;
 
@@ -23,7 +17,11 @@ public class EnemyFourModl : MonoBehaviour
     public NavMeshAgent enemigo;
     //
 
+    public float explosionTimer;
+    public GameObject explosion;
+
     public float sightRadius;
+    public float attackRadius;
     public Transform[] target;
     public int targetIndex;
 
@@ -41,7 +39,10 @@ public class EnemyFourModl : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, sightRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
+
     }
 }
