@@ -47,12 +47,12 @@ public class CharOneModl : Characters
     }
     public void SpcRangeAtck()
     {
-        if (shootable)
-        {
+        /*if (shootable)
+        {*/
             GameObject bllt = Instantiate(plyBullet);
             bllt.transform.position = pointer.transform.position;
             bllt.transform.rotation = gun.transform.rotation;
-        }   
+        //}   
     }
     public override void SelfDmg(int dmg)
     {
