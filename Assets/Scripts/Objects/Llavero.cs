@@ -44,11 +44,12 @@ public class Llavero : MonoBehaviour
         this.GetComponent<BoxCollider>().isTrigger = false;
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name =="Hueco")
         {
-            Debug.Log("Llavero puesto");
+            Debug.Log("asdf");
+            Destroy(other.gameObject);
         }
     }
 }

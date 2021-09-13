@@ -14,6 +14,15 @@ public class CameraOptions : MonoBehaviour
     Quaternion rot;
     Vector3 dir;
 
+    [Header("CameraValues")]
+    public Transform camTarget;
+    public float pLerp = .02f;
+    public float rLerp = .01f;
+    private Quaternion camRotation;
+    public float sensitivity;
+    public float maxRot;
+    public float minRot;
+
     [Header("CurveFocusValues")]
     public float curveSg;
     public Transform[] segmts;
@@ -30,6 +39,8 @@ public class CameraOptions : MonoBehaviour
     public float zoomSpd;
 
     private Camera myCamera;
+
+
 
 
 
@@ -65,7 +76,7 @@ public class CameraOptions : MonoBehaviour
         enumeratorAct = false;
         myCamera = GetComponent<Camera>();
         cmBrain = GetComponent<CinemachineBrain>();
-        
+        camRotation = transform.localRotation;
     }
 
     // Start is called before the first frame update
@@ -164,7 +175,18 @@ public class CameraOptions : MonoBehaviour
     void FixedCam(GameObject obj)
     {
         //Cambiar este tipo decamara luego, ta fea xD
-        cmBrain.enabled = true;
+        cmBrain.enabled = false;
+        transform.position = Vector3.Lerp(transform.position, camTarget.position, pLerp);
+        transform.rotation = Quaternion.Lerp(transform.rotation, camTarget.rotation, rLerp);
+
+
+        camRotation.x += Input.GetAxisRaw("Mouse Y") * sensitivity * (-1);
+        camRotation.y += Input.GetAxisRaw("Mouse X") * sensitivity;
+
+        camRotation.x = Mathf.Clamp(camRotation.x, minRot, maxRot);
+
+        transform.localRotation = Quaternion.Euler(camRotation.x,camRotation.y,camRotation.z);
+        //cmBrain.enabled = true;
     }
 
     void FreeCam()
