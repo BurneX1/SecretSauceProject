@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 5271456077336316788}
   - component: {fileID: 9117575697609229521}
   - component: {fileID: 6443759929079328795}
+  - component: {fileID: 1260849679}
+  - component: {fileID: 1260849680}
+  - component: {fileID: 1260849681}
   m_Layer: 0
   m_Name: Camara_Low
   m_TagString: Untagged
@@ -25,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4786246631400198606}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.141701, y: 1.9255886, z: -23.190912}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +84,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1260849679
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786246631400198606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06358719, y: 0.065083906, z: 0.031634063}
+  m_Center: {x: -0.003370285, y: 0.03993641, z: 0.037940636}
+--- !u!65 &1260849680
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786246631400198606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.017318726, y: 0.014163196, z: 0.015752792}
+  m_Center: {x: 0.07223511, y: 0.11894587, z: -0.0016040802}
+--- !u!65 &1260849681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786246631400198606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20400876, y: 0.111631624, z: 0.07508827}
+  m_Center: {x: 0, y: 0.0557678, z: -0.015258674}

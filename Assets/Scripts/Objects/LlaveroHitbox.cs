@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class LlaveroHitbox : MonoBehaviour
 {
-
+    public GameObject llave; 
     Llavero llaveroComp;
 
     private void Start()
     {
-        llaveroComp = GameObject.Find("Llavero").GetComponent<Llavero>();
+        llaveroComp = llave.GetComponent<Llavero>();
     }
 
     void OnTriggerEnter(Collider other)

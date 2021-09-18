@@ -7,6 +7,8 @@ public class Llavero : MonoBehaviour
     public Transform punto;
     public bool canPickUp;
     bool pickedUp;
+    public GameObject HuecoCorrecto;
+    int puntos;
 
     void Start()
     {
@@ -24,6 +26,10 @@ public class Llavero : MonoBehaviour
         {
             Throw();
         }
+        if(puntos == 3)
+        {
+            Debug.Log("Puzzle Completado");
+        }
     }
     void PickUp ()
     {
@@ -39,17 +45,17 @@ public class Llavero : MonoBehaviour
     {
         pickedUp = false;
         this.transform.parent = null;
-        this.GetComponent<Rigidbody>().freezeRotation = false;
         this.GetComponent<Rigidbody>().useGravity = true;
+        this.GetComponent<Rigidbody>().freezeRotation = false;
         this.GetComponent<BoxCollider>().isTrigger = false;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name =="Hueco")
+        if (other.gameObject == HuecoCorrecto)
         {
-            Debug.Log("asdf");
             Destroy(other.gameObject);
+            puntos++;
         }
     }
 }

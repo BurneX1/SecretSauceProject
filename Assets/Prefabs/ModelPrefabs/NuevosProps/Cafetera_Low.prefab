@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 4712128989297349911}
   - component: {fileID: 8559939694826920626}
   - component: {fileID: 5850163293632360056}
+  - component: {fileID: 1686722391}
+  - component: {fileID: 1686722392}
+  - component: {fileID: 1686722393}
   m_Layer: 0
   m_Name: Cafetera_Low
   m_TagString: Untagged
@@ -25,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5345501131413114797}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.674208, y: 1.9255886, z: -23.43906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +84,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1686722391
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345501131413114797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026195303, y: 0.03715375, z: 0.015}
+  m_Center: {x: 0.07029163, y: 0.19102262, z: 0}
+--- !u!65 &1686722392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345501131413114797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.045612037, y: 0.106133506, z: 0.015}
+  m_Center: {x: -0.070302814, y: 0.15653273, z: 0}
+--- !u!65 &1686722393
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345501131413114797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.102882385, y: 0.21603458, z: 0.12180823}
+  m_Center: {x: 0.0028533936, y: 0.10836262, z: 0}

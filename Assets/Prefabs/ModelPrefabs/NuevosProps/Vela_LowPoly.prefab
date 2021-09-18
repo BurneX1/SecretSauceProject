@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7938240805237394550}
   - component: {fileID: 6450720789437121491}
   - component: {fileID: 9106673345259140889}
+  - component: {fileID: 3886909664698836072}
+  - component: {fileID: 4102689429787297849}
+  - component: {fileID: 1975210700845180875}
   m_Layer: 0
   m_Name: Vela_LowPoly
   m_TagString: Untagged
@@ -25,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7305290875836290764}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.202561, y: 1.9254596, z: -22.99071}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +84,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3886909664698836072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7305290875836290764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18663651, y: 0.034563087, z: 0.23739162}
+  m_Center: {x: 0.000000014901161, y: 0.017410617, z: 0}
+--- !u!65 &4102689429787297849
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7305290875836290764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08545303, y: 0.30008405, z: 0.08276081}
+  m_Center: {x: 0.002565384, y: 0.18483147, z: -0.023589611}
+--- !u!65 &1975210700845180875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7305290875836290764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0064964294, y: 0.021342397, z: 0.0065984726}
+  m_Center: {x: -0.0000667572, y: 0.3457088, z: -0.024333477}

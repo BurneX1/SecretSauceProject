@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5131766813626737158}
   - component: {fileID: 8113350379465551267}
   - component: {fileID: 6304087743098247529}
+  - component: {fileID: 5998945449004054092}
+  - component: {fileID: 566964293404050620}
   m_Layer: 0
   m_Name: TachodeBasura_LowPoly
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5511387894229268668}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.089931, y: 1.924133, z: -22.184841}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5998945449004054092
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511387894229268668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.41469353, y: 0.5535936, z: 0.45082766}
+  m_Center: {x: 0.07676205, y: 0.2782524, z: 0}
+--- !u!65 &566964293404050620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511387894229268668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15398407, y: 0.4410439, z: 0.45082766}
+  m_Center: {x: -0.20669556, y: 0.22197756, z: 0}

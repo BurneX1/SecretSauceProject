@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5342419388878150035}
   - component: {fileID: 9046550456950773302}
   - component: {fileID: 6516492041296421628}
+  - component: {fileID: 3224632903983711973}
+  - component: {fileID: 2036399154040002329}
   m_Layer: 0
   m_Name: Tetera_Low
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4715205641114583849}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.516589, y: 1.9255886, z: -23.83854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3224632903983711973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4715205641114583849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19190201, y: 0.16590267, z: 0.2191945}
+  m_Center: {x: -0.000000014901161, y: 0.08295134, z: 0.01364626}
+--- !u!65 &2036399154040002329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4715205641114583849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021148682, y: 0.061449707, z: 0.13218307}
+  m_Center: {x: -0.000289917, y: 0.19642565, z: 0.00178051}

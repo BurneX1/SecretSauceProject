@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 2045754735852970132}
   - component: {fileID: 3155933184518647601}
   - component: {fileID: 876187395543342075}
+  - component: {fileID: 416471269}
+  - component: {fileID: 416471270}
+  - component: {fileID: 416471271}
+  - component: {fileID: 416471272}
   m_Layer: 0
   m_Name: "Avi\xF3nJuguete_Low"
   m_TagString: Untagged
@@ -25,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668631746023176750}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.333, y: 1.9255885, z: -22.67608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +85,55 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &416471269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668631746023176750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3134079, y: 0.039730266, z: 0.08427429}
+  m_Center: {x: -0.010353088, y: 0.061300524, z: -0.04551506}
+--- !u!65 &416471270
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668631746023176750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1467247, y: 0.018825874, z: 0.018553197}
+  m_Center: {x: 0.00042915344, y: 0.09610588, z: -0.1637108}
+--- !u!65 &416471271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668631746023176750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05, y: 0.09923741, z: 0.16405815}
+  m_Center: {x: 0, y: 0.06776054, z: -0.09095833}
+--- !u!65 &416471272
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668631746023176750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05, y: 0.08833153, z: 0.34597477}
+  m_Center: {x: 0, y: 0.044555243, z: 0}

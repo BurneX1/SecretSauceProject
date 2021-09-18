@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 4270655060638682011}
   - component: {fileID: 931033133855851582}
   - component: {fileID: 3102776708836110580}
+  - component: {fileID: 848090153}
+  - component: {fileID: 848090154}
+  - component: {fileID: 848090155}
+  - component: {fileID: 848090156}
   m_Layer: 0
   m_Name: Interruptor_Low
   m_TagString: Untagged
@@ -25,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3463191740560150817}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.089343, y: 1.9255885, z: -23.445452}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +85,55 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &848090153
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463191740560150817}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009918213, y: 0.031220146, z: 0.009877205}
+  m_Center: {x: -0.031139374, y: 0.03440355, z: 0.012539387}
+--- !u!65 &848090154
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463191740560150817}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.031814575, y: 0.009675972, z: 0.00990963}
+  m_Center: {x: 0.031017303, y: 0.034224007, z: 0.012555599}
+--- !u!65 &848090155
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463191740560150817}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12595718, y: 0.05005815, z: 0.005716324}
+  m_Center: {x: -0.006288372, y: 0.034638505, z: 0.0048980713}
+--- !u!65 &848090156
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463191740560150817}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12646072, y: 0.06814852, z: 0.019748025}
+  m_Center: {x: 0.006036602, y: 0.03407426, z: -0.007643368}
