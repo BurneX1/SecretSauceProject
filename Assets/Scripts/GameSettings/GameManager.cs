@@ -33,10 +33,24 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] protected gameMode m_GameMode = gameMode.UserMode;
+    public static GameManager instance;
+    [SerializeField] public gameMode m_GameMode = gameMode.UserMode;
     [SerializeField] protected conectionState m_Conection = conectionState.Offline;
     [SerializeField] protected gameState m_State = gameState.MenuStaying;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
