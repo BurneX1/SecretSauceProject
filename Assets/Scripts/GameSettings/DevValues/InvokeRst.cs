@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class InvokeRst : MonoBehaviour
 {
+    public GameObject restoreObj;
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<Button>().onClick.Invoke();
+        restoreObj.GetComponent<Button>().onClick.Invoke();
     }
 
     // Update is called once per frame

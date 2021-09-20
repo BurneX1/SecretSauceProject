@@ -22,6 +22,7 @@ public class PlayerMangr : MonoBehaviour
 
     public GameObject[] playerArray;
     public GameObject vrtCam;
+    public GameObject myCam;
 
     /*private void OnEnable()
     {
@@ -114,15 +115,18 @@ public class PlayerMangr : MonoBehaviour
                     if(vrtCam == null)
                     {
                         Debug.Log(name + ": Please place a VirtualCamera on the Inspector");
+                        myCam.GetComponent<CameraOptions>().camTarget = playerArray[i].transform.Find("NewCameraLookAt");
                         return;
                     }
                     else if (vrtCam.GetComponent<CinemachineFreeLook>())
                     {
-                        vrtCam.GetComponent<CinemachineFreeLook>().Follow = playerArray[i].transform;
-                        vrtCam.GetComponent<CinemachineFreeLook>().LookAt = playerArray[i].transform;
+                        //vrtCam.GetComponent<CinemachineFreeLook>().Follow = playerArray[i].transform;
+                        //vrtCam.GetComponent<CinemachineFreeLook>().LookAt = playerArray[i].transform;
+                        myCam.GetComponent<CameraOptions>().camTarget = playerArray[i].transform.Find("NewCameraLookAt");
                     }
                     else
                     {
+                        myCam.GetComponent<CameraOptions>().camTarget = playerArray[i].transform.Find("NewCameraLookAt");
                         Debug.Log(name + ": Please add a CinemachineFreeLook component on the Inspector");
                         return;
                     }
@@ -132,6 +136,7 @@ public class PlayerMangr : MonoBehaviour
                     if (playerArray[i].GetComponent<Characters>().cmp_agent)
                     {
                         playerArray[i].GetComponent<Characters>().cmp_agent.enabled = false;
+                        
                     }
 
 

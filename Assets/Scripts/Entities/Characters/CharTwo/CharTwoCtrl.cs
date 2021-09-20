@@ -47,8 +47,6 @@ public class CharTwoCtrl : MonoBehaviour
         _cmp_mod.sphColl.radius = _cmp_mod.spcRange;
 
 
-
-        _cmp_mod.grndDistance = 7;
         _cmp_mod.meleHitCollider.gameObject.SetActive(false);
 
         
