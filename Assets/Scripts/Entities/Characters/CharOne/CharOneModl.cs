@@ -16,6 +16,7 @@ public class CharOneModl : Characters
     public float aimZoom;
     public float aimSpd;
     public float bulletHitMissDitance = 10000f;
+    public LayerMask shootLyr;
 
     public Transform bulletParent;
     
@@ -54,7 +55,7 @@ public class CharOneModl : Characters
         //{
             RaycastHit hit;
 
-        if (Physics.Raycast(myCamera.transform.position, myCamera.transform.forward, out hit, Mathf.Infinity))
+        if (Physics.Raycast(myCamera.transform.position, myCamera.transform.forward, out hit, Mathf.Infinity, shootLyr))
             {
                 GameObject bullet = GameObject.Instantiate(plyBullet, pointer.transform.position, gun.transform.rotation);
                 Bullet bulletController = bullet.GetComponent<Bullet>();
