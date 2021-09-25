@@ -15,6 +15,9 @@ public class CharOneModl : Characters
     public float atkTime;
     public float aimZoom;
     public float aimSpd;
+    public float bulletHitMissDitance = 10000f;
+
+    public Transform bulletParent;
     
     public CharOneModl() : base ()
     {
@@ -47,12 +50,26 @@ public class CharOneModl : Characters
     }
     public void SpcRangeAtck()
     {
-        /*if (shootable)
-        {*/
-            GameObject bllt = Instantiate(plyBullet);
-            bllt.transform.position = pointer.transform.position;
-            bllt.transform.rotation = gun.transform.rotation;
-        //}   
+        //if (shootable)
+        //{
+            RaycastHit hit;
+
+        if (Physics.Raycast(myCamera.transform.position, myCamera.transform.forward, out hit, Mathf.Infinity))
+            {
+                GameObject bullet = GameObject.Instantiate(plyBullet, pointer.transform.position, gun.transform.rotation);
+                Bullet bulletController = bullet.GetComponent<Bullet>();
+                bulletController.target = hit.point;
+                bulletController.hit = true;
+            }
+
+        else
+            {
+                GameObject bullet = GameObject.Instantiate(plyBullet, pointer.transform.position, gun.transform.rotation);
+                Bullet bulletController = bullet.GetComponent<Bullet>();
+                 bulletController.target = myCamera.transform.position + myCamera.transform.forward;
+                bulletController.hit = true;
+            }
+        // }   
     }
     public override void SelfDmg(int dmg)
     {
