@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 4015042096893840978}
   - component: {fileID: 1372533822655841310}
   - component: {fileID: 2886236153471977840}
+  - component: {fileID: 8742616615267510360}
+  - component: {fileID: 8257528282332967016}
   m_Layer: 0
-  m_Name: Prop_MesaM_Low
+  m_Name: MesaM_Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8742616615267510360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528462776863662194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1144428, y: 0.08681893, z: 1.9267246}
+  m_Center: {x: 0, y: 0.6872703, z: 0}
+--- !u!65 &8257528282332967016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528462776863662194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27939224, y: 0.013358593, z: 1.2316818}
+  m_Center: {x: 0.00018119812, y: 0.15592599, z: 0.0132751465}

@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 5189583030558820116}
   - component: {fileID: 3406080624513500108}
   - component: {fileID: 4917968405664563086}
+  - component: {fileID: 7767735402391789041}
+  - component: {fileID: 2603874670842546025}
   m_Layer: 0
-  m_Name: Prop_Mesita_Low
+  m_Name: Mesita_Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7767735402391789041
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252869164951280198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7870269, y: 0.04127717, z: 0.77762794}
+  m_Center: {x: 0, y: 0.56770337, z: 0}
+--- !u!65 &2603874670842546025
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252869164951280198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.63705254, y: 0.14527535, z: 0.62125015}
+  m_Center: {x: 0, y: 0.47582495, z: 0}
