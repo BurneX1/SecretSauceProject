@@ -55,4 +55,29 @@ public class CanvasMng : MonoBehaviour
             s.canvObj.SetActive(false);
         }
     }
+
+
+    //Specific funtion for specific elemnts, delete if you are not using this...thing in your proyect -BurneX
+    public void DisableCanvas(string canvasName)
+    {
+        CanvasObj s = Array.Find(canvas, canvasobj => canvasobj.name == canvasName);
+        if (s == null)
+        {
+            Debug.Log("El canvas " + canvasName + " no se ha encontrado");
+            return;
+        }
+
+        if (s.canvObj.activeSelf == true)
+        {
+            if (s.canvObj.GetComponent<AlphaTransition>())
+            {
+                s.canvObj.GetComponent<AlphaTransition>().AlternativeDisable();
+            }
+            else
+            {
+                s.canvObj.SetActive(false);
+            }
+            
+        }
+    }
 }
