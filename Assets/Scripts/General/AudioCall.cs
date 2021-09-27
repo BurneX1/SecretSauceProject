@@ -23,4 +23,12 @@ public class AudioCall : MonoBehaviour
             GameObject.Find("SoundManager").GetComponent<AudioManager>().Play(audioName);
         }
     }
+
+    public void PauseAudio(string audioName)
+    {
+        if (GameObject.Find("SoundManager").GetComponent<AudioManager>())
+        {
+            GameObject.Find("SoundManager").GetComponent<AudioManager>().Stop(audioName);
+        }
+    }
 }
