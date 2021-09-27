@@ -51,6 +51,10 @@ public class Characters : Entities
     public float smoothVel;
     [HideInInspector]
     public bool afkMode;
+    [Range(0.0f, 100)]
+    public float afkMaxDistance;
+    [Range(0.0f, 100)]
+    public float afkMinDistance;
 
     public Transform der;
     public Transform izq;
@@ -251,7 +255,8 @@ public class Characters : Entities
 
     public void AFKmove()
     {
-        if (Vector3.Distance(AFKtarget.transform.position, transform.position) > 70.5f)
+        //cmp_agent.speed = movSpd;
+        if (Vector3.Distance(AFKtarget.transform.position, transform.position) > afkMaxDistance)
         {
             
 
@@ -270,13 +275,13 @@ public class Characters : Entities
             if(cmp_agent.enabled)
             {
                 cmp_agent.enabled = false;
-                gameObject.transform.position = new Vector3(AFKtarget.position.x + (3.5f * xValue), AFKtarget.position.y, AFKtarget.position.z + (3.5f * zValue));
+                gameObject.transform.position = new Vector3(AFKtarget.position.x + (afkMinDistance/2 * xValue), AFKtarget.position.y, AFKtarget.position.z + (afkMinDistance/2 * zValue));
                 cmp_agent.enabled = true;
             }
 
         }
 
-        if (Vector3.Distance(AFKtarget.transform.position, transform.position) > 6.5f)
+        if (Vector3.Distance(AFKtarget.transform.position, transform.position) > afkMinDistance)
         {
             float xValue = 1;
             float zValue = 1;
@@ -291,7 +296,7 @@ public class Characters : Entities
             }
 
 
-            Vector3 targ = new Vector3(AFKtarget.position.x + (2.5f*xValue), transform.position.y, AFKtarget.position.z + (2.5f * zValue));
+            Vector3 targ = new Vector3(AFKtarget.position.x + ((afkMinDistance /2) - (afkMinDistance/5) * xValue), transform.position.y, AFKtarget.position.z + ((afkMinDistance / 2) - (afkMinDistance / 5) * zValue));
             if (cmp_agent.enabled)
             {
                 cmp_agent.destination = targ;
