@@ -8,7 +8,7 @@ public class CharOneCtrl : MonoBehaviour
 {
     private CharOneModl _cmp_mod;
     private CharOneView _cmp_view;
-    //public bool _atacking;
+    public bool _atacking;
     private float _tauntTime;
     private float _cdTime;
     private Pause _cmp_ps;
@@ -59,14 +59,14 @@ public class CharOneCtrl : MonoBehaviour
                 _cmp_mod.HitBoxAtk(1, true, _cmp_mod.meleHitCollider);
                 if(_cmp_mod.grounded)
                 {
-                    //Shoot();
+                    Shoot();
                 }
 
             }
         }
     }
 
-    /*public void Shoot()
+    public void Shoot()
     {
         _cmp_mod.Aim();
         if(Input.GetKey(_cmp_mod.keyArray_extrAct[1]))
@@ -113,6 +113,6 @@ public class CharOneCtrl : MonoBehaviour
 
             }
         }
-    }*/
+    }
 
 }

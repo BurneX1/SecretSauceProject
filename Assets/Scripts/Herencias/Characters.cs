@@ -84,7 +84,7 @@ public class Characters : Entities
     {
         grounded = GroundDetect(groundLayer, grndDistance);
         CDTimer(meleCD);
-
+        
     }
     
     void CDTimer(float cooldownTime)
