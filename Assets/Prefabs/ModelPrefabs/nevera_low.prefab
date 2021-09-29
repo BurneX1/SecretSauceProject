@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6711660679881681693}
   - component: {fileID: 7677300639097087160}
   - component: {fileID: 5579879711432118386}
+  - component: {fileID: 8173748523526556119}
   m_Layer: 0
-  m_Name: Nevera_low
+  m_Name: nevera_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6228279790860612007}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.0255013, y: 1.9255884, z: -29.165379}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8173748523526556119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228279790860612007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.83080524, y: 1.695587, z: 1.0766773}
+  m_Center: {x: -0.056853086, y: 0.8462936, z: 0.009353638}

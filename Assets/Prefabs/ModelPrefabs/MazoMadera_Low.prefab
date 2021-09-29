@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4469899346553613401}
   - component: {fileID: 695698736757285884}
   - component: {fileID: 3333623706370692918}
+  - component: {fileID: 3498126360318106345}
+  - component: {fileID: 3324305872257019943}
   m_Layer: 0
   m_Name: MazoMadera_Low
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3838075587661166307}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.4570255, y: 1.9255884, z: -27.30285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3498126360318106345
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838075587661166307}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13356763, y: 0.1330199, z: 0.14903326}
+  m_Center: {x: 0.09510413, y: 0.07095982, z: 0.0033663735}
+--- !u!65 &3324305872257019943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838075587661166307}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19692403, y: 0.03203146, z: 0.031873226}
+  m_Center: {x: -0.0703477, y: 0.070628844, z: 0.0035059452}

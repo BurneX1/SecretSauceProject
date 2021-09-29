@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8357814597864778771}
   - component: {fileID: 606238293133714736}
   - component: {fileID: 9128517959093351623}
+  - component: {fileID: 8229192711986704625}
   m_Layer: 0
   m_Name: Cama1Plaza_Low
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7564939514731449798}
-  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.25499, y: 1.9255885, z: -28.24424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -107,5 +108,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.199302, y: 0.890921, z: 0.10665035}
-  m_Center: {x: 0, y: 0.63654727, z: -1.1669787}
+  m_Size: {x: 1.199302, y: 0.73, z: 0.10665035}
+  m_Center: {x: 0, y: 0.35, z: 1.17}
+--- !u!65 &8229192711986704625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564939514731449798}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.199302, y: 1.0800517, z: 0.10665035}
+  m_Center: {x: 0, y: 0.54198194, z: -1.1669787}

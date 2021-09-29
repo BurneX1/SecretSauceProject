@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 726169437883726845}
   - component: {fileID: 4448435844168217688}
   - component: {fileID: 1898535099441479826}
+  - component: {fileID: 7782713190080268156}
+  - component: {fileID: 1702376447355760026}
+  - component: {fileID: 1783768702621109484}
   m_Layer: 0
   m_Name: Taburete_Low
   m_TagString: Untagged
@@ -25,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96844902662250823}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.9868617, y: 1.9255886, z: -25.182552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +84,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7782713190080268156
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96844902662250823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6322973, y: 0.60050344, z: 0.54344493}
+  m_Center: {x: 0.008638263, y: 0.3021652, z: 0.00073084235}
+--- !u!65 &1702376447355760026
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96844902662250823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.53286743, y: 0.24155918, z: 0.6344722}
+  m_Center: {x: -0.0015029907, y: 0.43880272, z: 0.046244472}
+--- !u!65 &1783768702621109484
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96844902662250823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.53286743, y: 0.23494758, z: 0.71568424}
+  m_Center: {x: -0.0015029907, y: 0.17428178, z: 0.086850494}

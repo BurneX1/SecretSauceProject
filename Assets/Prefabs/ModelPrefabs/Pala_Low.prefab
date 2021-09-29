@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 2960102916359775689}
   - component: {fileID: 2214573090329324140}
   - component: {fileID: 4134103487282093734}
+  - component: {fileID: 1844388071624264729}
+  - component: {fileID: 3566225746929703432}
+  - component: {fileID: 5761252413170669672}
   m_Layer: 0
   m_Name: Pala_Low
   m_TagString: Untagged
@@ -25,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2476897640223653747}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.4525766, y: 1.9255884, z: -24.649878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -82,3 +85,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1844388071624264729
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476897640223653747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18983877, y: 0.21146078, z: 0.061759673}
+  m_Center: {x: 0, y: 0.10573039, z: 0.0000000037252903}
+--- !u!65 &3566225746929703432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476897640223653747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.029678345, y: 0.5734449, z: 0.020054676}
+  m_Center: {x: -0.0012893677, y: 0.49721268, z: -0.020852495}
+--- !u!65 &5761252413170669672
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476897640223653747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.102458954, y: 0.11072874, z: 0.020054676}
+  m_Center: {x: -0.000024795532, y: 0.83912647, z: -0.020852495}

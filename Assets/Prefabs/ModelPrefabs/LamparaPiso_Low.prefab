@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8722725480340419628}
   - component: {fileID: -1759062621451741786}
   - component: {fileID: 2631671102229692367}
+  - component: {fileID: 7395603241862115792}
   m_Layer: 0
   m_Name: LamparaPiso_Low
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7065484724845663737}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.840147, y: 1.9255886, z: -17.529041}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -111,6 +112,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.11
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &7395603241862115792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7065484724845663737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5435416, y: 0.39635968, z: 0.5435417}
+  m_Center: {x: 0, y: 1.75554, z: 0}
 --- !u!1 &7394009436722317482
 GameObject:
   m_ObjectHideFlags: 0

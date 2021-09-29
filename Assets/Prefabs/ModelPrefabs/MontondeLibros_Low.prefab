@@ -1,5 +1,93 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2815858225102970134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5353089925777476117}
+  - component: {fileID: 5483737560380253625}
+  m_Layer: 0
+  m_Name: Collider (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5353089925777476117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815858225102970134}
+  m_LocalRotation: {x: -0.13814916, y: 0.46077612, z: -0.24453579, w: 0.8419041}
+  m_LocalPosition: {x: -0.0078, y: 0.0693, z: -0.0652}
+  m_LocalScale: {x: 0.98923504, y: 0.95, z: 0.95}
+  m_Children: []
+  m_Father: {fileID: 8507053974724728806}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -0.416, y: 57.506, z: -32.621}
+--- !u!65 &5483737560380253625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815858225102970134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27070236, y: 0.03404239, z: 0.1663928}
+  m_Center: {x: -0.00917244, y: 0.016866848, z: 0.048653364}
+--- !u!1 &8449275252850630608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1315274086018688953}
+  - component: {fileID: 8973841191650048730}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1315274086018688953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449275252850630608}
+  m_LocalRotation: {x: -0, y: -0.25832433, z: -0, w: 0.96605825}
+  m_LocalPosition: {x: 0.0169, y: 0.0417, z: 0.0097}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8507053974724728806}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -29.941, z: 0}
+--- !u!65 &8973841191650048730
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8449275252850630608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27070236, y: 0.03404239, z: 0.1663928}
+  m_Center: {x: -0.00917244, y: 0.016866848, z: 0.048653364}
 --- !u!1 &9026603608052501852
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +99,7 @@ GameObject:
   - component: {fileID: 8507053974724728806}
   - component: {fileID: 4729055662636914755}
   - component: {fileID: 7369028462995385481}
+  - component: {fileID: 2573483160678814064}
   m_Layer: 0
   m_Name: MontondeLibros_Low
   m_TagString: Untagged
@@ -25,10 +114,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9026603608052501852}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.068156, y: 1.9255884, z: -28.28582}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1315274086018688953}
+  - {fileID: 5353089925777476117}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,3 +172,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2573483160678814064
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9026603608052501852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27070236, y: 0.03404239, z: 0.1663928}
+  m_Center: {x: -0.00917244, y: 0.016866848, z: 0.048653364}

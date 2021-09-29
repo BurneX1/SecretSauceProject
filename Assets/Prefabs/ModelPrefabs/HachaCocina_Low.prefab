@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 980873823235646482}
   - component: {fileID: 3060253956528689368}
   - component: {fileID: 7698507605860927304}
+  - component: {fileID: 8412793144496157424}
   m_Layer: 0
   m_Name: HachaCocina_Low
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3564819773098291469}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.273848, y: 1.9255886, z: -19.085978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -93,5 +94,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.014460014, y: 0.089011654, z: 0.35715345}
-  m_Center: {x: 0, y: 0.039486557, z: -0.000000014901161}
+  m_Size: {x: 0.014460014, y: 0.089011654, z: 0.18031049}
+  m_Center: {x: 0, y: 0.039486557, z: 0.088421464}
+--- !u!65 &8412793144496157424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564819773098291469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014460014, y: 0.062453136, z: 0.17681721}
+  m_Center: {x: 0, y: 0.052765816, z: -0.09016813}

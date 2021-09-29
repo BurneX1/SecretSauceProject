@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7708101302328451060}
   - component: {fileID: 7513945159677404590}
   - component: {fileID: 5182269994085319916}
-  - component: {fileID: 6859000718009173972}
+  - component: {fileID: 8194747566165881995}
   m_Layer: 0
   m_Name: Repisa-cuerpo-entero_low
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6738782989397503332}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.7666855, y: 1.9086028, z: -25.707321}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -82,8 +82,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6859000718009173972
-MeshCollider:
+--- !u!65 &8194747566165881995
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,7 +92,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -812753290516902423, guid: 4fb83a4f48763ae48b90a9df351e72a6, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.6982238, y: 1.6990558, z: 1.1390926}
+  m_Center: {x: -0.030850366, y: 0.86171716, z: 0.0010704994}

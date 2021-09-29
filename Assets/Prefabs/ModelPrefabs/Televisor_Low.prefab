@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 336098924879751608}
   - component: {fileID: 3676568577207838237}
   - component: {fileID: 1504550742055637719}
+  - component: {fileID: 935552320552560989}
+  - component: {fileID: 4444168694489693253}
+  - component: {fileID: 8479595875496924524}
   m_Layer: 0
   m_Name: Televisor_Low
   m_TagString: Untagged
@@ -25,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144407563428262658}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.1358047, y: 1.9255886, z: -22.553574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +84,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &935552320552560989
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144407563428262658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9526758, y: 0.5766516, z: 0.53808105}
+  m_Center: {x: 0, y: 0.2878809, z: 0}
+--- !u!65 &4444168694489693253
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144407563428262658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6240692, y: 0.4785037, z: 0.08006191}
+  m_Center: {x: 0.00207901, y: 0.8153372, z: 0.08291483}
+--- !u!65 &8479595875496924524
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144407563428262658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24538803, y: 0.037843645, z: 0.24271822}
+  m_Center: {x: 0.00081443787, y: 0.5950072, z: 0.077744246}

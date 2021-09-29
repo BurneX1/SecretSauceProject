@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8391884686926346800}
   - component: {fileID: 4889270082901374357}
   - component: {fileID: 7223451050749395295}
+  - component: {fileID: 1042729478535850937}
+  - component: {fileID: 4034277629850410158}
   m_Layer: 0
   m_Name: MacetaPlanta_Low
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9168807697426456714}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.2555494, y: 1.9255886, z: -27.741676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1042729478535850937
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168807697426456714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42712307, y: 0.3312674, z: 0.43274266}
+  m_Center: {x: 0.0012243837, y: 0.17164849, z: -0.0040341765}
+--- !u!65 &4034277629850410158
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168807697426456714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18578339, y: 0.65415835, z: 0.13516521}
+  m_Center: {x: -0.005519867, y: 0.6647656, z: 0.00064611435}

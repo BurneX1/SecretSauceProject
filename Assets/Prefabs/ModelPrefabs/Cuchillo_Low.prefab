@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8578362984824783944}
   - component: {fileID: 4657755804854143981}
   - component: {fileID: 7442017462704979751}
-  - component: {fileID: 6858218964438899150}
+  - component: {fileID: 1826340308666285356}
+  - component: {fileID: 5105186259878038108}
   m_Layer: 0
   m_Name: Cuchillo_Low
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8955310019040452338}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.063627, y: 1.9255886, z: -24.801964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -82,8 +83,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6858218964438899150
-MeshCollider:
+--- !u!65 &1826340308666285356
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,7 +93,19 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8835555637113077373, guid: 8a42378f504c2904d9ac5c9cd34eec96, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.011111853, y: 0.040178318, z: 0.16523933}
+  m_Center: {x: 0, y: 0.020036412, z: -0.0871706}
+--- !u!65 &5105186259878038108
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8955310019040452338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011111853, y: 0.030084293, z: 0.1753025}
+  m_Center: {x: 0, y: 0.025083425, z: 0.08314514}

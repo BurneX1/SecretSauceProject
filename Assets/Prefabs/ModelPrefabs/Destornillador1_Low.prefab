@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2901369949467959108}
   - component: {fileID: 2300326817728876769}
   - component: {fileID: 4037635689751782443}
-  - component: {fileID: 3700931274098268934}
+  - component: {fileID: 7252056081302179747}
+  - component: {fileID: 5350580825732513274}
   m_Layer: 0
   m_Name: Destornillador1_Low
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2524386562988803582}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.79919, y: 1.9255888, z: -24.973976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -82,8 +83,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3700931274098268934
-MeshCollider:
+--- !u!65 &7252056081302179747
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,7 +93,19 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3777671581106066622, guid: 37b148c1102900948b6ea05d0f23eda5, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.024907717, y: 0.12431924, z: 0.024871247}
+  m_Center: {x: 0, y: 0.21867988, z: 0}
+--- !u!65 &5350580825732513274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2524386562988803582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011421204, y: 0.15687975, z: 0.008518219}
+  m_Center: {x: -0.00060653687, y: 0.077996075, z: 0.000016212463}

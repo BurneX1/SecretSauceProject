@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 962587069878348572}
   - component: {fileID: 4248038225437041849}
   - component: {fileID: 2094427863865643123}
+  - component: {fileID: 8957070072901117469}
+  - component: {fileID: 9026344723899629827}
   m_Layer: 0
   m_Name: TenedorG_Low
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436879381496590758}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.3845544, y: 1.9255886, z: -25.25211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8957070072901117469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436879381496590758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02519842, y: 0.016748106, z: 0.064083695}
+  m_Center: {x: 0, y: 0.008374053, z: -0.0644539}
+--- !u!65 &9026344723899629827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436879381496590758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012519836, y: 0.016748106, z: 0.12944841}
+  m_Center: {x: -0.00038909912, y: 0.008374053, z: 0.03344798}
