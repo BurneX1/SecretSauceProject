@@ -234,7 +234,7 @@ public class CameraOptions : MonoBehaviour
 
     public void DfltZoom(float smthVel)
     {
-        myCamera.fieldOfView = Mathf.Lerp(myCamera.fieldOfView, dfltZoom, smthVel * Time.deltaTime);
+        //myCamera.fieldOfView = Mathf.Lerp(myCamera.fieldOfView, dfltZoom, smthVel * Time.deltaTime);
         /*if (myCamera.fieldOfView == dfltZoom)
         {
             cmBrain.enabled = true;
