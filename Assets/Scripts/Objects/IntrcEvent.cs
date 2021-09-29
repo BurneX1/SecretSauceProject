@@ -1,19 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class OpenTrapdoor : MonoBehaviour
+public class IntrcEvent : InteractableAction
 {
-    public GameObject door;
-
-    
-    public Animator anim;
-
+    public UnityEvent ev;
     // Start is called before the first frame update
     void Start()
     {
-
-       
+        
     }
 
     // Update is called once per frame
@@ -22,13 +18,8 @@ public class OpenTrapdoor : MonoBehaviour
         
     }
 
-    public void Open()
+    public override void Activation()
     {
-        anim.SetBool("Open", true);
-    }
-
-    public void Close()
-    {
-        anim.SetBool("Open", false);
+        ev.Invoke();
     }
 }
