@@ -34,7 +34,7 @@ public class CharOneModl : Characters
     }
     public void Aim()
     {
-        if (aimState)
+        /*if (aimState)
         {
             myCamera.GetComponent<CameraOptions>().ZoomTo(aimZoom, aimSpd);
             shootable = true;
@@ -43,12 +43,18 @@ public class CharOneModl : Characters
         {
             myCamera.GetComponent<CameraOptions>().DfltZoom(aimSpd);
             shootable = false;
-        }
+        }*/
 
     }
     public void SpcRangeAtck()
     {
-        if (shootable)
+
+        GameObject bllt = Instantiate(plyBullet);
+        bllt.transform.position = pointer.transform.position;
+        bllt.transform.rotation = gun.transform.rotation;
+
+
+        /*if (shootable)
         {
             RaycastHit hit;
 
@@ -67,7 +73,7 @@ public class CharOneModl : Characters
                  bulletController.target = myCamera.transform.position + myCamera.transform.forward;
                 bulletController.hit = true;
             }
-        }   
+        }   */
     }
     public override void SelfDmg(int dmg)
     {
