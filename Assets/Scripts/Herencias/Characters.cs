@@ -155,7 +155,7 @@ public class Characters : Entities
         //Mov();
         //cmp_rb.velocity = transform.forward * speed * Time.deltaTime;
         //Vector3 vctMov = new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime);
-        //cmp_rb.velocity = new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime);
+        cmp_rb.velocity = new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime);
         //cmp_rb.AddForce(new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime));
         //cmp_rb.velocity = new Vector3(transform.forward.x + speed, transform.forward.y, transform.forward.z + speed);
     }
@@ -183,7 +183,8 @@ public class Characters : Entities
         if (move.magnitude >= 0.1f)
         {
 
-            lookCamPs = playerInput.x * /*camRight + playerInput.z * */camForward;
+            lookCamPs = playerInput.x * camRight + playerInput.z * camForward;
+            //comentar el camRigth + player.input por si quuieres volver a volver a cambiar el movimiento otra vez al que habia antes
 
             float targetAngle = Mathf.Atan2(lookCamPs.x, lookCamPs.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref smoothVel, 0.1f);
@@ -199,13 +200,15 @@ public class Characters : Entities
         {
             hor = -1;
             //LateralMovement(-movSpd);
-            
+            Move_in_transform(movSpd);
+
         }
         else if (Input.GetKey(key_rigth))
         {
             hor = 1;
             //LateralMovement(movSpd);
-            
+            Move_in_transform(movSpd);
+
         }
         else
         {
@@ -215,13 +218,13 @@ public class Characters : Entities
         if (Input.GetKey(key_down))
         {
             ver = -1;
-            //Move_in_transform(-movSpd);
+            Move_in_transform(movSpd);
             
         }
         else if (Input.GetKey(key_up) /*&& Physics.BoxCast(transform.position, transform.localScale, transform.forward, transform.rotation, 1.5f, groundLayer) == false*/)
         {
             ver = 1;
-            //Move_in_transform(movSpd);
+            Move_in_transform(movSpd);
             
 
         }
@@ -230,17 +233,18 @@ public class Characters : Entities
             ver = 0;
         }
 
-        if(hor != 0 && ver != 0)
+        /*if(hor != 0 && ver != 0)
         {
             CompleteFPMovement(movSpd * hor/1.5f, movSpd * ver/1.5f);
         }
         else if(hor != 0 || ver != 0)
         {
             CompleteFPMovement(movSpd * hor, movSpd * ver);
-        }
+        }*/
 
         //Mov();
-        playerInput = new Vector3(myCamera.transform.rotation.eulerAngles.x, 0, myCamera.transform.rotation.eulerAngles.z);
+        playerInput = new Vector3(hor, 0f, ver);
+        //playerInput = new Vector3(myCamera.transform.rotation.eulerAngles.x, 0, myCamera.transform.rotation.eulerAngles.z);
         Rote_in_Y(playerInput);
 
     }

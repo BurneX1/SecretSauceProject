@@ -40,6 +40,13 @@ public class CameraOptions : MonoBehaviour
 
     private Camera myCamera;
 
+    [Header("AutoCamera")]
+    public GameObject actualGrabPoint;
+    public bool smoothChange;
+    public float smoothSpd;
+    public bool autoRotate;
+    public float rotSpd;
+
 
 
 
@@ -109,7 +116,7 @@ public class CameraOptions : MonoBehaviour
                 break;
 
             case 4:
-                //ZoomTo(newZoomValue, zoomSpd);
+                AutoGrabCam(target, actualGrabPoint);
                 break;
 
             default:
@@ -138,7 +145,7 @@ public class CameraOptions : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, 0.05f);
 
 
-        StartCoroutine(BackToDefault(transitionTime, 1));
+        StartCoroutine(BackToDefault(transitionTime, 4));
         
     }
 
@@ -170,15 +177,14 @@ public class CameraOptions : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, 0.05f / transitionTime);
 
 
-        StartCoroutine(BackToDefault(transitionTime, 1));
+        StartCoroutine(BackToDefault(transitionTime, 4));
     }
     void FixedCam(GameObject obj)
     {
         //Cambiar este tipo decamara luego, ta fea xD
         cmBrain.enabled = false;
-        transform.position = Vector3.Lerp(transform.position, camTarget.position, pLerp);
-        //Lo regrese a como estaba antes por q la linea de abajo trajo mas problemas que los que soluciono, si quieres luego sigues provando xD
-        //transform.position = Vector3.MoveTowards(transform.position, camTarget.position, pLerp);
+        //transform.position = Vector3.Lerp(transform.position, camTarget.position, pLerp);
+        transform.position = Vector3.MoveTowards(transform.position, camTarget.position, pLerp);
         transform.rotation = Quaternion.Lerp(transform.rotation, camTarget.rotation, rLerp);
 
 
@@ -189,6 +195,42 @@ public class CameraOptions : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(camRotation.x,camRotation.y,camRotation.z);
         //cmBrain.enabled = true;
+    }
+
+    void AutoGrabCam(GameObject obj, GameObject grabPoint)
+    {
+
+        cmBrain.enabled = false;
+        if(smoothChange ==true)
+        {
+            if (Vector3.Distance(myCamera.transform.position, grabPoint.transform.position) != 0)
+                myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, grabPoint.transform.position, Time.deltaTime * smoothSpd);
+        }
+        else if (myCamera.transform.position != grabPoint.transform.position)
+        {
+            
+            myCamera.transform.position = grabPoint.transform.position;
+        }
+
+
+        //---------------------//
+
+        if (autoRotate == true)
+        {
+            dir = (new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z) - transform.position).normalized;
+            rot = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotSpd);
+        }
+        else if (smoothChange == true && autoRotate ==false)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, grabPoint.transform.rotation, rotSpd/3);
+        }
+        else
+        {
+            myCamera.transform.rotation = grabPoint.transform.rotation;
+        }
+
+
     }
 
     void FreeCam()
@@ -209,7 +251,7 @@ public class CameraOptions : MonoBehaviour
 
             if (changeType <= 0)
             {
-                changeType = 1;
+                changeType = 4;
                 
             }
             gmManager.GetComponent<PlayerMangr>().EnableActionPlayer();
