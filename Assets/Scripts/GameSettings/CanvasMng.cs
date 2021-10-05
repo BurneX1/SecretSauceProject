@@ -5,9 +5,16 @@ using System;
 
 public class CanvasMng : MonoBehaviour
 {
+    public AudioCall audioA;
+    public SceneChange scenes;
+
     public GameObject shadowCanvas;
     public GameObject defaultCanvas;
     public CanvasObj[] canvas;
+
+    private float timer;
+    public float normalTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +24,7 @@ public class CanvasMng : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ActiveCanvas(string canvasName)
@@ -80,4 +87,5 @@ public class CanvasMng : MonoBehaviour
             
         }
     }
+
 }
