@@ -72,7 +72,7 @@ public class CharOneView : MonoBehaviour
     
     void ActivateAnimationAttack()
     {
-        if (_cmp_ctrl._atacking == true && _cmp_mod.shootable == true)
+        if (_cmp_ctrl._atacking == true /*&& _cmp_mod.shootable == true*/)
         {
             viewAttack = true;
         }
