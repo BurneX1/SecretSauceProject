@@ -20,6 +20,9 @@ public class CharOneModl : Characters
 
     public Transform bulletParent;
 
+    public int maxAmmo;
+    public int currentAmmo;
+
     public void FixedUpdate()
     {
         cmp_rb.velocity = new Vector3(0, cmp_rb.velocity.y, 0);
