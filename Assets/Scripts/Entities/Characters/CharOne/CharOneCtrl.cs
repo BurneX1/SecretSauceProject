@@ -24,7 +24,7 @@ public class CharOneCtrl : MonoBehaviour
         _cmp_view = gameObject.GetComponent<CharOneView>();
         //_cmp_mod.grndDistance = 7;
         _cmp_mod.meleHitCollider.gameObject.SetActive(false);
-
+        _cmp_mod.currentAmmo = _cmp_mod.maxAmmo;
     }
 
     private void FixedUpdate()
@@ -64,6 +64,10 @@ public class CharOneCtrl : MonoBehaviour
 
             }
         }
+        if(_cmp_mod.currentAmmo > _cmp_mod.maxAmmo)
+        {
+            _cmp_mod.currentAmmo = _cmp_mod.maxAmmo;
+        }    
     }
 
     public void Shoot()
@@ -85,12 +89,13 @@ public class CharOneCtrl : MonoBehaviour
             if (_cdTime >= _cmp_mod.coldTime)
             {
                 _cdTime = _cmp_mod.coldTime;
-                if (Input.GetKeyDown(_cmp_mod.keyArray_extrAct[0]))
+                if (Input.GetKeyDown(_cmp_mod.keyArray_extrAct[0]) && _cmp_mod.currentAmmo > 0) 
                 {
                     _atacking = true;
                     _cdTime = 0;
+                    _cmp_mod.currentAmmo--;
+                    Debug.Log(_cmp_mod.currentAmmo);
                     Debug.Log("a");
-
                 }
             }
         }
