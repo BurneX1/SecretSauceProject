@@ -1080,7 +1080,7 @@ MonoBehaviour:
   valueField: {fileID: 7995752291611752706}
   togle: {fileID: 6845642665860346157}
   slide: {fileID: 919520925349128599}
-  valueName: Fuerza de Salto Robot
+  valueName: Robot salto
   exEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2795,7 +2795,7 @@ MonoBehaviour:
   valueField: {fileID: 1206848660826543458}
   togle: {fileID: 5682586483129467541}
   slide: {fileID: 6893687730326669437}
-  valueName: Velocidad de movimiento Soldado
+  valueName: Soldado mov
   exEvent:
     m_PersistentCalls:
       m_Calls:
@@ -3690,7 +3690,7 @@ MonoBehaviour:
   valueField: {fileID: 3733752739468314075}
   togle: {fileID: 3774346871527535387}
   slide: {fileID: 8625079429590465962}
-  valueName: Fuerza de Salto Soldado
+  valueName: Soldado Salto
   exEvent:
     m_PersistentCalls:
       m_Calls:
@@ -4338,7 +4338,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1500
+          m_FloatArgument: 93
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -4350,7 +4350,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 141
+          m_FloatArgument: 58
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -4362,7 +4362,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 600
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -4374,7 +4374,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 100
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -4390,6 +4390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2058a15bc3ad34282035f907c095f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restoreObj: {fileID: 0}
 --- !u!1 &4240944456657396194
 GameObject:
   m_ObjectHideFlags: 0
@@ -4766,12 +4767,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c609e3bca1d24cb4eba82398d1d536ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioA: {fileID: 0}
+  scenes: {fileID: 0}
   shadowCanvas: {fileID: 0}
   defaultCanvas: {fileID: 0}
   canvas:
   - name: Values
     canvObj: {fileID: 7780939771004109734}
     startActive: 0
+  normalTime: 0
 --- !u!114 &2920253075179407248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6370,7 +6374,7 @@ MonoBehaviour:
   valueField: {fileID: 7443458592571387655}
   togle: {fileID: 1129316607522835004}
   slide: {fileID: 7190910580400218889}
-  valueName: Velocidad de movimiento Robot
+  valueName: Robot mov
   exEvent:
     m_PersistentCalls:
       m_Calls:
@@ -7815,7 +7819,7 @@ RectTransform:
   m_Father: {fileID: 2730716257138173781}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.038815852}
+  m_AnchorMin: {x: 0, y: 0.038815975}
   m_AnchorMax: {x: 1, y: 0.9999998}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -8365,8 +8369,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2773762578414245290}
   m_HandleRect: {fileID: 2707489069481104734}
   m_Direction: 2
-  m_Value: 0.9999953
-  m_Size: 0.96118397
+  m_Value: 1.0000015
+  m_Size: 0.961184
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

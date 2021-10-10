@@ -3510,8 +3510,8 @@ MonoBehaviour:
   movSpd: 1
   smoothVel: 0
   afkMode: 0
-  afkMaxDistance: 0
-  afkMinDistance: 0
+  afkMaxDistance: 9.7
+  afkMinDistance: 3
   der: {fileID: 0}
   izq: {fileID: 0}
   hor: 0
@@ -3842,9 +3842,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2886189670725037760}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.65, y: 0.715, z: 4.282}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalRotation: {x: -0, y: 0.3061187, z: -0, w: 0.9519934}
+  m_LocalPosition: {x: -0.473, y: 0.0754, z: -0.644}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children:
   - {fileID: 8613816918341424279}
   - {fileID: 8491259257843294117}
@@ -3860,7 +3860,7 @@ Transform:
   - {fileID: 267450899698547964}
   m_Father: {fileID: 2886189671507954673}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 35.651, z: 0}
 --- !u!114 &2886189670725037766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3877,7 +3877,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 24
-  grndDistance: 0.61
+  grndDistance: 0.08
   cmp_rb: {fileID: 0}
   lifeMng: {fileID: 2886189671192773620}
   myCamera: {fileID: 617195282087481091}
@@ -3892,8 +3892,8 @@ MonoBehaviour:
   keyArray_extrAct: 
   meleCD: 0.24
   meleHitCollider: {fileID: 2886189670006162855}
-  jmpForce: 1
-  movSpd: 1
+  jmpForce: 93
+  movSpd: 58
   smoothVel: 0
   afkMode: 0
   afkMaxDistance: 0
@@ -3919,6 +3919,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 200
   bulletParent: {fileID: 0}
+  maxAmmo: 10
+  currentAmmo: 0
 --- !u!114 &2886189670725037765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3962,7 +3964,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2886189670725037760}
   serializedVersion: 2
-  m_Mass: 4.3
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.15
   m_UseGravity: 1
@@ -6282,6 +6284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c609e3bca1d24cb4eba82398d1d536ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioA: {fileID: 0}
+  scenes: {fileID: 0}
   shadowCanvas: {fileID: 0}
   defaultCanvas: {fileID: 0}
   canvas:
@@ -6291,6 +6295,7 @@ MonoBehaviour:
   - name: Options
     canvObj: {fileID: 2775102231863183095}
     startActive: 0
+  normalTime: 0
 --- !u!1 &4662272895174844315
 GameObject:
   m_ObjectHideFlags: 0
@@ -6458,12 +6463,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gmManager: {fileID: 2886189671192773616}
-  camType: 0
-  cmBrain: {fileID: 0}
+  camType: 4
+  cmBrain: {fileID: 577721749005304951}
   target: {fileID: 2886189670725037760}
   camTarget: {fileID: 267450899698547964}
-  pLerp: 0.02
-  rLerp: 0.01
+  pLerp: 0.2
+  rLerp: 0.1
   sensitivity: 1
   maxRot: 30
   minRot: -30
@@ -6476,6 +6481,11 @@ MonoBehaviour:
   dfltZoom: 60
   newZoomValue: 40
   zoomSpd: 10
+  actualGrabPoint: {fileID: 0}
+  smoothChange: 1
+  smoothSpd: 2
+  autoRotate: 1
+  rotSpd: 1
 --- !u!54 &3401686746383320516
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -484,6 +484,8 @@ MonoBehaviour:
   movSpd: 262
   smoothVel: 0
   afkMode: 0
+  afkMaxDistance: 0
+  afkMinDistance: 0
   der: {fileID: 2487974723776030811}
   izq: {fileID: 2487974724232527795}
   hor: 0
@@ -494,8 +496,19 @@ MonoBehaviour:
   plyBullet: {fileID: 3539710996946217216, guid: cfab8014f5dd7c34b99d92f03109bf60,
     type: 3}
   pointer: {fileID: 2487974723651461725}
+  aimState: 0
+  shootable: 0
   coldTime: 0
   atkTime: 0
+  aimZoom: 0
+  aimSpd: 0
+  bulletHitMissDitance: 10000
+  shootLyr:
+    serializedVersion: 2
+    m_Bits: 0
+  bulletParent: {fileID: 0}
+  maxAmmo: 0
+  currentAmmo: 0
 --- !u!114 &2487974722805472998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,6 +977,8 @@ MonoBehaviour:
   movSpd: 332
   smoothVel: 0
   afkMode: 0
+  afkMaxDistance: 0
+  afkMinDistance: 0
   der: {fileID: 0}
   izq: {fileID: 0}
   hor: 0
@@ -2742,6 +2757,7 @@ MonoBehaviour:
   - {fileID: 2487974722805472995}
   - {fileID: 2487974723199748779}
   vrtCam: {fileID: 2487974722988482476}
+  myCam: {fileID: 0}
 --- !u!114 &2487974724481053655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2755,10 +2771,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLive: 4
+  actLive: 0
   barLife: {fileID: 3622108920157451807}
   player: {fileID: 2487974722805472995}
   scnMng: {fileID: 0}
-  gameOverScene: 
+  gameOverScene: Menus
 --- !u!114 &39805871977265132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2774,6 +2791,7 @@ MonoBehaviour:
   escape: 27
   paused: 0
   Pause_Menu: {fileID: 0}
+  Opt_Menu: {fileID: 0}
 --- !u!1 &3119001868270291776
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,10 +3188,26 @@ MonoBehaviour:
   camType: 0
   cmBrain: {fileID: 0}
   target: {fileID: 2487974722805472995}
+  camTarget: {fileID: 0}
+  pLerp: 0.02
+  rLerp: 0.01
+  sensitivity: 0
+  maxRot: 0
+  minRot: 0
+  curveSg: 0
+  segmts: []
   actualFocus: {fileID: 0}
   transitionTime: 3
   nearDist: 4
   focusOffset: {x: 0, y: 3, z: 0}
+  dfltZoom: 0
+  newZoomValue: 0
+  zoomSpd: 0
+  actualGrabPoint: {fileID: 0}
+  smoothChange: 0
+  smoothSpd: 0
+  autoRotate: 0
+  rotSpd: 0
 --- !u!54 &2720167509349774823
 Rigidbody:
   m_ObjectHideFlags: 0
