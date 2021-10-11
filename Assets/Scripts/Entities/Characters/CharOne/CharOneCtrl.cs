@@ -40,7 +40,7 @@ public class CharOneCtrl : MonoBehaviour
             {
                 _cmp_mod.cmp_agent.enabled = false;
                 _cmp_mod.Move();
-                _cmp_mod.cmp_rb.velocity.Set(0,0,0);
+                //_cmp_mod.cmp_rb.velocity.Set(0,0,0);
                 //_cmp_mod.cmp_rb.speed
             }
         }

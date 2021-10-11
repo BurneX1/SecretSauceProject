@@ -25,7 +25,7 @@ public class CharOneModl : Characters
 
     public void FixedUpdate()
     {
-        cmp_rb.velocity = new Vector3(0, cmp_rb.velocity.y, 0);
+        //cmp_rb.velocity = new Vector3(0, cmp_rb.velocity.y, 0);
     }
     public CharOneModl() : base ()
     {

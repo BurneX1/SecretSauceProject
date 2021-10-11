@@ -6607,6 +6607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c609e3bca1d24cb4eba82398d1d536ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioA: {fileID: 0}
+  scenes: {fileID: 0}
   shadowCanvas: {fileID: 0}
   defaultCanvas: {fileID: 0}
   canvas:
@@ -6616,6 +6618,7 @@ MonoBehaviour:
   - name: Options
     canvObj: {fileID: 1435582521}
     startActive: 0
+  normalTime: 0
 --- !u!4 &744843022
 Transform:
   m_ObjectHideFlags: 0
@@ -11560,6 +11563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0684ee955eeb3004ea978383ad1607da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _atacking: 0
   gmMng: {fileID: 340402186}
 --- !u!114 &1182861547
 MonoBehaviour:
@@ -11640,6 +11644,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 200
   bulletParent: {fileID: 0}
+  maxAmmo: 0
+  currentAmmo: 0
 --- !u!1001 &1187919714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20953,7 +20959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gmManager: {fileID: 340402186}
-  camType: 0
+  camType: 4
   cmBrain: {fileID: 2009380422}
   target: {fileID: 1182861538}
   camTarget: {fileID: 17362128}
@@ -20971,6 +20977,11 @@ MonoBehaviour:
   dfltZoom: 60
   newZoomValue: 40
   zoomSpd: 10
+  actualGrabPoint: {fileID: 1099393090}
+  smoothChange: 0
+  smoothSpd: 0
+  autoRotate: 0
+  rotSpd: 0
 --- !u!114 &2009380422
 MonoBehaviour:
   m_ObjectHideFlags: 0
