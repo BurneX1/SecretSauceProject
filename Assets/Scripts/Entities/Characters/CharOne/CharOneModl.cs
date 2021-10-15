@@ -23,6 +23,8 @@ public class CharOneModl : Characters
     public int maxAmmo;
     public int currentAmmo;
 
+    public bool canReceiveDmg;
+
     public void FixedUpdate()
     {
         //cmp_rb.velocity = new Vector3(0, cmp_rb.velocity.y, 0);
@@ -81,7 +83,10 @@ public class CharOneModl : Characters
     public override void SelfDmg(int dmg)
     {
         base.SelfDmg(dmg);
-        lifeMngObj.GetComponent<LifeManager>().Damage(dmg);
-
+        if (canReceiveDmg == true)
+        {
+            lifeMngObj.GetComponent<LifeManager>().Damage(dmg);
+            canReceiveDmg = false;
+        }
     }
 }

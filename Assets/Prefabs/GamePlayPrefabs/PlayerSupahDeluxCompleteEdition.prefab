@@ -3436,7 +3436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2886189670045579919
 Transform:
   m_ObjectHideFlags: 0
@@ -3912,7 +3912,7 @@ MonoBehaviour:
   shootable: 0
   coldTime: 0
   atkTime: 0.8
-  aimZoom: 25
+  aimZoom: 50
   aimSpd: 10
   bulletHitMissDitance: 1
   shootLyr:
@@ -3921,6 +3921,7 @@ MonoBehaviour:
   bulletParent: {fileID: 0}
   maxAmmo: 10
   currentAmmo: 0
+  canReceiveDmg: 0
 --- !u!114 &2886189670725037765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3956,6 +3957,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _atacking: 0
   gmMng: {fileID: 2886189671192773616}
+  selfDmgTimer: 0
+  selfDmgCooldown: 2
 --- !u!54 &2886189670725037767
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4294,7 +4297,7 @@ MonoBehaviour:
   barLife: {fileID: 4285381825531598124}
   player: {fileID: 2886189670725037760}
   scnMng: {fileID: 48754906012684268}
-  gameOverScene: Derrota
+  gameOverScene: Menus
 --- !u!114 &722734111720130511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4776,7 +4779,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2886189671470748286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.33, z: 0.45}
+  m_LocalPosition: {x: 0, y: 0.33, z: 1.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2886189670422461751}
@@ -6311,7 +6314,6 @@ GameObject:
   - component: {fileID: 577721749005304951}
   - component: {fileID: 2296677672361991523}
   - component: {fileID: 3401686746383320516}
-  - component: {fileID: 9009210220190883497}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -6326,13 +6328,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4662272895174844315}
-  m_LocalRotation: {x: -0.17839134, y: -0.11302942, z: -0.020633325, w: 0.97722834}
-  m_LocalPosition: {x: -2.920256, y: 3.211899, z: -3.9100933}
+  m_LocalRotation: {x: 0.2256312, y: 0, z: 0, w: 0.9742128}
+  m_LocalPosition: {x: 0.67, y: 1.266, z: -2.769}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2886189671507954673}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 26.08, y: 0, z: 0}
 --- !u!20 &617195282087481091
 Camera:
   m_ObjectHideFlags: 0
@@ -6467,8 +6469,8 @@ MonoBehaviour:
   cmBrain: {fileID: 577721749005304951}
   target: {fileID: 2886189670725037760}
   camTarget: {fileID: 267450899698547964}
-  pLerp: 0.2
-  rLerp: 0.1
+  pLerp: 5
+  rLerp: 5
   sensitivity: 1
   maxRot: 30
   minRot: -30
@@ -6502,19 +6504,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &9009210220190883497
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4662272895174844315}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4669280969310410465
 GameObject:
   m_ObjectHideFlags: 0
@@ -7006,7 +6995,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2292157574726243845
@@ -11310,15 +11299,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee2893199080dba43a64b01296006c73, type: 3}
---- !u!4 &1412601306867710656 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5696012949503772013, guid: ee2893199080dba43a64b01296006c73,
-    type: 3}
-  m_PrefabInstance: {fileID: 6671762884867440557}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1412601307519537124 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5696012950085365833, guid: ee2893199080dba43a64b01296006c73,
+    type: 3}
+  m_PrefabInstance: {fileID: 6671762884867440557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1412601306867710656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5696012949503772013, guid: ee2893199080dba43a64b01296006c73,
     type: 3}
   m_PrefabInstance: {fileID: 6671762884867440557}
   m_PrefabAsset: {fileID: 0}

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemies : Entities
 {
-    private int _vida;
+    public int _vida;
     private int _atkDmg;
 
     public bool sigthRad;
@@ -22,7 +22,6 @@ public class Enemies : Entities
 
     public float sightRadius;
     public float attackRadius;
-    public Transform[] target;
     public Transform sphere;
     public bool activateShoot;
     public bool activateAttack;
@@ -41,6 +40,14 @@ public class Enemies : Entities
 
     public override void SelfDmg(int dmg)
     {
+        if (_vida > 0)
+        {
+            _vida--;
+        }
+        if (_vida <= 0)
+        {
+            Die();
+        }
         Debug.Log(name + ": Auch!");
     }
 
@@ -49,42 +56,42 @@ public class Enemies : Entities
 
     }
 
-    public void Die()
+    public virtual void Die()
     {
 
     }
 
     public void DetectPlayer()
     {
-        float distancePlayer = Vector3.Distance(target[0].position, /*sphere.position*/transform.position);
+        float distancePlayer = Vector3.Distance(targetObj.transform.position, /*sphere.position*/transform.position);
         if (distancePlayer <= sightRadius)
         {
-            /*Debug.Log("te veo bb");
+            Debug.Log("te veo bb");
             activateShoot = true;
-            activatePatrol = false;*/
+            activatePatrol = false;
 
-            enemigo.destination = target[0].position;
+            enemigo.destination = targetObj.transform.position;
             sigthRad = true;
         }
-        /*else
+        else
         {
             sigthRad = false;
             activateShoot = false;
             activatePatrol = true;
 
-        }*/
+        }
         if (targetObj != null)
         {
             float distanciaAttack = Vector3.Distance(targetObj.transform.position, /*sphere.position*/transform.position);
             if (distanciaAttack <= attackRadius)
             {
                 atkRad = true;
-                //activateAttack = true;
+                activateAttack = true;
             }
             else
             {
                 atkRad = false;
-                //activateAttack = false;
+                activateAttack = false;
             }
 
         }
@@ -112,7 +119,7 @@ public class Enemies : Entities
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(new Vector3(targetPos.position.x, transform.position.y, targetPos.position.z) - transform.position), 0.01f);
     }
-    public void ChangeTarget()
+    /*public void ChangeTarget()
     {
 
         targetIndex++;
@@ -121,7 +128,7 @@ public class Enemies : Entities
             targetIndex = 0;
         }
 
-    }
+    }*/
 
     public void ChangeDirection()
     {       
@@ -157,7 +164,7 @@ public class Enemies : Entities
 
     public void FollowPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target[targetIndex].transform.position, movSpd * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetObj.transform.position, movSpd * Time.deltaTime);
     }
 
 }

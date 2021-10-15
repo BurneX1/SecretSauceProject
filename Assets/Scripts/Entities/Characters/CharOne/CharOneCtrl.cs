@@ -16,6 +16,9 @@ public class CharOneCtrl : MonoBehaviour
     private Vector3 rotatioProves;
 
     public GameObject gmMng;
+
+    public float selfDmgTimer = 0;
+    public float selfDmgCooldown;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,7 @@ public class CharOneCtrl : MonoBehaviour
         //_cmp_mod.grndDistance = 7;
         _cmp_mod.meleHitCollider.gameObject.SetActive(false);
         _cmp_mod.currentAmmo = _cmp_mod.maxAmmo;
+        _cmp_mod.canReceiveDmg = true;
     }
 
     private void FixedUpdate()
@@ -56,6 +60,7 @@ public class CharOneCtrl : MonoBehaviour
             }
             else
             {
+                SelfDmgTimer();
                 _cmp_mod.HitBoxAtk(1, true, _cmp_mod.meleHitCollider);
                 if(_cmp_mod.grounded)
                 {
@@ -68,6 +73,19 @@ public class CharOneCtrl : MonoBehaviour
         {
             _cmp_mod.currentAmmo = _cmp_mod.maxAmmo;
         }    
+    }
+
+    public void SelfDmgTimer()
+    {
+        if(_cmp_mod.canReceiveDmg == false)
+        {
+            selfDmgTimer += Time.deltaTime;
+            if (selfDmgTimer >= selfDmgCooldown)
+            {
+                _cmp_mod.canReceiveDmg = true;
+                selfDmgTimer = 0;
+            }
+        }
     }
 
     public void Shoot()

@@ -362,7 +362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045775879879601309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.34306717, y: -1.418366, z: -0.3570671}
+  m_LocalPosition: {x: 7.6, y: -1.418366, z: -1.6}
   m_LocalScale: {x: 2, y: 3.2106, z: 2}
   m_Children:
   - {fileID: 2045775878307751878}
@@ -468,21 +468,19 @@ MonoBehaviour:
     m_Bits: 8
   grndDistance: 0
   cmp_rb: {fileID: 0}
+  _vida: 3
   sigthRad: 0
   atkRad: 0
   taunted: 0
-  movSpd: 3
+  movSpd: 0.25
   targetObj: {fileID: 0}
   enemigo: {fileID: 6228097726827842954}
   sightRadius: 1.47
   attackRadius: 0.36
-  target:
-  - {fileID: 0}
-  - {fileID: 0}
   sphere: {fileID: 2045775878368735847}
   activateShoot: 0
   activateAttack: 0
-  targetIndex: 0
+  targetIndex: 1
   key_change: 0
   waypoints:
   - {fileID: 0}
@@ -630,7 +628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8807795771430243507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.019999953, z: 0.91}
+  m_LocalPosition: {x: -0.02, y: 0.019999953, z: 0.669}
   m_LocalScale: {x: 0.66611516, y: 0.7070338, z: 0.60078263}
   m_Children: []
   m_Father: {fileID: 8807795772005812204}
@@ -842,7 +840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8807795771537443687}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.019999953, z: 0.981}
+  m_LocalPosition: {x: -0.02, y: 0.019999953, z: 0.66}
   m_LocalScale: {x: 0.66611516, y: 0.7070338, z: 0.60078263}
   m_Children: []
   m_Father: {fileID: 8807795772171796536}
@@ -1054,7 +1052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8807795771731339201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.019999953, z: 0.943}
+  m_LocalPosition: {x: -0.02, y: 0.019999953, z: 0.63}
   m_LocalScale: {x: 0.66611516, y: 0.7070338, z: 0.60078263}
   m_Children: []
   m_Father: {fileID: 8807795772246092958}
@@ -1377,17 +1375,15 @@ MonoBehaviour:
     m_Bits: 8
   grndDistance: 0
   cmp_rb: {fileID: 0}
+  _vida: 0
   sigthRad: 0
   atkRad: 0
   taunted: 0
-  movSpd: 3
+  movSpd: 0.25
   targetObj: {fileID: 0}
   enemigo: {fileID: 2475627396007072699}
   sightRadius: 1.47
   attackRadius: 0.33
-  target:
-  - {fileID: 0}
-  - {fileID: 0}
   sphere: {fileID: 8807795771642091791}
   activateShoot: 0
   activateAttack: 0
@@ -1616,17 +1612,15 @@ MonoBehaviour:
     m_Bits: 8
   grndDistance: 0
   cmp_rb: {fileID: 0}
+  _vida: 0
   sigthRad: 0
   atkRad: 0
   taunted: 0
-  movSpd: 3
+  movSpd: 0.25
   targetObj: {fileID: 0}
   enemigo: {fileID: 3231585668561829767}
   sightRadius: 1.47
   attackRadius: 0.3
-  target:
-  - {fileID: 0}
-  - {fileID: 0}
   sphere: {fileID: 8807795771459952347}
   activateShoot: 0
   activateAttack: 0
@@ -1855,17 +1849,15 @@ MonoBehaviour:
     m_Bits: 8
   grndDistance: 0
   cmp_rb: {fileID: 0}
+  _vida: 0
   sigthRad: 0
   atkRad: 0
   taunted: 0
-  movSpd: 3
+  movSpd: 0.25
   targetObj: {fileID: 0}
   enemigo: {fileID: 4678679047689368995}
   sightRadius: 1.47
   attackRadius: 0.2
-  target:
-  - {fileID: 0}
-  - {fileID: 0}
   sphere: {fileID: 8807795771804512893}
   activateShoot: 0
   activateAttack: 0

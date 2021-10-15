@@ -9,6 +9,7 @@ public class EnemyTwoModl : Enemies
     public override void Start()
     {
         base.Start();
+        targetObj = GameObject.FindGameObjectWithTag("Player");
         _cmp_ctrl = gameObject.GetComponent<EnemyTwoCtrl>();
     }
     public EnemyTwoModl() : base()
@@ -16,12 +17,8 @@ public class EnemyTwoModl : Enemies
 
     }
 
-    public override void SelfDmg(int dmg)
+    public override void Die()
     {
-        base.SelfDmg(dmg);
-        if(dmg >= 1)
-        {
-            _cmp_ctrl.ChangeBody();
-        }
+        _cmp_ctrl.ChangeBody();
     }
 }
