@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421030906829231354}
+  - component: {fileID: 1742476984}
   m_Layer: 0
   m_Name: Candado_Low
   m_TagString: Untagged
@@ -23,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052749181681405504}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.482904, y: 1.9255886, z: -31.800774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1742476984
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052749181681405504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.120700836, y: 0.1477642, z: 0.041135788}
+  m_Center: {x: 0.0005970001, y: 0.06811419, z: -0.0011301041}
 --- !u!1 &3346335803997683157
 GameObject:
   m_ObjectHideFlags: 0

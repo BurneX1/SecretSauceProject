@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 6356868166311574305}
   - component: {fileID: 8041171085459354756}
   - component: {fileID: 5220530920324497486}
+  - component: {fileID: 1453903131}
+  - component: {fileID: 1453903132}
+  - component: {fileID: 1453903133}
   m_Layer: 0
   m_Name: Bota_Low
   m_TagString: Untagged
@@ -25,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6013415211800535451}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.1438055, y: 1.9255886, z: -37.26011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +84,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1453903131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013415211800535451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14303547, y: 0.14131147, z: 0.06383133}
+  m_Center: {x: -0.0004400015, y: 0.07079041, z: 0.013015747}
+--- !u!65 &1453903132
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013415211800535451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14303547, y: 0.102352865, z: 0.15034467}
+  m_Center: {x: -0.0004400015, y: 0.05131111, z: 0.11962691}
+--- !u!65 &1453903133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013415211800535451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14303547, y: 0.25821245, z: 0.17558843}
+  m_Center: {x: -0.0004400015, y: 0.1292409, z: -0.10700503}

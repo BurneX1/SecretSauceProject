@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6529321065538271092}
   - component: {fileID: 7868656609317959889}
   - component: {fileID: 5393027804180630555}
+  - component: {fileID: 1548011740}
+  - component: {fileID: 1548011741}
   m_Layer: 0
   m_Name: Lampara1_Low
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5897215526640446926}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.675454, y: 2.422, z: -38.128452}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1548011740
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5897215526640446926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05636978, y: 0.18320698, z: 0.057806015}
+  m_Center: {x: 0.0005931854, y: 0.26650807, z: -0.00020503998}
+--- !u!65 &1548011741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5897215526640446926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7209947, y: 0.17375793, z: 0.7209947}
+  m_Center: {x: 0, y: 0.08701492, z: 0}

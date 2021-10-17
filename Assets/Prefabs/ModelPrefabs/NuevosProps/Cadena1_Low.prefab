@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7092837866277198466}
   - component: {fileID: 6179231025616082215}
   - component: {fileID: 8225260296549933549}
+  - component: {fileID: 2122978022}
   m_Layer: 0
   m_Name: Cadena1_Low
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7576465079794925624}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.17, y: 2.532, z: -37.698605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2122978022
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7576465079794925624}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.043902278, y: 0.59616685, z: 0.041263867}
+  m_Center: {x: 0.0000000027939677, y: -0.29808342, z: 0}
