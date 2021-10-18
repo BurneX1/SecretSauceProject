@@ -45,6 +45,7 @@ public class Characters : Entities
     public Collider meleHitCollider;
     [Range(0.0f, 1500)]
     public float jmpForce;
+    public float vertForSpdLimt;
     [Range(0.0f, 500)]
     public float movSpd;
     [HideInInspector]
@@ -267,6 +268,22 @@ public class Characters : Entities
         if (Input.GetKey(key_jump) && grounded)
         {
             cmp_rb.AddForce(new Vector3(0, force, 0));
+        }
+
+        if (cmp_rb.velocity.y < 0 && grounded==false)
+        {
+            cmp_rb.velocity = new Vector3(cmp_rb.velocity.x, cmp_rb.velocity.y + (Time.deltaTime * -1), cmp_rb.velocity.z);
+        }
+
+        if (cmp_rb.velocity.y > vertForSpdLimt)
+        {
+            cmp_rb.velocity = new Vector3(cmp_rb.velocity.x ,vertForSpdLimt , cmp_rb.velocity.z);
+        }
+        else if(cmp_rb.velocity.y < (-1 * vertForSpdLimt))
+        {
+
+            cmp_rb.velocity = new Vector3(cmp_rb.velocity.x, vertForSpdLimt * -1, cmp_rb.velocity.z);
+
         }
     }
 

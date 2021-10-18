@@ -70,7 +70,7 @@ public class Enemies : Entities
             activateShoot = true;
             activatePatrol = false;
 
-            enemigo.destination = targetObj.transform.position;
+            //enemigo.destination = targetObj.transform.position;
             sigthRad = true;
         }
         else
