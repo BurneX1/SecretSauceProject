@@ -151,11 +151,14 @@ public class Characters : Entities
     public void Move_in_transform(float speed)
     {
 
+
         //vAxis = transform.forward * speed * Time.deltaTime;
         //Mov();
         //cmp_rb.velocity = transform.forward * speed * Time.deltaTime;
         //Vector3 vctMov = new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime);
+
         cmp_rb.velocity = new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime);
+
         //cmp_rb.AddForce(new Vector3(transform.forward.x * speed * Time.deltaTime, cmp_rb.velocity.y, transform.forward.z * speed * Time.deltaTime));
         //cmp_rb.velocity = new Vector3(transform.forward.x + speed, transform.forward.y, transform.forward.z + speed);
     }
@@ -169,6 +172,12 @@ public class Characters : Entities
         //cmp_rb.velocity = new Vector3(hAxis.x + vAxis.x, hAxis.y + vAxis.y, hAxis.z + vAxis.z);
         //new Vector3(transform.right.x * spd * Time.deltaTime, cmp_rb.velocity.y, transform.right.z * spd * Time.deltaTime)
 
+    }
+
+    public void MoveBasedOnCam(float speed)
+    {
+        Vector3 mvPs = playerInput.x * camRight + playerInput.z * camForward;
+        cmp_rb.velocity = new Vector3(mvPs.x * speed * Time.deltaTime, cmp_rb.velocity.y, mvPs.z * speed * Time.deltaTime);
     }
 
     void CompleteFPMovement(float hSpd, float vSpd)
@@ -200,14 +209,16 @@ public class Characters : Entities
         {
             hor = -1;
             //LateralMovement(-movSpd);
-            Move_in_transform(movSpd);
+            //Move_in_transform(movSpd);
+            MoveBasedOnCam(movSpd);
 
         }
         else if (Input.GetKey(key_rigth))
         {
             hor = 1;
             //LateralMovement(movSpd);
-            Move_in_transform(movSpd);
+            //Move_in_transform(movSpd);
+            MoveBasedOnCam(movSpd);
 
         }
         else
@@ -218,14 +229,16 @@ public class Characters : Entities
         if (Input.GetKey(key_down))
         {
             ver = -1;
-            Move_in_transform(movSpd);
-            
+            //Move_in_transform(movSpd);
+            MoveBasedOnCam(movSpd);
+
         }
         else if (Input.GetKey(key_up) /*&& Physics.BoxCast(transform.position, transform.localScale, transform.forward, transform.rotation, 1.5f, groundLayer) == false*/)
         {
             ver = 1;
-            Move_in_transform(movSpd);
-            
+            //Move_in_transform(movSpd);
+            MoveBasedOnCam(movSpd);
+
 
         }
         else
