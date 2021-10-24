@@ -10,6 +10,7 @@ public class InteractCaller : MonoBehaviour
     public KeyCode key_intrc;
     public GameObject[] InteractObj;
     public bool onlyOneUse;
+    public GameObject actlDtcPly;
     
     // Start is called before the first frame update
     void Start()
@@ -67,7 +68,9 @@ public class InteractCaller : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            actlDtcPly = other.gameObject;
             _nearPly =  true;
+            
         }
     }
 
@@ -75,6 +78,10 @@ public class InteractCaller : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (other.gameObject == actlDtcPly)
+            {
+                actlDtcPly = null;
+            }
             _nearPly = false;
         }
     }
