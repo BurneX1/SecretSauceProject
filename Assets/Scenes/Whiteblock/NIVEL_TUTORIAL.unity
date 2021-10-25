@@ -27763,6 +27763,61 @@ MonoBehaviour:
   - {fileID: 1483310675}
   onlyOneUse: 1
   actlDtcPly: {fileID: 0}
+--- !u!1 &1927278149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927278151}
+  - component: {fileID: 1927278150}
+  m_Layer: 0
+  m_Name: EnviromentSnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1927278150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927278149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a97af14d1ed0d4499c7d41e5de1ffbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adCll: {fileID: 0}
+  sndList:
+  - Viento
+  - Aves
+  - Ramas
+  - Grillos
+  - Aves2
+  minTime: 10
+  maxTime: 15
+  timer: 0
+  actWaiting: 0
+  lastSnd: 
+--- !u!4 &1927278151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927278149}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4449863, y: 1.0000277, z: -3.2375324}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938648909
 GameObject:
   m_ObjectHideFlags: 0
