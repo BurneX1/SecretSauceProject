@@ -24,7 +24,7 @@ public class UIpuzzBase : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && ps.paused == false)
+        if(Input.GetKeyDown(KeyCode.Escape) && ps.paused == false)
         {
             ClosePuzzle();
             

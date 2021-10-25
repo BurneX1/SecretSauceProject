@@ -36,13 +36,13 @@ public class Pause : MonoBehaviour
             {
                 Opt_Menu.SetActive(false);
             }
-            Time.timeScale = 1;
+            
         }
         if (paused == true)
         {
             cmp_msLck.msLock = false;
             Pause_Menu.SetActive(true);
-            Time.timeScale = 0;
+            
         }
 
         //Button_false();
@@ -54,10 +54,12 @@ public class Pause : MonoBehaviour
         if (paused == true)
         {
             paused = false;
+            Time.timeScale = 1;
         }
         else if (paused == false)
         {
             paused = true;
+            Time.timeScale = 0;
         }
     }
 
