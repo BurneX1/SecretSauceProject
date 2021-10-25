@@ -8,6 +8,11 @@ public class CharOneModl : Characters
     public GameObject gun;
     public GameObject plyBullet;
     public GameObject pointer;
+    public GameObject bodyPart;
+    public RaycastHit shootHitPoint;
+
+    public Ray mouseRay;
+    public Vector3 linePos;
 
     public bool aimState;
     public bool shootable;
@@ -39,46 +44,70 @@ public class CharOneModl : Characters
     }
     public void Aim()
     {
-        /*if (aimState)
+        
+        
+        if (aimState)
         {
+            Vector3 rayShootPoint;
+            rayShootPoint = Input.mousePosition;
+            mouseRay = myCamera.ScreenPointToRay(rayShootPoint);
+            if(Physics.Raycast(mouseRay.origin, mouseRay.direction, out shootHitPoint, Mathf.Infinity, shootLyr))
+            {
+                linePos = /*pointer.transform.position + pointer.transform.forward; */new Vector3(shootHitPoint.point.x, pointer.transform.position.y, shootHitPoint.point.z);
+                
+            }
+            else
+            {
+                //linePos = pointer.transform.position + pointer.transform.forward;
+            }
+
+            bodyPart.transform.rotation = Quaternion.Slerp(bodyPart.transform.rotation, Quaternion.LookRotation(new Vector3(linePos.x, bodyPart.transform.position.y, linePos.z) - bodyPart.transform.position), 0.5f);
+
+
             myCamera.GetComponent<CameraOptions>().ZoomTo(aimZoom, aimSpd);
             shootable = true;
         }
         else
         {
+            bodyPart.transform.rotation = Quaternion.Slerp(bodyPart.transform.rotation, Quaternion.LookRotation(bodyPart.transform.parent.forward), 0.5f);
             myCamera.GetComponent<CameraOptions>().DfltZoom(aimSpd);
             shootable = false;
-        }*/
+        }
 
     }
     public void SpcRangeAtck()
     {
 
-        GameObject bllt = Instantiate(plyBullet);
+        /*GameObject bllt = Instantiate(plyBullet);
         bllt.transform.position = pointer.transform.position;
-        bllt.transform.rotation = gun.transform.rotation;
+        bllt.transform.rotation = gun.transform.rotation;*/
 
 
-        /*if (shootable)
+
+        if (shootable)
         {
-            RaycastHit hit;
+            GameObject bllt = Instantiate(plyBullet);
+            bllt.transform.position = pointer.transform.position;
+            bllt.transform.rotation = gun.transform.rotation;
+            //--------------//
+            //gameObject.GetComponent<LineRenderer>().SetPosition(0, pointer.transform.position);
+            //if (Physics.Raycast(mouseRay.origin, mouseRay.direction, out shootHitPoint, Mathf.Infinity, shootLyr))
+            //{
+            /*GameObject bullet = GameObject.Instantiate(plyBullet, pointer.transform.position, gun.transform.rotation);
+            Bullet bulletController = bullet.GetComponent<Bullet>();
+            bulletController.target = new Vector3(shootHitPoint.point.x, pointer.transform.position.y, shootHitPoint.point.z);
+            bulletController.hit = true;*/
+            //gameObject.GetComponent<LineRenderer>().SetPosition(1, shootHitPoint.point);
+            //}
 
-        if (Physics.Raycast(myCamera.transform.position, myCamera.transform.forward, out hit, Mathf.Infinity, shootLyr))
+            /*else
             {
                 GameObject bullet = GameObject.Instantiate(plyBullet, pointer.transform.position, gun.transform.rotation);
                 Bullet bulletController = bullet.GetComponent<Bullet>();
-                bulletController.target = hit.point;
+                bulletController.target = myCamera.transform.position + myCamera.transform.forward;
                 bulletController.hit = true;
-            }
-
-        else
-            {
-                GameObject bullet = GameObject.Instantiate(plyBullet, pointer.transform.position, gun.transform.rotation);
-                Bullet bulletController = bullet.GetComponent<Bullet>();
-                 bulletController.target = myCamera.transform.position + myCamera.transform.forward;
-                bulletController.hit = true;
-            }
-        }   */
+            }*/
+        }   
     }
     public override void SelfDmg(int dmg)
     {

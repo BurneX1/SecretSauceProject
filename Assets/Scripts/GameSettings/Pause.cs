@@ -30,7 +30,7 @@ public class Pause : MonoBehaviour
 
         if (paused == false)
         {
-            cmp_msLck.msLock = true;
+            cmp_msLck.msLock = false;
             Pause_Menu.SetActive(false);
             if(Opt_Menu.activeSelf == true)
             {

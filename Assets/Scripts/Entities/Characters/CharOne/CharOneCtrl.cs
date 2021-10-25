@@ -100,6 +100,7 @@ public class CharOneCtrl : MonoBehaviour
             _cmp_mod.aimState = false;
         }
 
+
         if (_atacking == false)
         {
          

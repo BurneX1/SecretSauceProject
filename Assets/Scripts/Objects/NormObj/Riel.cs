@@ -174,11 +174,6 @@ public class GrabPreset
     public GameObject target;
     [HideInInspector]
     public float t;
-    [HideInInspector]
-    public string name;
 
-    public  GrabPreset()
-    {
-        name = point.name;
-    }
+
 }

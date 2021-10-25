@@ -8,6 +8,7 @@ public class CharOneView : MonoBehaviour
     private CharOneModl _cmp_mod;
     private CharOneCtrl _cmp_ctrl;
     public Animator _cmp_anim;
+    public LineRenderer _cmp_lr;
 
     public bool viewMove;
     public bool viewAttack;
@@ -24,6 +25,7 @@ public class CharOneView : MonoBehaviour
         _cmp_mod = gameObject.GetComponent<CharOneModl>();
         _cmp_ctrl = gameObject.GetComponent<CharOneCtrl>();
         _cmp_anim = GetComponent<Animator>();
+        _cmp_lr = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class CharOneView : MonoBehaviour
         ActivateAnimationEspecial();
         ActivateAnimationKnockDown();
         ActivateAnimationRecoil();
+        ShowAimLine();
 
     }
     
@@ -72,7 +75,7 @@ public class CharOneView : MonoBehaviour
     
     void ActivateAnimationAttack()
     {
-        if (_cmp_ctrl._atacking == true /*&& _cmp_mod.shootable == true*/)
+        if (_cmp_ctrl._atacking == true && _cmp_mod.shootable == true)
         {
             viewAttack = true;
         }
@@ -122,5 +125,24 @@ public class CharOneView : MonoBehaviour
                 timer = 0;
             }
         }
+    }
+
+    void ShowAimLine()
+    {
+        if(_cmp_lr==null)
+        {
+            _cmp_lr = gameObject.AddComponent<LineRenderer>();
+        }
+        if(_cmp_mod.shootable)
+        {
+            _cmp_lr.enabled = true;
+            _cmp_lr.SetPosition(0, _cmp_mod.pointer.transform.position);
+            _cmp_lr.SetPosition(1, _cmp_mod.linePos);
+        }
+        else
+        {
+            _cmp_lr.enabled = false;
+        }
+
     }
 }
