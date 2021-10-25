@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8807417526502146365}
   - component: {fileID: 8807417526502146366}
   - component: {fileID: 8807417526502146361}
+  - component: {fileID: 1110341494560380362}
+  - component: {fileID: 2051107276308613063}
   m_Layer: 0
   m_Name: AmmoObject
   m_TagString: Untagged
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 8807417526502146367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.67, y: 1.25, z: -13.384}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -127,3 +129,39 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 8807417526502146367}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
+--- !u!114 &1110341494560380362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807417526502146367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0.9510727, b: 1, a: 1}
+  outlineWidth: 1
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &2051107276308613063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807417526502146367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b504a540bbed084fbdc6c714905e35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  world: 0
+  rotX: 0
+  rotY: 1
+  rotZ: 0
+  loopSpd: 0.7
