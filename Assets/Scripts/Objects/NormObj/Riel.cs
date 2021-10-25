@@ -14,6 +14,8 @@ public class Riel : MonoBehaviour
     public GameObject grab;
     public GameObject camPoint;
 
+    public GrabPreset[] targetArrays;
+
     public List<Transform> points;
     public Vector3 position;
     public int currentSegment;
@@ -32,118 +34,111 @@ public class Riel : MonoBehaviour
 
     void Start()
     {
-        t = 0f;
+        //t = 0f;
     }
 
     void Update()
     {
-        /*t += Time.deltaTime * 0.5f;
-
-        if (t >= 1f)
-            t = 0;*/
-        if (t >= 1f)
+        for(int i = 0; i < targetArrays.Length; i++)
         {
-            t = 1f;
-        }
-        else if (t <= 0f)
-        {
-            t = 0f;
+            Segmentation(targetArrays[i]);
         }
 
-        /*if (currentSegment == 0)
-        {
-            actPos = MathTools.BezierLerp(
-               points[(1 - 1) * 2].position,
-               points[((1 - 1) * 2) + 1].position,
-               points[((1 - 1) * 2) + 2].position,
-               (t * totalSegments) - (1 - 1));
-
-            plusPos = MathTools.BezierLerp(
-               points[(1 - 1) * 2].position,
-               points[((1 - 1) * 2) + 1].position,
-               points[((1 - 1) * 2) + 2].position,
-               ((t + (Time.deltaTime * 0.5f)) * totalSegments) - (1 - 1));
-
-            restPos = MathTools.BezierLerp(
-               points[(1 - 1) * 2].position,
-               points[((1 - 1) * 2) + 1].position,
-               points[((1 - 1) * 2) + 2].position,
-               ((t - (Time.deltaTime * 0.5f)) * totalSegments) - (1 - 1));
-        }
-        else*/
-        //{
-        actPos = MathTools.BezierLerp(
-           points[(currentSegment - 1) * 2].position,
-           points[((currentSegment - 1) * 2) + 1].position,
-           points[((currentSegment - 1) * 2) + 2].position,
-           (t * totalSegments) - (currentSegment - 1));
-
-        plusPos = MathTools.BezierLerp(
-           points[(currentSegment - 1) * 2].position,
-           points[((currentSegment - 1) * 2) + 1].position,
-           points[((currentSegment - 1) * 2) + 2].position,
-           ((t + (Time.deltaTime * 0.5f)) * totalSegments) - (currentSegment - 1));
-
-        restPos = MathTools.BezierLerp(
-           points[(currentSegment - 1) * 2].position,
-           points[((currentSegment - 1) * 2) + 1].position,
-           points[((currentSegment - 1) * 2) + 2].position,
-           ((t - (Time.deltaTime * 0.5f)) * totalSegments) - (currentSegment - 1));
-        //}
-
-
-        if (Vector3.Distance(actPos, grab.transform.position) > Vector3.Distance(plusPos, grab.transform.position) && t < 1f)
-        {
-            t += Time.deltaTime * 0.5f;
-        }
-        else if (Vector3.Distance(actPos, grab.transform.position) > Vector3.Distance(restPos, grab.transform.position) && t > 0.001f)
-        {
-            t -= Time.deltaTime * 0.5f;
-        }
-
-        if (t >= 1f)
-        {
-            t = 1f;
-        }
-        else if (t <= 0f)
-        {
-            t = 0f;
-        }
-        if (camPoint)
-        {
-            camPoint.transform.position = position;
-        }
-
-        Positioning();
+        //Positioning();
     }
 
-    void Positioning()
+    void Segmentation(GrabPreset preset)
     {
-        currentSegment = Mathf.Max(Mathf.CeilToInt(totalSegments * t), 1);
-        u = (t * totalSegments) - (currentSegment - 1);
+        Vector3 position;
+        int currentSegment;
+        float u;
+
+        Vector3 actPos;
+        Vector3 plusPos;
+        Vector3 restPos;
+
+
+
+
+
+        if (preset.t >= 1f)
+        {
+            preset.t = 1f;
+        }
+        else if (preset.t <= 0f)
+        {
+            preset.t = 0f;
+        }
+
+        /*------------------*/
+        currentSegment = Mathf.Max(Mathf.CeilToInt(totalSegments * preset.t), 1);
+        u = (preset.t * totalSegments) - (currentSegment - 1);
 
         position = MathTools.BezierLerp(
                 points[(currentSegment - 1) * 2].position,
                 points[((currentSegment - 1) * 2) + 1].position,
                 points[((currentSegment - 1) * 2) + 2].position,
                 u);
+        /*------------------*/
+
+
+
+        actPos = MathTools.BezierLerp(
+           points[(currentSegment - 1) * 2].position,
+           points[((currentSegment - 1) * 2) + 1].position,
+           points[((currentSegment - 1) * 2) + 2].position,
+           (preset.t * totalSegments) - (currentSegment - 1));
+
+        plusPos = MathTools.BezierLerp(
+           points[(currentSegment - 1) * 2].position,
+           points[((currentSegment - 1) * 2) + 1].position,
+           points[((currentSegment - 1) * 2) + 2].position,
+           ((preset.t + (Time.deltaTime * 0.5f)) * totalSegments) - (currentSegment - 1));
+
+        restPos = MathTools.BezierLerp(
+           points[(currentSegment - 1) * 2].position,
+           points[((currentSegment - 1) * 2) + 1].position,
+           points[((currentSegment - 1) * 2) + 2].position,
+           ((preset.t - (Time.deltaTime * 0.5f)) * totalSegments) - (currentSegment - 1));
+        //}
+
+
+        if (Vector3.Distance(actPos, preset.target.transform.position) > Vector3.Distance(plusPos, preset.target.transform.position) && preset.t < 1f)
+        {
+            preset.t += Time.deltaTime * 0.5f;
+        }
+        else if (Vector3.Distance(actPos, preset.target.transform.position) > Vector3.Distance(restPos, preset.target.transform.position) && preset.t > 0.001f)
+        {
+            preset.t -= Time.deltaTime * 0.5f;
+        }
+
+        if (preset.t >= 1f)
+        {
+            preset.t = 1f;
+        }
+        else if (preset.t <= 0f)
+        {
+            preset.t = 0f;
+        }
+        if (preset.point)
+        {
+            preset.point.transform.position = position;
+        }
+
+
+        
     }
 
     void OnDrawGizmos()
     {
 
-        currentSegment = Mathf.Max(Mathf.CeilToInt(totalSegments * t), 1);
-        u = (t * totalSegments) - (currentSegment - 1);
-
-            position = MathTools.BezierLerp(
-                            points[(currentSegment - 1) * 2].position,
-                            points[((currentSegment - 1) * 2) + 1].position,
-                            points[((currentSegment - 1) * 2) + 2].position,
-                            u);
-
 
         Gizmos.color = Color.cyan;
-        Gizmos.DrawCube(position, Vector3.one * 0.3f);
+        for (int i = 0; i < targetArrays.Length; i++)
+        {
+            Gizmos.DrawCube(targetArrays[i].point.transform.position, Vector3.one * 0.3f);
+        }
+
 
 
 
@@ -169,5 +164,21 @@ public class Riel : MonoBehaviour
             }
         }
 
+    }
+}
+
+[System.Serializable]
+public class GrabPreset
+{
+    public GameObject point;
+    public GameObject target;
+    [HideInInspector]
+    public float t;
+    [HideInInspector]
+    public string name;
+
+    public  GrabPreset()
+    {
+        name = point.name;
     }
 }
