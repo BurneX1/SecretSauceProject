@@ -4275,6 +4275,11 @@ PrefabInstance:
       propertyPath: actualGrabPoint
       value: 
       objectReference: {fileID: 165308463}
+    - target: {fileID: 2297843995652468932, guid: 764fb05c20513c649a7b704c7ce0c9ab,
+        type: 3}
+      propertyPath: outlineMode
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2299280540120307308, guid: 764fb05c20513c649a7b704c7ce0c9ab,
         type: 3}
       propertyPath: m_Layer
@@ -9575,7 +9580,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494266338}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.22
@@ -23740,7 +23745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 2
+  outlineMode: 4
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 0.8
   precomputeOutline: 0
@@ -24537,6 +24542,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JackBox_Low (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4614453404285487249, guid: 1bf675f9f16990849807f25143d832d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5422901576945046059, guid: 1bf675f9f16990849807f25143d832d6,
         type: 3}
       propertyPath: m_RootOrder
@@ -24611,6 +24621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762550552544777730, guid: 1bf675f9f16990849807f25143d832d6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.554
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf675f9f16990849807f25143d832d6, type: 3}
@@ -27792,7 +27807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a97af14d1ed0d4499c7d41e5de1ffbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adCll: {fileID: 0}
+  adCll: {fileID: 288258656}
   sndList:
   - Viento
   - Aves

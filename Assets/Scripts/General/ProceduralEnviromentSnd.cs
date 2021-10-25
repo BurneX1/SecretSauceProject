@@ -23,7 +23,7 @@ public class ProceduralEnviromentSnd : MonoBehaviour
             minTime = 10;
             maxTime = 10;
         }
-
+        RandomCall();
         actWaiting = Random.Range(minTime, maxTime);
     }
 

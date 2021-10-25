@@ -127,11 +127,6 @@ public class CharOneCtrl : MonoBehaviour
             {
                 _cmp_mod.SpcRangeAtck();
 
-                GameObject sndObj = GameObject.Find("SoundManager");
-                if (sndObj != null)
-                {
-                    GameObject.Find("SoundManager").GetComponent<AudioManager>().Play("Disparo");
-                }
                 _atacking = false;
                 _tauntTime = 0;
 

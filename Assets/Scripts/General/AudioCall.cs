@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class AudioCall : MonoBehaviour
 {
+    AudioManager aud;
     // Start is called before the first frame update
     void Start()
     {
-        
+        aud = GameObject.Find("SoundManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -18,17 +19,17 @@ public class AudioCall : MonoBehaviour
 
     public void CallAudio(string audioName)
     {
-        if (GameObject.Find("SoundManager").GetComponent<AudioManager>())
+        if (aud)
         {
-            GameObject.Find("SoundManager").GetComponent<AudioManager>().Play(audioName);
+            aud.Play(audioName);
         }
     }
 
     public void PauseAudio(string audioName)
     {
-        if (GameObject.Find("SoundManager").GetComponent<AudioManager>())
+        if (aud)
         {
-            GameObject.Find("SoundManager").GetComponent<AudioManager>().Stop(audioName);
+            aud.Stop(audioName);
         }
     }
 }

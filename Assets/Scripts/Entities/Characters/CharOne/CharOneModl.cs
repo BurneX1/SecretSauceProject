@@ -89,6 +89,12 @@ public class CharOneModl : Characters
             GameObject bllt = Instantiate(plyBullet);
             bllt.transform.position = pointer.transform.position;
             bllt.transform.rotation = gun.transform.rotation;
+
+            GameObject sndObj = GameObject.Find("SoundManager");
+            if (sndObj != null)
+            {
+                GameObject.Find("SoundManager").GetComponent<AudioManager>().Play("Disparo");
+            }
             //--------------//
             //gameObject.GetComponent<LineRenderer>().SetPosition(0, pointer.transform.position);
             //if (Physics.Raycast(mouseRay.origin, mouseRay.direction, out shootHitPoint, Mathf.Infinity, shootLyr))
