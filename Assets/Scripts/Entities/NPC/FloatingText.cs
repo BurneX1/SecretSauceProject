@@ -8,32 +8,49 @@ public class FloatingText : MonoBehaviour
     public string textToShow;
     public float sightRadius;
     GameObject target;
+    GameObject target2;
+    public Camera cameraPlayer1;
+    public Camera cameraPlayer2;
+    Camera cameraToShow;
 
     private void Start()
     {
         floatingText.SetActive(false);
         floatingText.GetComponent<TextMesh>().text = textToShow.ToString();
-        target = GameObject.FindGameObjectWithTag("Player");
+        target = GameObject.Find("Pj1");
+        target2 = GameObject.Find("Pj3 (1)");
     }
 
     private void Update()
     {
+        //floatingText.transform.rotation = Quaternion.LookRotation(floatingText.transform.position - cameraToShow.transform.position);
         DetectPlayer();
     }
     public void DetectPlayer()
     {
         float distancePlayer = Vector3.Distance(target.transform.position, transform.position);
+        float distancePlayer2 = Vector3.Distance(target2.transform.position, transform.position);
         if (distancePlayer <= sightRadius)
         {
-            ShowFloatingText();
+            ShowFloatingTextOnCamera1();
+        }
+        else if(distancePlayer2 <= sightRadius)
+        {
+            ShowFloatingTextOnCamera2();
         }
         else
         {
             HideFloatingText();
         }
     }
-    void ShowFloatingText()
+    void ShowFloatingTextOnCamera1()
     {
+        cameraToShow = cameraPlayer1;
+        floatingText.SetActive(true);
+    }
+    void ShowFloatingTextOnCamera2()
+    {
+        cameraToShow = cameraPlayer2;
         floatingText.SetActive(true);
     }
     void HideFloatingText()
