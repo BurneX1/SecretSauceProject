@@ -11,11 +11,18 @@ public class InteractCaller : MonoBehaviour
     public GameObject[] InteractObj;
     public bool onlyOneUse;
     public GameObject actlDtcPly;
+
+    public bool singleTarget;
+    public int playerNumber;
+    GameObject player1;
+    GameObject player2;
     
     // Start is called before the first frame update
     void Start()
     {
-       
+        player1 = GameObject.Find("Pj1");
+        player2 = GameObject.Find("Pj3 (1)");
+
         if(key_intrc != KeyCode.None)
         {
             onKey = true;
@@ -66,23 +73,75 @@ public class InteractCaller : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (singleTarget == true)
         {
-            actlDtcPly = other.gameObject;
-            _nearPly =  true;
-            
+            if (playerNumber == 1)
+            {
+                if(other.gameObject == player1)
+                {
+                    actlDtcPly = other.gameObject;
+                    _nearPly = true;
+                }
+                else if(other.gameObject == player2)
+                {
+                    Debug.Log("Personaje incorrecto");
+                }
+            }
+            else if (playerNumber == 2)
+            {
+                if (other.gameObject == player2)
+                {
+                    actlDtcPly = other.gameObject;
+                    _nearPly = true;
+                }
+                else if (other.gameObject == player1)
+                {
+                    Debug.Log("Personaje incorrecto");
+                }
+            }
+        }
+        else if (singleTarget == false)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                actlDtcPly = other.gameObject;
+                _nearPly = true;
+
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if(singleTarget == true)
         {
-            if (other.gameObject == actlDtcPly)
+            if(other.gameObject == player1)
             {
-                actlDtcPly = null;
+                if (other.gameObject == actlDtcPly)
+                {
+                    actlDtcPly = null;
+                }
+                _nearPly = false;
             }
-            _nearPly = false;
+            else if (other.gameObject == player2)
+            {
+                if (other.gameObject == actlDtcPly)
+                {
+                    actlDtcPly = null;
+                }
+                _nearPly = false;
+            }
+        }
+        if (singleTarget == false)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                if (other.gameObject == actlDtcPly)
+                {
+                    actlDtcPly = null;
+                }
+                _nearPly = false;
+            }
         }
     }
 }
