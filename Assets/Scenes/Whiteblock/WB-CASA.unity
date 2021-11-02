@@ -3089,10 +3089,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 0
+  dontAutoSelectCam: 0
   camObj: {fileID: 1010313188}
   grabPoint: {fileID: 341423215}
+  riel: {fileID: 0}
   smooth: 0
   autoRot: 0
+  currentCaller: {fileID: 0}
 --- !u!114 &76426767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3109,6 +3112,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 76426763}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!1 &78219931
 GameObject:
   m_ObjectHideFlags: 0
@@ -3207,6 +3211,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 91685289}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!4 &91685293
 Transform:
   m_ObjectHideFlags: 0
@@ -9635,10 +9640,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 0
+  dontAutoSelectCam: 0
   camObj: {fileID: 1010313188}
   grabPoint: {fileID: 1585958158}
+  riel: {fileID: 0}
   smooth: 1
   autoRot: 1
+  currentCaller: {fileID: 0}
 --- !u!114 &302120473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9655,6 +9663,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 302120469}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!1 &302218975
 GameObject:
   m_ObjectHideFlags: 0
@@ -9899,6 +9908,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 302344210}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!4 &302344214
 Transform:
   m_ObjectHideFlags: 0
@@ -10728,6 +10738,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 339676533}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!4 &339676537
 Transform:
   m_ObjectHideFlags: 0
@@ -13293,6 +13304,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1750157078}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!43 &441090007
 Mesh:
   m_ObjectHideFlags: 0
@@ -15490,10 +15502,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 0
+  dontAutoSelectCam: 0
   camObj: {fileID: 1010313188}
   grabPoint: {fileID: 1342183415}
+  riel: {fileID: 0}
   smooth: 1
   autoRot: 1
+  currentCaller: {fileID: 0}
 --- !u!114 &507080003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15510,6 +15525,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 507079999}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!1 &522909515
 GameObject:
   m_ObjectHideFlags: 0
@@ -19439,6 +19455,7 @@ MonoBehaviour:
   - {fileID: 284463251}
   - {fileID: 657794086}
   onlyOneUse: 1
+  actlDtcPly: {fileID: 0}
 --- !u!1 &645410771
 GameObject:
   m_ObjectHideFlags: 0
@@ -19789,6 +19806,7 @@ MonoBehaviour:
   - {fileID: 1750157078}
   - {fileID: 1062406613}
   onlyOneUse: 1
+  actlDtcPly: {fileID: 0}
 --- !u!1001 &661098890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21688,6 +21706,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 91685289}
   onlyOneUse: 1
+  actlDtcPly: {fileID: 0}
 --- !u!43 &771659039
 Mesh:
   m_ObjectHideFlags: 0
@@ -21975,6 +21994,7 @@ MonoBehaviour:
   - {fileID: 1967858317}
   - {fileID: 1717586162}
   onlyOneUse: 1
+  actlDtcPly: {fileID: 0}
 --- !u!1 &781617856
 GameObject:
   m_ObjectHideFlags: 0
@@ -31768,6 +31788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grab: {fileID: 1404166537}
   camPoint: {fileID: 9586660}
+  targetArrays: []
   points:
   - {fileID: 589643064}
   - {fileID: 1241607197}
@@ -34953,6 +34974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grab: {fileID: 1404166537}
   camPoint: {fileID: 341423215}
+  targetArrays: []
   points:
   - {fileID: 431742808}
   - {fileID: 1264064713}
@@ -35144,10 +35166,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 0
+  dontAutoSelectCam: 0
   camObj: {fileID: 1010313188}
   grabPoint: {fileID: 9586660}
+  riel: {fileID: 0}
   smooth: 1
   autoRot: 0
+  currentCaller: {fileID: 0}
 --- !u!114 &1120267386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35164,6 +35189,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1120267382}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!1 &1125379959
 GameObject:
   m_ObjectHideFlags: 0
@@ -36822,6 +36848,7 @@ MonoBehaviour:
   - {fileID: 165730943}
   - {fileID: 1222262456}
   onlyOneUse: 1
+  actlDtcPly: {fileID: 0}
 --- !u!1 &1176129238
 GameObject:
   m_ObjectHideFlags: 0
@@ -42130,6 +42157,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1337756239}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!43 &1340911367
 Mesh:
   m_ObjectHideFlags: 0
@@ -46259,6 +46287,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1465799269}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!1 &1472139387
 GameObject:
   m_ObjectHideFlags: 0
@@ -47516,6 +47545,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1505074080}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!43 &1505697827
 Mesh:
   m_ObjectHideFlags: 0
@@ -47739,10 +47769,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 0
+  dontAutoSelectCam: 0
   camObj: {fileID: 1010313188}
   grabPoint: {fileID: 818443272}
+  riel: {fileID: 0}
   smooth: 1
   autoRot: 1
+  currentCaller: {fileID: 0}
 --- !u!114 &1507666028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47759,6 +47792,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1507666024}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!1 &1511441366
 GameObject:
   m_ObjectHideFlags: 0
@@ -47826,6 +47860,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1511441366}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!65 &1511441370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48390,6 +48425,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 302344210}
   onlyOneUse: 1
+  actlDtcPly: {fileID: 0}
 --- !u!4 &1534852837
 Transform:
   m_ObjectHideFlags: 0
@@ -56186,10 +56222,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 0
+  dontAutoSelectCam: 0
   camObj: {fileID: 1010313188}
   grabPoint: {fileID: 132328606}
+  riel: {fileID: 0}
   smooth: 1
   autoRot: 1
+  currentCaller: {fileID: 0}
 --- !u!114 &1804621477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56206,6 +56245,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1804621473}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!4 &1805425042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 860949565368636598, guid: e57ee0c632117b647a955bd78edfaa7d,
@@ -57233,7 +57273,7 @@ PrefabInstance:
     - target: {fileID: 2111689077741929298, guid: 8dca9fb608deccd4dad7c926e295f802,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.945
+      value: -1.899
       objectReference: {fileID: 0}
     - target: {fileID: 2111689077741929298, guid: 8dca9fb608deccd4dad7c926e295f802,
         type: 3}
@@ -57403,6 +57443,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1854025745}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!65 &1854025749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57708,10 +57749,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 0
+  dontAutoSelectCam: 0
   camObj: {fileID: 1010313188}
   grabPoint: {fileID: 2064701203}
+  riel: {fileID: 0}
   smooth: 1
   autoRot: 1
+  currentCaller: {fileID: 0}
 --- !u!114 &1876599073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57728,6 +57772,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1876599069}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!43 &1880193244
 Mesh:
   m_ObjectHideFlags: 0
@@ -58155,6 +58200,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1886240128}
   onlyOneUse: 0
+  actlDtcPly: {fileID: 0}
 --- !u!1 &1893652148
 GameObject:
   m_ObjectHideFlags: 0
@@ -59222,6 +59268,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 133253836}
   onlyOneUse: 1
+  actlDtcPly: {fileID: 0}
 --- !u!65 &1905999832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61520,6 +61567,7 @@ MonoBehaviour:
   InteractObj:
   - {fileID: 1511441366}
   onlyOneUse: 1
+  actlDtcPly: {fileID: 0}
 --- !u!65 &2013613613
 BoxCollider:
   m_ObjectHideFlags: 0
