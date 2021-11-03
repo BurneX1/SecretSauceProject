@@ -35,6 +35,7 @@ public class TrigerButon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        theTime();
         if (_nearPly == true)
         {     
             ActOnEnter();
@@ -43,7 +44,7 @@ public class TrigerButon : MonoBehaviour
         {
             ActOnExit();
         }
-        theTime();
+        
     }
 
     public void theTime()
@@ -64,8 +65,9 @@ public class TrigerButon : MonoBehaviour
     }
     public void ActOnEnter()
     {
-        if (canMakeAct == true && onWait == true)
+        if (canMakeAct == true/* && onWait == true*/)
         {
+            Debug.Log("ENTER");
             enterEv.Invoke();
             canMakeAct = false;
             onWait = false;
@@ -74,7 +76,7 @@ public class TrigerButon : MonoBehaviour
 
     public void ActOnExit()
     {
-        if (canMakeAct == true && onWait == true)
+        if (canMakeAct == true/* && onWait == true*/)
         {
             Debug.Log("EXIT");
             exitEv.Invoke();
@@ -93,7 +95,10 @@ public class TrigerButon : MonoBehaviour
                 {
                     actlDtcPly = other.gameObject;
                     _nearPly = true;
-                    canMakeAct = true;
+                    if (onWait == true)
+                    {
+                        canMakeAct = true;
+                    }
                 }
                 else if (other.gameObject == player2)
                 {
@@ -106,7 +111,10 @@ public class TrigerButon : MonoBehaviour
                 {
                     actlDtcPly = other.gameObject;
                     _nearPly = true;
-                    canMakeAct = true;
+                    if (onWait == true)
+                    {
+                        canMakeAct = true;
+                    }
                 }
                 else if (other.gameObject == player1)
                 {
@@ -120,7 +128,10 @@ public class TrigerButon : MonoBehaviour
             {
                 actlDtcPly = other.gameObject;
                 _nearPly = true;
-                canMakeAct = true;
+                if (onWait == true)
+                {
+                    canMakeAct = true;
+                }
 
             }
         }
@@ -128,7 +139,7 @@ public class TrigerButon : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.gameObject);
+       
         if (singleTarget == true)
         {
             if (other.gameObject == player1)
@@ -136,7 +147,10 @@ public class TrigerButon : MonoBehaviour
                 if (other.gameObject == actlDtcPly)
                 {
                     actlDtcPly = null;
-                    canMakeAct = true;
+                    if (onWait == true)
+                    {
+                        canMakeAct = true;
+                    }
                 }
                 _nearPly = false;
 
@@ -146,7 +160,10 @@ public class TrigerButon : MonoBehaviour
                 if (other.gameObject == actlDtcPly)
                 {
                     actlDtcPly = null;
-                    canMakeAct = true;
+                    if (onWait == true)
+                    {
+                        canMakeAct = true;
+                    }
                 }
                 _nearPly = false;
                 
@@ -159,7 +176,10 @@ public class TrigerButon : MonoBehaviour
                 if (other.gameObject == actlDtcPly)
                 {
                     actlDtcPly = null;
-                    canMakeAct = true;
+                    if (onWait == true)
+                    {
+                        canMakeAct = true;
+                    }
                 }
                 _nearPly = false;
 
