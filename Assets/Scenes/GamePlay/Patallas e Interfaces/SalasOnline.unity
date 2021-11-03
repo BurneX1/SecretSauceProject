@@ -296,7 +296,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Nivel-2
+          m_StringArgument: NIVEL_2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &19529132
@@ -1612,7 +1612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &407620605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2107,7 +2107,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Version antigua del nivel 1
+  m_Text: Nivel 1 - La sala
 --- !u!222 &606220385
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3055,7 +3055,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1305911379}
   m_HandleRect: {fileID: 1305911378}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3598,7 +3598,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tutorial [v1]
+  m_Text: Tutorial
 --- !u!222 &963016749
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3798,7 +3798,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nivel antiguo del boss no jugable
+  m_Text: WhiteBlocking del nivel 2 - Cocina
 --- !u!222 &1003763512
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4150,7 +4150,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tutorial
+          m_StringArgument: NewComic
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1134007650
@@ -5312,7 +5312,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Version Antigua del nivel Tutorial
+  m_Text: Nivel Tutorial
 --- !u!222 &1359545729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5391,7 +5391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Piso 2 [v1] [Cancelado]
+  m_Text: Nivel 2 [WB]
 --- !u!222 &1453737470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6583,7 +6583,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nivel 1 [v1]
+  m_Text: Nivel 1
 --- !u!222 &1733077805
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7639,7 +7639,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Nivel-1
+          m_StringArgument: NIVEL_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2054576467
@@ -7724,6 +7724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c609e3bca1d24cb4eba82398d1d536ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioA: {fileID: 0}
+  scenes: {fileID: 0}
   shadowCanvas: {fileID: 1249061913}
   defaultCanvas: {fileID: 1222418986}
   canvas:
@@ -7745,6 +7747,7 @@ MonoBehaviour:
   - name: Niveles
     canvObj: {fileID: 378734234}
     startActive: 0
+  normalTime: 0
 --- !u!114 &2072944708
 MonoBehaviour:
   m_ObjectHideFlags: 0
