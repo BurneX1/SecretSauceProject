@@ -5,12 +5,24 @@ using UnityEngine;
 public class PathAction : MonoBehaviour
 {
     public Vector3[] wayPoints;
+    Rigidbody rb;
     public float speed;
+    int dir;
 
     private int current;
     void Start()
     {
-        
+        if(gameObject.GetComponent<Rigidbody>())
+        {
+            rb = gameObject.GetComponent<Rigidbody>();
+        }
+        else
+        {
+            rb = gameObject.AddComponent<Rigidbody>();
+            
+        }
+
+        dir = -1;
     }
 
     void Update()
@@ -20,6 +32,16 @@ public class PathAction : MonoBehaviour
             Vector3 pos = Vector3.MoveTowards(transform.position, wayPoints[current], speed * Time.deltaTime);
             GetComponent<Rigidbody>().MovePosition(pos);
         }
-        else current = (current + 1) % wayPoints.Length;
+        //else NextPoint();
+    }
+
+    public void NextPoint()
+    {
+        if (current >= wayPoints.Length - 1 || current <= 0)
+        {
+            dir = dir * -1;
+        }
+
+        current = (current + dir) % wayPoints.Length;
     }
 }
