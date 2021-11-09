@@ -205,7 +205,7 @@ public class CameraOptions : MonoBehaviour
         if(smoothChange ==true)
         {
             if (Vector3.Distance(myCamera.transform.position, grabPoint.transform.position) != 0)
-                myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, grabPoint.transform.position, Time.deltaTime * smoothSpd * Vector3.Distance(myCamera.transform.position, grabPoint.transform.position));
+                myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, grabPoint.transform.position, Time.deltaTime * smoothSpd * (Vector3.Distance(myCamera.transform.position, grabPoint.transform.position) *5));
         }
         else if (myCamera.transform.position != grabPoint.transform.position)
         {
@@ -231,14 +231,14 @@ public class CameraOptions : MonoBehaviour
                     Vector3.Slerp(
                         transform.eulerAngles, 
                         new Vector3(myCamera.transform.eulerAngles.x, tmp_y, myCamera.transform.eulerAngles.z),
-                        rotSpd /* (Vector3.Distance(myCamera.transform.eulerAngles, dir) / 3)*/ * Time.deltaTime);
+                        rotSpd  * (Vector3.Distance(myCamera.transform.eulerAngles, dir)) * Time.deltaTime);
                 //transform.rotation = Quaternion.Slerp(transform.rotation, rotate, rotSpd * Vector3.Distance(myCamera.transform.eulerAngles, dir));
 
 
             }
             else
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotate, rotSpd /* (Vector3.Distance(myCamera.transform.eulerAngles, dir) / 3)*/ * Time.deltaTime);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotate, rotSpd  * (Vector3.Distance(myCamera.transform.eulerAngles, dir)) * Time.deltaTime);
             }
             /*if(frezAutoX==false)
             {

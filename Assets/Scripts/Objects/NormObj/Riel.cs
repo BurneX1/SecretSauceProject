@@ -105,11 +105,11 @@ public class Riel : MonoBehaviour
 
         if (Vector3.Distance(actPos, preset.target.transform.position) > Vector3.Distance(plusPos, preset.target.transform.position) && preset.t < 1f)
         {
-            preset.t += Time.deltaTime * 0.5f;
+            preset.t += Time.deltaTime /* 0.5f*/;
         }
         else if (Vector3.Distance(actPos, preset.target.transform.position) > Vector3.Distance(restPos, preset.target.transform.position) && preset.t > 0.001f)
         {
-            preset.t -= Time.deltaTime * 0.5f;
+            preset.t -= Time.deltaTime /* 0.5f*/;
         }
 
         if (preset.t >= 1f)
