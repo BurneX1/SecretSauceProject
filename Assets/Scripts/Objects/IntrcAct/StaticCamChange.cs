@@ -10,6 +10,8 @@ public class StaticCamChange : InteractableAction
     public GameObject camObj;
     public GameObject grabPoint;
     public Riel riel;
+    public bool useShrCt;
+    public RielGrabShortCut shrCt;
     public bool smooth;
     public bool autoRot;
 
@@ -35,13 +37,28 @@ public class StaticCamChange : InteractableAction
         base.Activation();
 
 
-        
+
 
         if (dontAutoSelectCam == true)
         {
             camObj.GetComponent<CameraOptions>().smoothChange = smooth;
             camObj.GetComponent<CameraOptions>().autoRotate = autoRot;
             camObj.GetComponent<CameraOptions>().actualGrabPoint = grabPoint;
+        }
+        else if (useShrCt==true && shrCt != null)
+        {
+            GrabPreset g = Array.Find(shrCt.targetArrays, grabpreset => grabpreset.target.name == currentCaller.actlDtcPly.name);
+            if (g == null)
+            {
+                Debug.Log("No se encontró un target para " + currentCaller.actlDtcPly.name + " en el riel seleccionado . . ." + shrCt.targetArrays[0].target.name);
+                return;
+
+            }
+
+            currentCaller.actlDtcPly.GetComponent<CharOneModl>().myCamera.GetComponent<CameraOptions>().smoothChange = smooth;
+            currentCaller.actlDtcPly.GetComponent<CharOneModl>().myCamera.GetComponent<CameraOptions>().autoRotate = autoRot;
+            currentCaller.actlDtcPly.GetComponent<CharOneModl>().myCamera.GetComponent<CameraOptions>().actualGrabPoint = g.point;
+
         }
         else
         {
@@ -56,7 +73,6 @@ public class StaticCamChange : InteractableAction
             currentCaller.actlDtcPly.GetComponent<CharOneModl>().myCamera.GetComponent<CameraOptions>().smoothChange = smooth;
             currentCaller.actlDtcPly.GetComponent<CharOneModl>().myCamera.GetComponent<CameraOptions>().autoRotate = autoRot;
             currentCaller.actlDtcPly.GetComponent<CharOneModl>().myCamera.GetComponent<CameraOptions>().actualGrabPoint = g.point;
-
         }
 
     }
