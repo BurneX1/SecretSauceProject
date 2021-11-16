@@ -13,7 +13,9 @@ public class Characters : Entities
     private Vector3 playerInput;
     private bool cooldownActive;
     private float atkCDTimer;
-    private RaycastHit _frontHit; 
+    private RaycastHit _frontHit;
+    private bool canJmp;
+    private float jmpTimer;
 
 
     public LifeManager lifeMng;
@@ -22,6 +24,7 @@ public class Characters : Entities
     public Transform AFKtarget;
     [HideInInspector]
     public NavMeshAgent cmp_agent;
+    public GameObject grabPoint;
 
     //-----Escoger Teclas------//
     //[HideInInspector]
@@ -265,12 +268,15 @@ public class Characters : Entities
 
     private void Jump(float force)
     {
-        if (Input.GetKey(key_jump) && grounded)
+
+        JmpTimer(0.3f);
+        if (Input.GetKey(key_jump) && canJmp)
         {
             cmp_rb.AddForce(new Vector3(0, force, 0));
+            canJmp = false;
         }
 
-        if (cmp_rb.velocity.y < 0 && grounded==false)
+        if (cmp_rb.velocity.y < 0 && canJmp == false)
         {
             cmp_rb.velocity = new Vector3(cmp_rb.velocity.x, cmp_rb.velocity.y + (Time.deltaTime * -1), cmp_rb.velocity.z);
         }
@@ -284,6 +290,27 @@ public class Characters : Entities
 
             cmp_rb.velocity = new Vector3(cmp_rb.velocity.x, vertForSpdLimt * -1, cmp_rb.velocity.z);
 
+        }
+    }
+
+    private void JmpTimer(float coyoteTime)
+    {
+        if(grounded == true)
+        {
+            canJmp = true;
+            jmpTimer = 0;
+        }
+        else if(jmpTimer <= coyoteTime)
+        {
+            jmpTimer += Time.deltaTime;
+            if(jmpTimer >= coyoteTime)
+            {
+                canJmp = false;
+            }
+        }
+        else if (canJmp==true)
+        {
+            canJmp = false;
         }
     }
 

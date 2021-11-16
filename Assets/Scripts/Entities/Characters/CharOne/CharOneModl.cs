@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharOneModl : Characters
 {
-    public GameObject lifeMngObj;
+    
     public GameObject gun;
     public GameObject plyBullet;
     public GameObject pointer;
@@ -120,7 +120,7 @@ public class CharOneModl : Characters
         base.SelfDmg(dmg);
         if (canReceiveDmg == true)
         {
-            lifeMngObj.GetComponent<LifeManager>().Damage(dmg);
+            lifeMng.Damage(dmg);
             canReceiveDmg = false;
         }
     }

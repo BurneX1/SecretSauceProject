@@ -8,7 +8,7 @@ public class LifeManager : MonoBehaviour
     [SerializeField]
     [Range(1,20)]
     public float maxLive;
-    [HideInInspector]
+    //[HideInInspector]
     public float actLive;
     public Image barLife;
 
