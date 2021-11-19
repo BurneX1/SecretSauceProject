@@ -16,6 +16,7 @@ public class Characters : Entities
     private RaycastHit _frontHit;
     private bool canJmp;
     private float jmpTimer;
+    private GameObject actualPick;
 
 
     public LifeManager lifeMng;
@@ -419,5 +420,26 @@ public class Characters : Entities
         gameObject.SetActive(false);
     }
     
+    public void pickUp(GameObject pickObj)
+    {
 
+        if(pickObj.GetComponent<Pickeable>())
+        {
+            if(actualPick!=null)
+            {
+                Drop();
+            }
+            actualPick.GetComponent<Pickeable>().Picked();
+            actualPick = pickObj;
+        }
+    }
+
+    public void Drop()
+    {
+        if (actualPick != null && actualPick.GetComponent<Pickeable>())
+        {
+            actualPick.GetComponent<Pickeable>().Droped();
+        }
+        actualPick = null;
+    }
 }

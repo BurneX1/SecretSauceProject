@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pickeable : MonoBehaviour
 {
+    public bool picked;
+    public GameObject grabPick;
     // Start is called before the first frame update
     void Start()
     {
