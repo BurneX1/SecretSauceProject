@@ -78,9 +78,11 @@ public class InteractCaller : MonoBehaviour
         {
             if(other.gameObject == singleObj)
             {
+                
                 actlDtcPly = other.gameObject;
                 _nearPly = true;
             }
+            Debug.Log(other.gameObject + " / " + singleObj);
             /*if (playerNumber == 1)
             {
                 if(other.gameObject == player1)

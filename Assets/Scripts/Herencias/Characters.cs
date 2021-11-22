@@ -17,6 +17,8 @@ public class Characters : Entities
     private bool canJmp;
     private float jmpTimer;
     private GameObject actualPick;
+    private GameObject befPick;
+    private float befPckTimer;
 
 
     public LifeManager lifeMng;
@@ -89,7 +91,9 @@ public class Characters : Entities
     {
         grounded = GroundDetect(groundLayer, grndDistance);
         CDTimer(meleCD);
-        
+        BeforPickTimer();
+
+
     }
     
     void CDTimer(float cooldownTime)
@@ -423,23 +427,23 @@ public class Characters : Entities
     public void pickUp(GameObject pickObj)
     {
 
-        if(pickObj.GetComponent<Pickeable>())
+        if(pickObj.GetComponent<Pickeable>() && pickObj!=actualPick && pickObj!=befPick)
         {
             if(actualPick!=null)
             {
                 Drop();
             }
             actualPick = pickObj;
-            //Collider[] tmp1 = gameObject.GetComponents<Collider>();
-            //Collider[] tmp2 = pickObj.GetComponents<Collider>();
-            //for (int i = 0; i < tmp1.Length; i++)
-            //{
-            //    for(int e = 0; e < tmp2.Length; e++)
-            //    {
-            //        Physics.IgnoreCollision(tmp1[i], tmp2[e], true);
-            //        Debug.Log(tmp1[i] + " " + tmp2[e]);
-            //    }
-            //}
+            Collider[] tmp1 = gameObject.GetComponents<Collider>();
+            Collider[] tmp2 = pickObj.GetComponents<Collider>();
+            for (int i = 0; i < tmp1.Length; i++)
+            {
+                for(int e = 0; e < tmp2.Length; e++)
+                {
+                    Physics.IgnoreCollision(tmp1[i], tmp2[e], true);
+                    //Debug.Log(tmp1[i] + " " + tmp2[e]);
+                }
+            }
             actualPick.GetComponent<Pickeable>().Picked(grabPoint);
 
         }
@@ -449,19 +453,34 @@ public class Characters : Entities
     {
         if (actualPick != null && actualPick.GetComponent<Pickeable>())
         {
-            //Collider[] tmp1 = gameObject.GetComponents<Collider>();
-            //Collider[] tmp2 = actualPick.GetComponents<Collider>();
-            //for (int i = 0; i < tmp1.Length; i++)
-            //{
-            //    for (int e = 0; e < tmp2.Length; e++)
-            //    {
-            //        Physics.IgnoreCollision(tmp1[i], tmp2[e], false);
-                    
-            //        Debug.Log(tmp1[i] + " " + tmp2[e]);
-            //    }
-            //}
             actualPick.GetComponent<Pickeable>().Droped();
+            befPick = actualPick;
+            Collider[] tmp1 = gameObject.GetComponents<Collider>();
+            Collider[] tmp2 = actualPick.GetComponents<Collider>();
+            for (int i = 0; i < tmp1.Length; i++)
+            {
+                for (int e = 0; e < tmp2.Length; e++)
+                {
+                    Physics.IgnoreCollision(tmp1[i], tmp2[e], false);
+                  
+                    //Debug.Log(tmp1[i] + " " + tmp2[e]);
+                }
+            }
+
         }
         actualPick = null;
+    }
+
+    private void BeforPickTimer()
+    {
+        if(befPick != null)
+        {
+            befPckTimer += Time.deltaTime;
+            if(befPckTimer>=1)
+            {
+                befPckTimer = 0;
+                befPick = null;
+            }
+        }
     }
 }
