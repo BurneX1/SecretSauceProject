@@ -112,7 +112,6 @@ public class CharOneCtrl : MonoBehaviour
                 {
                     _atacking = true;
                     _cdTime = 0;
-                    _cmp_mod.currentAmmo--;
                     Debug.Log(_cmp_mod.currentAmmo);
                     Debug.Log("a");
                 }

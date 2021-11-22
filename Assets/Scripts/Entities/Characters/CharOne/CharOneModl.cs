@@ -87,6 +87,7 @@ public class CharOneModl : Characters
         if (shootable)
         {
             GameObject bllt = Instantiate(plyBullet);
+            currentAmmo--;
             bllt.transform.position = pointer.transform.position;
             bllt.transform.rotation = gun.transform.rotation;
 
