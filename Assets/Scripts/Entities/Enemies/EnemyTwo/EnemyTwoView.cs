@@ -7,7 +7,7 @@ public class EnemyTwoView : MonoBehaviour
 {
     private EnemyTwoModl _cmp_mod;
     private EnemyTwoCtrl _cmp_ctrl;
-    private Animator _cmp_anim;
+    public Animator _cmp_anim;
 
     public bool viewAttack;
     public bool viewGetDamage;
@@ -22,7 +22,7 @@ public class EnemyTwoView : MonoBehaviour
     {
         _cmp_mod = gameObject.GetComponent<EnemyTwoModl>();
         _cmp_ctrl = gameObject.GetComponent<EnemyTwoCtrl>();
-        _cmp_anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
