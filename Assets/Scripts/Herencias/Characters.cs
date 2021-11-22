@@ -16,7 +16,8 @@ public class Characters : Entities
     private RaycastHit _frontHit;
     private bool canJmp;
     private float jmpTimer;
-    private GameObject actualPick;
+    [HideInInspector]
+    public GameObject actualPick;
     private GameObject befPick;
     private float befPckTimer;
 

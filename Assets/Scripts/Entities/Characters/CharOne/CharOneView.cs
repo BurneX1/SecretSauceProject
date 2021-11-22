@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharOneModl))]
 public class CharOneView : MonoBehaviour
@@ -9,6 +10,12 @@ public class CharOneView : MonoBehaviour
     private CharOneCtrl _cmp_ctrl;
     public Animator _cmp_anim;
     public LineRenderer _cmp_lr;
+
+    [Header("HUD")]
+    public Text bullNum;
+    public Image grabItm;
+    public Sprite defaultNoneItm;
+
 
     public bool viewMove;
     public bool viewAttack;
@@ -33,6 +40,9 @@ public class CharOneView : MonoBehaviour
     {
         _cmp_anim.SetBool("Grounded", _cmp_mod.grounded);
         _cmp_anim.SetBool("Attack 0", viewAttack);
+
+        updateBulletsNum();
+        updateGrabHud();
 
         ActivateAnimationMove();
         ActivateAnimationAttack();
@@ -144,5 +154,22 @@ public class CharOneView : MonoBehaviour
             _cmp_lr.enabled = false;
         }
 
+    }
+    void updateGrabHud()
+    {
+        if (_cmp_mod.actualPick != null && _cmp_mod.actualPick.activeSelf!=false)
+        {
+            grabItm.sprite = _cmp_mod.actualPick.GetComponent<Pickeable>().objImg;
+        }
+        else
+        {
+            grabItm.sprite = defaultNoneItm;
+            
+        }
+    }
+
+    void updateBulletsNum()
+    {
+        bullNum.text = _cmp_mod.currentAmmo + " ";
     }
 }

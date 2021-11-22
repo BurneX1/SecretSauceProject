@@ -8,7 +8,7 @@ public class Pickeable : MonoBehaviour
     public bool picked;
     [HideInInspector]
     public GameObject grabPick;
-    [HideInInspector]
+
     public Sprite objImg;
     public LayerMask grnLyr;
     public bool dropfx;
