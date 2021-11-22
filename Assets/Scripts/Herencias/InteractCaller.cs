@@ -13,6 +13,7 @@ public class InteractCaller : MonoBehaviour
     public GameObject actlDtcPly;
 
     public bool singleTarget;
+    public GameObject singleObj;
     public int playerNumber;
     GameObject player1;
     GameObject player2;
@@ -75,7 +76,12 @@ public class InteractCaller : MonoBehaviour
     {
         if (singleTarget == true)
         {
-            if (playerNumber == 1)
+            if(other.gameObject == singleObj)
+            {
+                actlDtcPly = other.gameObject;
+                _nearPly = true;
+            }
+            /*if (playerNumber == 1)
             {
                 if(other.gameObject == player1)
                 {
@@ -98,7 +104,7 @@ public class InteractCaller : MonoBehaviour
                 {
                     Debug.Log("Personaje incorrecto");
                 }
-            }
+            }*/
         }
         else if (singleTarget == false)
         {
@@ -115,7 +121,12 @@ public class InteractCaller : MonoBehaviour
     {
         if(singleTarget == true)
         {
-            if(other.gameObject == player1)
+            if (other.gameObject == singleObj)
+            {
+                actlDtcPly = null;
+                _nearPly = false;
+            }
+            if (other.gameObject == player1)
             {
                 if (other.gameObject == actlDtcPly)
                 {

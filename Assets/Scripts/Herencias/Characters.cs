@@ -429,8 +429,19 @@ public class Characters : Entities
             {
                 Drop();
             }
-            actualPick.GetComponent<Pickeable>().Picked();
             actualPick = pickObj;
+            //Collider[] tmp1 = gameObject.GetComponents<Collider>();
+            //Collider[] tmp2 = pickObj.GetComponents<Collider>();
+            //for (int i = 0; i < tmp1.Length; i++)
+            //{
+            //    for(int e = 0; e < tmp2.Length; e++)
+            //    {
+            //        Physics.IgnoreCollision(tmp1[i], tmp2[e], true);
+            //        Debug.Log(tmp1[i] + " " + tmp2[e]);
+            //    }
+            //}
+            actualPick.GetComponent<Pickeable>().Picked(grabPoint);
+
         }
     }
 
@@ -438,6 +449,17 @@ public class Characters : Entities
     {
         if (actualPick != null && actualPick.GetComponent<Pickeable>())
         {
+            //Collider[] tmp1 = gameObject.GetComponents<Collider>();
+            //Collider[] tmp2 = actualPick.GetComponents<Collider>();
+            //for (int i = 0; i < tmp1.Length; i++)
+            //{
+            //    for (int e = 0; e < tmp2.Length; e++)
+            //    {
+            //        Physics.IgnoreCollision(tmp1[i], tmp2[e], false);
+                    
+            //        Debug.Log(tmp1[i] + " " + tmp2[e]);
+            //    }
+            //}
             actualPick.GetComponent<Pickeable>().Droped();
         }
         actualPick = null;
