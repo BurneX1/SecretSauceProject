@@ -61,7 +61,7 @@ public class CharOneCtrl : MonoBehaviour
             else
             {
                 SelfDmgTimer();
-                _cmp_mod.HitBoxAtk(1, true, _cmp_mod.meleHitCollider);
+                //_cmp_mod.HitBoxAtk(1, true, _cmp_mod.meleHitCollider);
                 if(_cmp_mod.grounded)
                 {
                     Shoot();
@@ -90,7 +90,7 @@ public class CharOneCtrl : MonoBehaviour
 
     public void Shoot()
     {
-        _cmp_mod.Aim();
+        //_cmp_mod.Aim();
         if(Input.GetKey(_cmp_mod.keyArray_extrAct[1]))
         {
             _cmp_mod.aimState = true;
@@ -125,6 +125,8 @@ public class CharOneCtrl : MonoBehaviour
             if (_tauntTime >= _cmp_mod.atkTime)
             {
                 _cmp_mod.SpcRangeAtck();
+                _cmp_view.PlayShootgunParticles();
+                //_cmp_mod.HitBoxAtk(1, false, _cmp_mod.meleHitCollider);
 
                 _atacking = false;
                 _tauntTime = 0;

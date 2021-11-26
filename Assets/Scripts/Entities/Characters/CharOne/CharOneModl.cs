@@ -86,10 +86,15 @@ public class CharOneModl : Characters
 
         if (shootable)
         {
-            GameObject bllt = Instantiate(plyBullet);
+            OpenHitbox(1, false, meleHitCollider);
             currentAmmo--;
+
+            /* //El Verdadero disparo yace akiabajo:,D
+            GameObject bllt = Instantiate(plyBullet);
+            
             bllt.transform.position = pointer.transform.position;
             bllt.transform.rotation = gun.transform.rotation;
+            */
 
             GameObject sndObj = GameObject.Find("SoundManager");
             if (sndObj != null)

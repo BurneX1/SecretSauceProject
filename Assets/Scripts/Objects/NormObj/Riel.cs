@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
+using System.Linq;
 public class Riel : MonoBehaviour
 {
     private int totalSegments
     {
         get
         {
-            return (points.Count - 1) / 2;
+            return (points.Length - 1) / 2;
         }
     }
-    public GameObject grab;
-    public GameObject camPoint;
+    //public GameObject grab;
+    //public GameObject camPoint;
 
     public GrabPreset[] targetArrays;
 
-    public List<Transform> points;
+    public Transform[] points;
     public Vector3 position;
-    public int currentSegment;
+    //public int currentSegment;
     public float u;
 
     public Vector3 actPos;
@@ -31,7 +32,10 @@ public class Riel : MonoBehaviour
     [Range(1, 30)]
     public int segments = 5;
 
-
+    private void Awake()
+    {
+        PointNormalization();
+    }
     void Start()
     {
         //t = 0f;
@@ -105,11 +109,11 @@ public class Riel : MonoBehaviour
 
         if (Vector3.Distance(actPos, preset.target.transform.position) > Vector3.Distance(plusPos, preset.target.transform.position) && preset.t < 1f)
         {
-            preset.t += Time.deltaTime * 0.5f;
+            preset.t +=  Time.deltaTime * 0.5f;
         }
         else if (Vector3.Distance(actPos, preset.target.transform.position) > Vector3.Distance(restPos, preset.target.transform.position) && preset.t > 0.001f)
         {
-            preset.t -= Time.deltaTime * 0.5f;
+            preset.t -=  Time.deltaTime * 0.5f;
         }
 
         if (preset.t >= 1f)
@@ -127,6 +131,53 @@ public class Riel : MonoBehaviour
 
 
         
+    }
+
+    void PointNormalization()
+    {
+        if(points.Length > 1)
+        {
+            Transform[] newArray = new Transform[1];
+            newArray[0] = points[0];
+            Debug.Log(newArray[0]);
+            for (int i = 0; i < points.Length;i++)
+            {
+
+                if (i != points.Length - 1)
+                {
+                    int axisDiff = 0;
+                    Vector3 diff = new Vector3(
+                        (points[i].position.x - points[i+1].position.x), 
+                        (points[i].position.y - points[i + 1].position.y), 
+                        (points[i].position.z - points[i + 1].position.z)
+                        );
+                    if (diff.x != 0) axisDiff++;
+                    if (diff.y != 0) axisDiff++;
+                    if (diff.z != 0) axisDiff++;
+                    if (axisDiff == 1)
+                    {
+                        int pntInter = Mathf.CeilToInt((diff.x + diff.y + diff.z) / 1.5f);
+                        for(int e = 1; e <= pntInter;e++)
+                        {
+                            int dir = 1;
+                            if(diff.x + diff.y + diff.z > 0)
+                            {
+                                dir = -1;
+                            }
+                            GameObject tmp = Instantiate(new GameObject("extraPoint"));
+                            tmp.transform.parent = gameObject.transform;
+                            tmp.transform.position = points[i].position + ((diff / pntInter) * (e)) * dir ;
+                            newArray = newArray.Concat(new Transform[] { tmp.transform }).ToArray();
+                            Debug.Log(newArray.Length);
+                        }
+
+                    }
+                    newArray = newArray.Concat(new Transform[] { points[i+1].transform }).ToArray();
+                }
+            }
+            Debug.Log(newArray[0]);
+            points = newArray;
+        }
     }
 
     void OnDrawGizmos()
@@ -172,7 +223,7 @@ public class GrabPreset
 {
     public GameObject point;
     public GameObject target;
-    [HideInInspector]
+    //[HideInInspector]
     public float t;
 
 

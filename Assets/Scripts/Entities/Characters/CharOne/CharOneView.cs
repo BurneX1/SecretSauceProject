@@ -10,6 +10,7 @@ public class CharOneView : MonoBehaviour
     private CharOneCtrl _cmp_ctrl;
     public Animator _cmp_anim;
     public LineRenderer _cmp_lr;
+    public ParticleSystem shotgunVfx;
 
     [Header("HUD")]
     public Text bullNum;
@@ -49,7 +50,7 @@ public class CharOneView : MonoBehaviour
         ActivateAnimationEspecial();
         ActivateAnimationKnockDown();
         ActivateAnimationRecoil();
-        ShowAimLine();
+        //ShowAimLine();
 
     }
     
@@ -154,6 +155,12 @@ public class CharOneView : MonoBehaviour
             _cmp_lr.enabled = false;
         }
 
+    }
+
+    public void PlayShootgunParticles()
+    {
+
+        shotgunVfx.Play();
     }
     void updateGrabHud()
     {

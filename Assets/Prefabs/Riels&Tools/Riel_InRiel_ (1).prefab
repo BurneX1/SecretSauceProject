@@ -47,8 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacc148becb21d0478e9b71125b128b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grab: {fileID: 0}
-  camPoint: {fileID: 8231349409433090101}
   targetArrays:
   - point: {fileID: 8231349409433090101}
     target: {fileID: 0}
@@ -58,7 +56,6 @@ MonoBehaviour:
   - {fileID: 8231349410892753825}
   - {fileID: 8231349410235927907}
   position: {x: 7.3242264, y: 2.29, z: -3.947}
-  currentSegment: 1
   u: 0
   actPos: {x: 0, y: 0, z: 0}
   plusPos: {x: 0, y: 0, z: 0}
@@ -120,14 +117,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8231349408966965607}
-  m_LocalRotation: {x: 0.046495322, y: -0, z: 0.000000009313225, w: 0.99891853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8231349409657507777}
   m_Father: {fileID: 8231349410572332569}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 5.33, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8231349408966965602
 Camera:
   m_ObjectHideFlags: 0
@@ -288,14 +285,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8231349409433090101}
-  m_LocalRotation: {x: 0.046495322, y: -0, z: 0.000000009313225, w: 0.99891853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8231349409783720978}
   m_Father: {fileID: 8231349408876794863}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 5.33, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8231349409433090096
 Camera:
   m_ObjectHideFlags: 0
@@ -486,14 +483,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8231349409763290139}
-  m_LocalRotation: {x: 0.046495322, y: -0, z: 0.000000009313225, w: 0.99891853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8231349410572332569}
   m_Father: {fileID: 8231349410110937088}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 5.33, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8231349409763290598
 Camera:
   m_ObjectHideFlags: 0
@@ -593,7 +590,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8231349409783720981}
-  m_LocalRotation: {x: -0.046495322, y: -0, z: -0.000000009313225, w: 0.99891853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -603,7 +600,7 @@ Transform:
   - {fileID: 8231349410107868087}
   m_Father: {fileID: 8231349409433090098}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8231349409783720979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,8 +613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacc148becb21d0478e9b71125b128b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grab: {fileID: 0}
-  camPoint: {fileID: 8231349410406476217}
   targetArrays:
   - point: {fileID: 8231349410406476217}
     target: {fileID: 0}
@@ -627,7 +622,6 @@ MonoBehaviour:
   - {fileID: 8231349410511974050}
   - {fileID: 8231349410107868087}
   position: {x: 7.3242264, y: 2.29, z: -3.947}
-  currentSegment: 1
   u: 0
   actPos: {x: 0, y: 0, z: 0}
   plusPos: {x: 0, y: 0, z: 0}
@@ -771,8 +765,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacc148becb21d0478e9b71125b128b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grab: {fileID: 0}
-  camPoint: {fileID: 8231349409763290139}
   targetArrays:
   - point: {fileID: 8231349409763290139}
     target: {fileID: 0}
@@ -782,7 +774,6 @@ MonoBehaviour:
   - {fileID: 8231349409981984809}
   - {fileID: 8231349409269121131}
   position: {x: 7.3242264, y: 2.29, z: -3.947}
-  currentSegment: 1
   u: 0
   actPos: {x: 0, y: 0, z: 0}
   plusPos: {x: 0, y: 0, z: 0}
@@ -904,14 +895,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8231349410406476217}
-  m_LocalRotation: {x: 0.046495322, y: -0, z: 0.000000009313225, w: 0.99891853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8231349409344737111}
   m_Father: {fileID: 8231349409783720978}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 5.33, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8231349410406476164
 Camera:
   m_ObjectHideFlags: 0
@@ -1004,7 +995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8231349410430167721
 Transform:
   m_ObjectHideFlags: 0
@@ -1038,8 +1029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacc148becb21d0478e9b71125b128b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grab: {fileID: 0}
-  camPoint: {fileID: 8231349410110937091}
   targetArrays:
   - point: {fileID: 8231349410110937091}
     target: {fileID: 0}
@@ -1054,7 +1043,6 @@ MonoBehaviour:
   - {fileID: 8231349410175804416}
   - {fileID: 8231349410174536073}
   position: {x: 7.3242264, y: 2.29, z: -3.947}
-  currentSegment: 1
   u: 0
   actPos: {x: 0, y: 0, z: 0}
   plusPos: {x: 0, y: 0, z: 0}
@@ -1224,7 +1212,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8231349410572332568}
-  m_LocalRotation: {x: -0.046495322, y: -0, z: -0.000000009313225, w: 0.99891853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1234,7 +1222,7 @@ Transform:
   - {fileID: 8231349408901304977}
   m_Father: {fileID: 8231349409763290136}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8231349410572333030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1247,8 +1235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacc148becb21d0478e9b71125b128b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grab: {fileID: 0}
-  camPoint: {fileID: 8231349408966965607}
   targetArrays:
   - point: {fileID: 8231349408966965607}
     target: {fileID: 0}
@@ -1258,7 +1244,6 @@ MonoBehaviour:
   - {fileID: 8231349410535143140}
   - {fileID: 8231349408901304977}
   position: {x: 7.3242264, y: 2.29, z: -3.947}
-  currentSegment: 1
   u: 0
   actPos: {x: 0, y: 0, z: 0}
   plusPos: {x: 0, y: 0, z: 0}

@@ -135,15 +135,18 @@ public class Characters : Entities
         {
             if(cooldownActive == false)
             {
-                cooldownActive = true;
-                hitBox.gameObject.GetComponent<HitElements>().dmg = dmg;
-                hitBox.gameObject.GetComponent<HitElements>().hitDetect = false;
-                hitBox.gameObject.GetComponent<HitElements>().despOnCollision = oneHitatk;
-                hitBox.gameObject.SetActive(true);
+                OpenHitbox(dmg, oneHitatk, hitBox);
             }
         }
     }
-
+    public void OpenHitbox(int dmg, bool oneHitatk, Collider hitBox)
+    {
+        cooldownActive = true;
+        hitBox.gameObject.GetComponent<HitElements>().dmg = dmg;
+        hitBox.gameObject.GetComponent<HitElements>().hitDetect = false;
+        hitBox.gameObject.GetComponent<HitElements>().despOnCollision = oneHitatk;
+        hitBox.gameObject.SetActive(true);
+    }
 
     void CamDirection()
     {
