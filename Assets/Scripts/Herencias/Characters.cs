@@ -21,6 +21,9 @@ public class Characters : Entities
     private GameObject befPick;
     private float befPckTimer;
 
+    public bool isMovingH;
+    public bool isMovingV;
+
 
     public LifeManager lifeMng;
     public Camera myCamera;
@@ -224,7 +227,7 @@ public class Characters : Entities
             //LateralMovement(-movSpd);
             //Move_in_transform(movSpd);
             MoveBasedOnCam(movSpd);
-
+            isMovingH = true;
         }
         else if (Input.GetKey(key_rigth))
         {
@@ -232,31 +235,32 @@ public class Characters : Entities
             //LateralMovement(movSpd);
             //Move_in_transform(movSpd);
             MoveBasedOnCam(movSpd);
-
+            isMovingH = true;
         }
         else
         {
             hor = 0;
+            isMovingH = false;
         }
-
+        
         if (Input.GetKey(key_down))
         {
             ver = -1;
             //Move_in_transform(movSpd);
             MoveBasedOnCam(movSpd);
-
+            isMovingV = true;
         }
         else if (Input.GetKey(key_up) /*&& Physics.BoxCast(transform.position, transform.localScale, transform.forward, transform.rotation, 1.5f, groundLayer) == false*/)
         {
             ver = 1;
             //Move_in_transform(movSpd);
             MoveBasedOnCam(movSpd);
-
-
+            isMovingV = true;
         }
         else
         {
-            ver = 0;
+            ver = 0; 
+            isMovingV = false;
         }
 
         /*if(hor != 0 && ver != 0)

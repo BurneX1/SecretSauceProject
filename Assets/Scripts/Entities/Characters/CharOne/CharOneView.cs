@@ -40,6 +40,7 @@ public class CharOneView : MonoBehaviour
     void Update()
     {
         _cmp_anim.SetBool("Grounded", _cmp_mod.grounded);
+        _cmp_anim.SetBool("isMoving", viewMove);
         _cmp_anim.SetBool("Attack 0", viewAttack);
 
         updateBulletsNum();
@@ -56,31 +57,17 @@ public class CharOneView : MonoBehaviour
     
     void ActivateAnimationMove()
     {
-        _cmp_anim.SetFloat("Move", activationMove);
-        _cmp_anim.SetFloat("Move2", activationMove2);
-        if (_cmp_mod.ver >= 1)
+        if (_cmp_mod.isMovingH == true || _cmp_mod.isMovingV == true)
         {
-            activationMove = 1;
+            viewMove = true;
         }
-        else if(_cmp_mod.ver <= -1)
+        else if (_cmp_mod.isMovingH == true && _cmp_mod.isMovingV == true)
         {
-            activationMove = -1;
+            viewMove = true;
         }
         else
         {
-            activationMove = 0;
-        }
-        if (_cmp_mod.hor >= 1)
-        {
-            activationMove2 = 1;
-        }
-        else if(_cmp_mod.hor <= -1)
-        {
-            activationMove2 = -1; 
-        }
-        else
-        {
-            activationMove2 = 0;
+            viewMove = false;
         }
     }
     
