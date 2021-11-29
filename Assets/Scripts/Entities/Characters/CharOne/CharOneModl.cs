@@ -86,7 +86,7 @@ public class CharOneModl : Characters
 
         if (shootable)
         {
-            OpenHitbox(1, false, meleHitCollider);
+            OpenHitbox(1, true, meleHitCollider);
             currentAmmo--;
 
             /* //El Verdadero disparo yace akiabajo:,D

@@ -88,4 +88,9 @@ public class EnemyTwoView : MonoBehaviour
             viewProtect = false;
         }
     }
+
+    public void DamageFeedback()
+    {
+        _cmp_anim.SetTrigger("GetDamage");
+    }
 }

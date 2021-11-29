@@ -18,6 +18,7 @@ public class Riel : MonoBehaviour
     public GrabPreset[] targetArrays;
 
     public Transform[] points;
+    public bool regeneratePoints;
     public Vector3 position;
     //public int currentSegment;
     public float u;
@@ -34,7 +35,11 @@ public class Riel : MonoBehaviour
 
     private void Awake()
     {
-        PointNormalization();
+        if(regeneratePoints == true)
+        {
+            PointNormalization();
+        }
+
     }
     void Start()
     {
@@ -156,8 +161,8 @@ public class Riel : MonoBehaviour
                     if (diff.z != 0) axisDiff++;
                     if (axisDiff == 1)
                     {
-                        int pntInter = Mathf.CeilToInt((diff.x + diff.y + diff.z) / 1.5f);
-                        for(int e = 1; e <= pntInter;e++)
+                        int pntInter = Mathf.CeilToInt((diff.x + diff.y + diff.z) / 1f);
+                        for(int e = 1; e < pntInter;e++)
                         {
                             int dir = 1;
                             if(diff.x + diff.y + diff.z > 0)
@@ -174,6 +179,14 @@ public class Riel : MonoBehaviour
                     }
                     newArray = newArray.Concat(new Transform[] { points[i+1].transform }).ToArray();
                 }
+                //if (newArray.Length % 2 == 0)
+                //{
+                //    GameObject tmp = Instantiate(new GameObject("extraPoint"));
+                //    tmp.transform.parent = gameObject.transform;
+                //    tmp.transform.position = points[points.Length - 1].position;
+                //    newArray = newArray.Concat(new Transform[] { tmp.transform }).ToArray();
+
+                //}
             }
             Debug.Log(newArray[0]);
             points = newArray;
