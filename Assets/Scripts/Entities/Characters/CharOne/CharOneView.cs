@@ -32,7 +32,7 @@ public class CharOneView : MonoBehaviour
     {
         _cmp_mod = gameObject.GetComponent<CharOneModl>();
         _cmp_ctrl = gameObject.GetComponent<CharOneCtrl>();
-        _cmp_anim = GetComponent<Animator>();
+        //_cmp_anim = GetComponent<Animator>();
         _cmp_lr = GetComponent<LineRenderer>();
     }
 
