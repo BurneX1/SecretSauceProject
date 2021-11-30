@@ -41,11 +41,20 @@ public class PathAction : MonoBehaviour
 
     public void NextPoint()
     {
-        if (current >= wayPoints.Length - 1 || current <= 0)
+        if (current >= wayPoints.Length - 1)
         {
-            dir = dir * -1;
+            dir =  -1;
+        }
+        else if(current <= 0)
+        {
+            dir = 1;
         }
 
         current = (current + dir) % wayPoints.Length;
+    }
+
+    public void ForceSetCurrent(int num)
+    {
+        current = num;
     }
 }

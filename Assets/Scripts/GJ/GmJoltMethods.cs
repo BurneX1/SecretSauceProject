@@ -14,6 +14,7 @@ using System.Linq;
 
 public class GmJoltMethods : MonoBehaviour
 {
+	/*
 	// Console
 	public RectTransform ConsoleTransform;
 	public GameObject LinePrefab;
@@ -45,7 +46,7 @@ public class GmJoltMethods : MonoBehaviour
 	public InputField ValueField;
 	public Dropdown ModeField;
 	public InputField PatternField;
-	public Toggle GlobalToggle;
+	public Toggle GlobalToggle;*/
 
 
 	// Start is called before the first frame update
@@ -108,12 +109,12 @@ public class GmJoltMethods : MonoBehaviour
 		DataStore.Get(keyName, global, value => {
 			if (value != null)
 			{
-				AddConsoleLine("> {0}", value);
+				//AddConsoleLine("> {0}", value);
 			}
 		});
 	}
 
-	public void GetDataStoreKeys()
+	/*public void GetDataStoreKeys()
 	{
 		Debug.Log("Get DataStore Keys. Click to see source.");
 
@@ -122,27 +123,27 @@ public class GmJoltMethods : MonoBehaviour
 			{
 				foreach (var key in keys)
 				{
-					AddConsoleLine("> {0}", key);
+					//AddConsoleLine("> {0}", key);
 				}
-				AddConsoleLine("Found {0} keys.", keys.Length);
+				//AddConsoleLine("Found {0} keys.", keys.Length);
 			}
 			else
 			{
-				AddConsoleLine("No keys found.");
+				//AddConsoleLine("No keys found.");
 			}
 		});
-	}
+	}*/
 
 	public void RemoveDataStoreKey(string keyName, bool global)
 	{
 		Debug.Log("Remove DataStore Key. Click to see source.");
 
 		DataStore.Delete(keyName, global, success => {
-			AddConsoleLine("Remove DataStore Key {0}.", success ? "Successful" : "Failed");
+			//AddConsoleLine("Remove DataStore Key {0}.", success ? "Successful" : "Failed");
 		});
 	}
 
-	public void SetDataStoreKey(string keyName, float value, bool global)
+	/*public void SetDataStoreKey(string keyName, float value, bool global)
 	{
 		Debug.Log("Set DataStore Key. Click to see source.");
 		var data = ValueField.text;
@@ -152,12 +153,12 @@ public class GmJoltMethods : MonoBehaviour
 		int uploadSize = 50;
 		if (data.Length > uploadSize) uploadSize = data.Length / 5 + 1;
 		DataStore.SetSegmented(KeyField.text, data, GlobalToggle.isOn, success => {
-			AddConsoleLine("Set DataStore Key {0}.", success ? "Successful" : "Failed");
+			//AddConsoleLine("Set DataStore Key {0}.", success ? "Successful" : "Failed");
 		}, progress => AddConsoleLine("uploaded {0}% ({1}/{2} bytes)",
 			progress * 100 / data.Length, progress, data.Length), uploadSize);
-	}
+	}*/
 
-	public void UpdateDataStoreKey()
+	/*public void UpdateDataStoreKey()
 	{
 		DataStoreOperation mode;
 		try
@@ -175,10 +176,10 @@ public class GmJoltMethods : MonoBehaviour
 		DataStore.Update(KeyField.text, ValueField.text, mode, GlobalToggle.isOn, value => {
 			if (value != null)
 			{
-				AddConsoleLine("> {0}", value);
+				//AddConsoleLine("> {0}", value);
 			}
 		});
-	}
+	}*/
 
 	//Trofeos
 	public void UnlockTrophy(string trophyID)
@@ -187,7 +188,7 @@ public class GmJoltMethods : MonoBehaviour
 
 		var trophyId = trophyID != string.Empty ? int.Parse(trophyID) : 0;
 		Trophies.Unlock(trophyId, success => {
-			AddConsoleLine("Unlock Trophy {0}.", success ? "Successful" : "Failed");
+			//AddConsoleLine("Unlock Trophy {0}.", success ? "Successful" : "Failed");
 		});
 	}
 
@@ -197,16 +198,16 @@ public class GmJoltMethods : MonoBehaviour
 
 		var trophyId = trophyID != string.Empty ? int.Parse(trophyID) : 0;
 		Trophies.TryUnlock(trophyId, success => {
-			AddConsoleLine("Unlock Trophy {0}.", success);
+			//AddConsoleLine("Unlock Trophy {0}.", success);
 		});
 	}
 
 
-	private void AddConsoleLine(string format, params object[] args)
+	/*private void AddConsoleLine(string format, params object[] args)
 	{
 		var tr = Instantiate(LinePrefab).transform;
 		tr.GetComponent<Text>().text = string.Format(format, args);
 		tr.SetParent(ConsoleTransform);
 		tr.SetAsFirstSibling();
-	}
+	}*/
 }
