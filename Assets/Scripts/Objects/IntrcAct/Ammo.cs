@@ -5,11 +5,11 @@ using UnityEngine;
 public class Ammo : InteractableAction
 {
     public int addedAmmo;
-    CharOneModl compChar;
+    public InteractCaller caller;
 
     void Start()
     {
-        compChar = GameObject.FindGameObjectWithTag("Player").GetComponent<CharOneModl>();
+        caller = GetComponent<InteractCaller>();
     }
 
     void Update()
@@ -18,10 +18,10 @@ public class Ammo : InteractableAction
 
     public override void Activation()
     {
-        if (compChar.currentAmmo < compChar.maxAmmo)
+        if (caller.actlDtcPly.GetComponent<CharOneModl>().currentAmmo < caller.actlDtcPly.GetComponent<CharOneModl>().maxAmmo)
         {
-            compChar.currentAmmo += addedAmmo;
-            Destroy(gameObject);
+            caller.actlDtcPly.GetComponent<CharOneModl>().currentAmmo += addedAmmo;
+            gameObject.SetActive(false);
         }
     }
 }
