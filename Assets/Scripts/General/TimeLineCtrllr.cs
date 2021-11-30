@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class TimeLineCtrllr : MonoBehaviour
 {
     public bool runTimer;
+    public bool loop;
     public TimeEvnt[] times;
     public float currentTime;
     public int timeEvInput;
@@ -38,11 +39,23 @@ public class TimeLineCtrllr : MonoBehaviour
             timeEvInput++;
             if(timeEvInput>= times.Length)
             { 
-                runTimer = false;
+                if(loop == false)
+                {
+                    runTimer = false;
+                }
+                else
+                {
+                    currentTime = 0;
+                    timeEvInput = 0;
+                }
             }
         }
     }
 
+    public void setRunBool(bool runTime)
+    {
+        runTimer = runTime;
+    }
 
 }
 
