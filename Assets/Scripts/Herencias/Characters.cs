@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
+/// Script encargado de asignar valores y funciones de un player controlable.
+/// 
+/// Para crear un personaje utilizando la clase “Characters” se recomienda heredar las 
+/// funciones de esta mediante la creación de un nuevo script que ejecute las funciones 
+/// preestablecidas en base a lo que cada usuario considere conveniente.
 [RequireComponent(typeof(NavMeshAgent))]
 public class Characters : Entities
 {

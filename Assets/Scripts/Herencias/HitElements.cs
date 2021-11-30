@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// Script que al ser asignado a un objeto crea elementos con collisiones de daño.
+/// 
+/// Agregar este script como componente a un objeto permite crear áreas de impacto y/o proyectiles que hagan daño o interactúen con cualquier tipo de entidad con el tag seleccionado.
 public class HitElements : MonoBehaviour
 {
     [HideInInspector]

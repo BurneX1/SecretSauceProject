@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// Script encargado de controlar las vidas del jugador.
+/// 
+/// Para manejar las vidas del jugador de forma independiente al script del jugador utilice este script para almacenar la vida
 public class LifeManager : MonoBehaviour
 {
     [SerializeField]

@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// Script encargado de asignar valores y funciones de un enemigo.
+/// 
+/// Para crear un enemigo utilizando la clase “Enemies” se recomienda heredar las 
+/// funciones de esta mediante la creación de un nuevo script que ejecute las funciones 
+/// preestablecidas en base a lo que cada usuario considere conveniente.
 public class Enemies : Entities
 {
     public int _vida;

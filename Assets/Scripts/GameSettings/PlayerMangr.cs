@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+/// Script encargado de configurar los valores de los personajes jugables.
+/// 
+/// El PlayerManayer permite configurar las características de todos los personajes jugables y mantener el modo jugable en solo uno de los personajes.
 public class PlayerMangr : MonoBehaviour
 {
     private int _inptPly;

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// Script encargado de ocultar la visibilidad del cursor y anular la movilidad del mismo.
+/// 
+/// Para desactivar la visualización del mouse este script permite ocultar la visibilidad de este y bloquear su posición en el centro de la pantalla.
 public class MouseLocker : MonoBehaviour
 {
     public KeyCode mouse_key;

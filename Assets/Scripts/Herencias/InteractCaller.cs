@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// Script encargado de convertir un objeto en interactuable.
+/// 
+/// Para crear un objeto dentro del juego que active alguna interacción independiente al mismo (ej: palancas, botones, etc), colocar este script en el objeto.
 public class InteractCaller : MonoBehaviour
 {
     private bool _nearPly;

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/// Script encargado de asignar valores y funciones dedicados para entidades.
+/// 
+/// Las entidades tomadas en cuenta dentro de este FrameWork se crean en base a clases provenientes de la clase “Entities”, la cual les permite heredar sus características.
 [RequireComponent(typeof(Rigidbody))]
 public class Entities : MonoBehaviour
 {

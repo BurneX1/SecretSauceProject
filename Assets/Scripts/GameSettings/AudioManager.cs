@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
 
+/// Script encargado de almacenar y controlar cada uno de los sonidos del juego, y poder modificar los valores de estos.
+/// 
+/// El SoundManager permite llevar un mejor control de todos los sonidos del juego, 
+/// para utilizarlo deberá de agregar los clips de sonidos en la pestaña de Inspector de 
+/// Unity y posteriormente llamar a la función que ejecuta el sonido mediante código.
 public class AudioManager : MonoBehaviour
 {
     [Range(0f,1f)]
