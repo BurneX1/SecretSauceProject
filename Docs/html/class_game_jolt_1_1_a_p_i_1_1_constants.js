@@ -1,0 +1,28 @@
+var class_game_jolt_1_1_a_p_i_1_1_constants =
+[
+    [ "ApiBaseUrl", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a32449f9f919c00c9caae429923058680", null ],
+    [ "ApiDatastoreFetch", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a6a7f9f87ba83f04706ec98c1531cb028", null ],
+    [ "ApiDatastoreKeysFetch", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a86c1ec68814a1d487bfcd5070d5a35ee", null ],
+    [ "ApiDatastoreRemove", "class_game_jolt_1_1_a_p_i_1_1_constants.html#ad03a8f378e46e852fe9391f78f281a98", null ],
+    [ "ApiDatastoreSet", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a5994758504adece95632be6e0f0ab8d8", null ],
+    [ "ApiDatastoreUpdate", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a61c1936f401676ad462c184d0c04b6c9", null ],
+    [ "ApiFriendsFetch", "class_game_jolt_1_1_a_p_i_1_1_constants.html#aeb53a471af747e1c2ba4046283f2db80", null ],
+    [ "ApiProtocol", "class_game_jolt_1_1_a_p_i_1_1_constants.html#aa21afca178c50f79f2a4fcf808839401", null ],
+    [ "ApiRoot", "class_game_jolt_1_1_a_p_i_1_1_constants.html#ac28eada2ae2e4ffc77c8ea5b166d60ef", null ],
+    [ "ApiScoresAdd", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a5fe3b6cc33e5b7c853f9e9495bf930fb", null ],
+    [ "ApiScoresFetch", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a76233f7f01805af8eea0363092aef56b", null ],
+    [ "ApiScoresRank", "class_game_jolt_1_1_a_p_i_1_1_constants.html#ac0f34487d5c718e4fb6a406b13381dbe", null ],
+    [ "ApiScoresTablesFetch", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a01fd5285f966929c3e065f74d7c49df5", null ],
+    [ "ApiSessionsCheck", "class_game_jolt_1_1_a_p_i_1_1_constants.html#adeb95d346dccbd9a8220f4294ce420b7", null ],
+    [ "ApiSessionsClose", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a5ce78a525f40e8ddf15d0d160a305911", null ],
+    [ "ApiSessionsOpen", "class_game_jolt_1_1_a_p_i_1_1_constants.html#aa592c5ee495ab8e5d2e061746c51be63", null ],
+    [ "ApiSessionsPing", "class_game_jolt_1_1_a_p_i_1_1_constants.html#aac0b9d00107863b08c7fa3c5d9b1a699", null ],
+    [ "ApiTimeGet", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a9e3536a9a05e18b18ee9933914993fa1", null ],
+    [ "ApiTrophiesAdd", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a42ed82fa25cf3d87a766388ae1c8fa05", null ],
+    [ "ApiTrophiesFetch", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a0a2db41e775ab0115ac0b41082261076", null ],
+    [ "ApiTrophiesRemove", "class_game_jolt_1_1_a_p_i_1_1_constants.html#aaa3f80f733b7d6c48c1796b4a743f4c3", null ],
+    [ "ApiUsersAuth", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a514117de1cf290795d08a6c81bbd2f72", null ],
+    [ "ApiUsersFetch", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a606043884fbbcc28e72caaba5f53792c", null ],
+    [ "ApiVersion", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a9da44416722e07dfd10e4cfb5062eeaa", null ],
+    [ "Version", "class_game_jolt_1_1_a_p_i_1_1_constants.html#a2fcdbccf3cd141ec6f08bb43c01a5984", null ]
+];

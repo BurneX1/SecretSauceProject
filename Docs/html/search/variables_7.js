@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['gamectrll_0',['gameCtrll',['../class_player_values.html#ae4aef842a48225eaa28164c0838d0946',1,'PlayerValues']]],
+  ['gameoverscene_1',['gameOverScene',['../class_life_manager.html#a51cc19b2da9e5e6b786b5d181ed388e7',1,'LifeManager']]],
+  ['genvolume_2',['genVolume',['../class_opciones.html#a16237b3d083f1adfc179e6b316f47e50',1,'Opciones']]],
+  ['globalvolume_3',['globalVolume',['../class_audio_manager.html#a1163fc43c910f9ac3d20c5639a99e162',1,'AudioManager']]],
+  ['gm_4',['gm',['../class_develop_active.html#a136570906c26f3c8c0e379b07b8d80cc',1,'DevelopActive']]],
+  ['gmmanager_5',['gmManager',['../class_camera_options.html#a7f3edbe6e4221536bff278b61fc99268',1,'CameraOptions']]],
+  ['gmmang_6',['gmMang',['../class_text_box.html#a017f9c5c6e68c680ef292babf7da7d69',1,'TextBox']]],
+  ['gmmng_7',['gmMng',['../class_char_one_ctrl.html#a19e0701f102c2216e5f697d190adad9f',1,'CharOneCtrl.gmMng()'],['../class_char_two_ctrl.html#a0a9ebc56baf60b6827846d2a09c074fe',1,'CharTwoCtrl.gmMng()']]],
+  ['grabitm_8',['grabItm',['../class_char_one_view.html#a4c25eae1ad22860a83b419b143c2c50c',1,'CharOneView']]],
+  ['grabpick_9',['grabPick',['../class_pickeable.html#a55fe7840ec57813a9d949577c31be1c4',1,'Pickeable']]],
+  ['grabpoint_10',['grabPoint',['../class_characters.html#a3017abf24203acbc80acf7ac8510571b',1,'Characters.grabPoint()'],['../class_static_cam_change.html#aaa649b1db9b3ac8b92b874d13f25a858',1,'StaticCamChange.grabPoint()']]],
+  ['grnddistance_11',['grndDistance',['../class_entities.html#a324a1e51dcfa0d13d9a0f20c14ea95c6',1,'Entities']]],
+  ['grnlyr_12',['grnLyr',['../class_pickeable.html#a6ca3296e1a6b7d908c975d12293a6b37',1,'Pickeable']]],
+  ['grounded_13',['grounded',['../class_entities.html#ad9f0369b5f6292f8d02baa482af43d73',1,'Entities']]],
+  ['groundlayer_14',['groundLayer',['../class_entities.html#a7fd884786a0151f9d7d898eaef85bf2a',1,'Entities']]],
+  ['group_15',['Group',['../class_game_jolt_1_1_u_i_1_1_controllers_1_1_trophy_item.html#aa04059b0c6fc60487bff2eca596f6f22',1,'GameJolt::UI::Controllers::TrophyItem']]],
+  ['gun_16',['gun',['../class_char_one_modl.html#afe5671ee06d2380c10316b7d0762f704',1,'CharOneModl']]]
+];

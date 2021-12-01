@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['jsondata_0',['JSONData',['../class_game_jolt_1_1_external_1_1_simple_j_s_o_n_1_1_j_s_o_n_data.html#abb7708ab84d66516ee1174a84473345a',1,'GameJolt.External.SimpleJSON.JSONData.JSONData(string aData)'],['../class_game_jolt_1_1_external_1_1_simple_j_s_o_n_1_1_j_s_o_n_data.html#a69aa45022e6f0f951074c0e747006d8f',1,'GameJolt.External.SimpleJSON.JSONData.JSONData(float aData)'],['../class_game_jolt_1_1_external_1_1_simple_j_s_o_n_1_1_j_s_o_n_data.html#aca3d5db3b24e82090512d109e2c4b60a',1,'GameJolt.External.SimpleJSON.JSONData.JSONData(double aData)'],['../class_game_jolt_1_1_external_1_1_simple_j_s_o_n_1_1_j_s_o_n_data.html#aaa6ab1655a11ca2dd898d9ab6a209127',1,'GameJolt.External.SimpleJSON.JSONData.JSONData(bool aData)'],['../class_game_jolt_1_1_external_1_1_simple_j_s_o_n_1_1_j_s_o_n_data.html#a0d664676ae66f66d430d9d8e3b309b0e',1,'GameJolt.External.SimpleJSON.JSONData.JSONData(int aData)']]]
+];
