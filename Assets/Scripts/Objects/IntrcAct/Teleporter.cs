@@ -8,6 +8,7 @@ public class Teleporter : InteractableAction
     public Transform tpPosition;
     public GameObject tpObj;
     public bool yAxis;
+    public bool ableRot;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -52,6 +53,11 @@ public class Teleporter : InteractableAction
                 tpObj.transform.position = tpPosition.position;
             }
         
+        }
+
+        if(ableRot==true)
+        {
+            tpObj.transform.rotation = tpPosition.transform.rotation;
         }
     }
 }
