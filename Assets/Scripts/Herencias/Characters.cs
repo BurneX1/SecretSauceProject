@@ -466,7 +466,11 @@ public class Characters : Entities
     {
         if (actualPick != null && actualPick.GetComponent<Pickeable>())
         {
-            actualPick.GetComponent<Pickeable>().Droped();
+            if(actualPick.GetComponent<Pickeable>().grabPick == grabPoint)
+            {
+                actualPick.GetComponent<Pickeable>().Droped();
+            }
+            
             befPick = actualPick;
             Collider[] tmp1 = gameObject.GetComponents<Collider>();
             Collider[] tmp2 = actualPick.GetComponents<Collider>();

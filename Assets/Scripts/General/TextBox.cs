@@ -14,10 +14,11 @@ public class TextBox : MonoBehaviour
     [SerializeField]
     private bool onDialogue;
     public GameObject gmMang;
+    private Component[] plyManagers;
     // Start is called before the first frame update
     void Start()
     {
-
+        plyManagers = gmMang.GetComponents(typeof(PlayerMangr));
     }
 
     // Update is called once per frame
@@ -28,7 +29,12 @@ public class TextBox : MonoBehaviour
 
             if (textBox.activeSelf != onDialogue)
             {
-                gmMang.GetComponent<PlayerMangr>().NonActionPly();
+
+                foreach (PlayerMangr ply in plyManagers)
+                {
+                    ply.NonActionPly();
+                }
+                
                 textBox.SetActive(true);
 
             }
@@ -53,7 +59,11 @@ public class TextBox : MonoBehaviour
         {
             if (textBox.activeSelf != onDialogue)
             {
-                gmMang.GetComponent<PlayerMangr>().EnableActionPlayer();
+                foreach (PlayerMangr ply in plyManagers)
+                {
+                    ply.EnableActionPlayer();
+                }
+
                 textBox.SetActive(false);
 
             }
