@@ -20,6 +20,7 @@ public class Enemies : Entities
     public float movSpd;
 
     public GameObject targetObj;
+    public GameObject[]  players;
 
     //
     public NavMeshAgent enemigo;
@@ -69,6 +70,18 @@ public class Enemies : Entities
     public void DetectPlayer()
     {
         float distancePlayer = Vector3.Distance(targetObj.transform.position, /*sphere.position*/transform.position);
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            float tmpdist = Vector3.Distance(players[i].transform.position, transform.position);
+            if ( players[i]!=targetObj && tmpdist < distancePlayer && tmpdist <= sightRadius)
+            {
+                targetObj = players[i];
+            }
+        }
+
+
+        
         if (distancePlayer <= sightRadius)
         {
             Debug.Log("te veo bb");
