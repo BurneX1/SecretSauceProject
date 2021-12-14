@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class Teleporter : InteractableAction
 {
+    public InteractCaller intCaller;
+    public bool useBtn;
+    public TrigerButon btnCaller;
+    public bool useCaller;
     public Transform tpPosition;
     public GameObject tpObj;
     public bool yAxis;
@@ -25,39 +29,56 @@ public class Teleporter : InteractableAction
 
     public override void Activation()
     {
-
-        if (yAxis == false)
+        GameObject tmpObj;
+        if(useCaller==true)
         {
-            if(tpObj.GetComponent<NavMeshAgent>())
+            if(useBtn == true)
             {
-                tpObj.GetComponent<NavMeshAgent>().enabled = false;
-                tpObj.transform.position = new Vector3(tpPosition.position.x, tpObj.transform.position.y, tpPosition.position.z);
-                tpObj.GetComponent<NavMeshAgent>().enabled = true;
+                tmpObj = btnCaller.actlDtcPly;
             }
             else
             {
-                tpObj.transform.position = new Vector3(tpPosition.position.x, tpObj.transform.position.y, tpPosition.position.z);
+                tmpObj = intCaller.actlDtcPly;
             }
             
         }
         else
         {
-            if (tpObj.GetComponent<NavMeshAgent>())
+            tmpObj = tpObj;
+        }
+        
+        if (yAxis == false)
+        {
+            if(tmpObj.GetComponent<NavMeshAgent>().enabled)
             {
-                tpObj.GetComponent<NavMeshAgent>().enabled = false;
-                tpObj.transform.position = tpPosition.position;
-                tpObj.GetComponent<NavMeshAgent>().enabled = true;
+                tmpObj.GetComponent<NavMeshAgent>().enabled = false;
+                tmpObj.transform.position = new Vector3(tpPosition.position.x, tmpObj.transform.position.y, tpPosition.position.z);
+                tmpObj.GetComponent<NavMeshAgent>().enabled = true;
             }
             else
             {
-                tpObj.transform.position = tpPosition.position;
+                tmpObj.transform.position = new Vector3(tpPosition.position.x, tmpObj.transform.position.y, tpPosition.position.z);
+            }
+            
+        }
+        else
+        {
+            if (tmpObj.GetComponent<NavMeshAgent>().enabled)
+            {
+                tmpObj.GetComponent<NavMeshAgent>().enabled = false;
+                tmpObj.transform.position = tpPosition.position;
+                tmpObj.GetComponent<NavMeshAgent>().enabled = true;
+            }
+            else
+            {
+                tmpObj.transform.position = tpPosition.position;
             }
         
         }
 
         if(ableRot==true)
         {
-            tpObj.transform.rotation = tpPosition.transform.rotation;
+            tmpObj.transform.rotation = tpPosition.transform.rotation;
         }
     }
 }

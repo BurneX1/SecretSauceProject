@@ -9,7 +9,12 @@ public class Transitor : InteractableAction
     public GameObject p_two;
     public Animator two_trans;
 
+    
     public TrigerButon currentCaller;
+    public bool useIntrc;
+    public InteractCaller intCaller;
+
+    private bool runing;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +30,30 @@ public class Transitor : InteractableAction
     public override void Activation()
     {
         base.Activation();
-        if(currentCaller.actlDtcPly == p_one)
+        if (useIntrc == true)
         {
-            one_trans.SetTrigger("Rigth");
+            if (intCaller.actlDtcPly == p_one)
+            {
+                one_trans.SetTrigger("Rigth");
+            }
+            else if (intCaller.actlDtcPly == p_two)
+            {
+                two_trans.SetTrigger("Left");
+            }
         }
-        else if(currentCaller.actlDtcPly == p_two)
+        else
         {
-            two_trans.SetTrigger("Left");
+            if (currentCaller.actlDtcPly == p_one)
+            {
+                one_trans.SetTrigger("Rigth");
+            }
+            else if (currentCaller.actlDtcPly == p_two)
+            {
+                two_trans.SetTrigger("Left");
+            }
         }
+        
+        
 
 
     }

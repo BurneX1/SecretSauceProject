@@ -136,16 +136,18 @@ public class InteractCaller : MonoBehaviour
                 if (other.gameObject == actlDtcPly)
                 {
                     actlDtcPly = null;
+                    _nearPly = false;
                 }
-                _nearPly = false;
+                
             }
             else if (other.gameObject == player2)
             {
                 if (other.gameObject == actlDtcPly)
                 {
                     actlDtcPly = null;
+                    _nearPly = false;
                 }
-                _nearPly = false;
+                
             }
         }
         if (singleTarget == false)
@@ -155,8 +157,9 @@ public class InteractCaller : MonoBehaviour
                 if (other.gameObject == actlDtcPly)
                 {
                     actlDtcPly = null;
+                    _nearPly = false;
                 }
-                _nearPly = false;
+                
             }
         }
     }
