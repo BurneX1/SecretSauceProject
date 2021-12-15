@@ -292,6 +292,15 @@ public class Characters : Entities
         {
             cmp_rb.AddForce(new Vector3(0, force, 0));
             canJmp = false;
+            GameObject sndObj = GameObject.Find("SoundManager");
+            if (sndObj != null)
+            {
+                if (sndObj.GetComponent<AudioManager>().DetectPlaying("Salto") == false)
+                {
+                    sndObj.GetComponent<AudioManager>().Play("Salto");
+                }
+
+            }
         }
 
         if (cmp_rb.velocity.y < 0 && canJmp == false)

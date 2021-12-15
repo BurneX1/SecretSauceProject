@@ -176,5 +176,16 @@ public class AudioManager : MonoBehaviour
         }
         s.source.UnPause();
     }
+
+    public bool DetectPlaying(string name)
+    {
+        Sound s = Array.Find(soundsArray, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.Log("El sonido " + name + " no se encontró");
+            return false;
+        }
+        return s.source.isPlaying;
+    }
     //------------------------------------------------------------------------//
 }

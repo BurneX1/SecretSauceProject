@@ -17,7 +17,7 @@ public class Opciones : MonoBehaviour
     {
         if(PlayerPrefs.HasKey("GenVol") == false)
         {
-            PlayerPrefs.SetFloat("GenVol", 0.5f);
+            PlayerPrefs.SetFloat("GenVol", 1);
         }
         if (PlayerPrefs.HasKey("MscVol") == false)
         {

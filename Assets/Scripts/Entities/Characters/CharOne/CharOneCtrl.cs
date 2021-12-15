@@ -19,6 +19,8 @@ public class CharOneCtrl : MonoBehaviour
 
     public float selfDmgTimer = 0;
     public float selfDmgCooldown;
+
+    GameObject sndObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class CharOneCtrl : MonoBehaviour
         _cmp_mod.meleHitCollider.gameObject.SetActive(false);
         _cmp_mod.currentAmmo = _cmp_mod.maxAmmo;
         _cmp_mod.canReceiveDmg = true;
+        sndObj = GameObject.Find("SoundManager");
     }
 
     private void FixedUpdate()
@@ -44,6 +47,22 @@ public class CharOneCtrl : MonoBehaviour
             {
                 _cmp_mod.cmp_agent.enabled = false;
                 _cmp_mod.Move();
+                /*if(_cmp_mod.hor!=0 ||_cmp_mod.ver != 0)
+                {
+                    if( _cmp_mod.grounded != false)
+                    {
+                        if (sndObj != null)
+                        {
+                            if(sndObj.GetComponent<AudioManager>().DetectPlaying("Pasos") == false)
+                            {
+                                sndObj.GetComponent<AudioManager>().Play("Pasos");
+                            }
+                            
+                        }
+                    }
+
+                }*/
+                
                 //_cmp_mod.cmp_rb.velocity.Set(0,0,0);
                 //_cmp_mod.cmp_rb.speed
             }

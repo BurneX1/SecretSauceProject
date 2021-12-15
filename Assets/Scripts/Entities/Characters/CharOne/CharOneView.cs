@@ -27,9 +27,11 @@ public class CharOneView : MonoBehaviour
     public float activationMove;
     public float timer;
 
+    GameObject sndObj;
     // Start is called before the first frame update
     void Start()
     {
+        sndObj = GameObject.Find("SoundManager");
         _cmp_mod = gameObject.GetComponent<CharOneModl>();
         _cmp_ctrl = gameObject.GetComponent<CharOneCtrl>();
         //_cmp_anim = GetComponent<Animator>();
@@ -60,15 +62,32 @@ public class CharOneView : MonoBehaviour
         if (_cmp_mod.isMovingH == true || _cmp_mod.isMovingV == true)
         {
             viewMove = true;
+            if (sndObj != null)
+            {
+                if (sndObj.GetComponent<AudioManager>().DetectPlaying("Pasos") == false)
+                {
+                    sndObj.GetComponent<AudioManager>().Play("Pasos");
+                }
+
+            }
         }
         else if (_cmp_mod.isMovingH == true && _cmp_mod.isMovingV == true)
         {
             viewMove = true;
+            if (sndObj != null)
+            {
+                if (sndObj.GetComponent<AudioManager>().DetectPlaying("Pasos") == false)
+                {
+                    sndObj.GetComponent<AudioManager>().Play("Pasos");
+                }
+
+            }
         }
         else
         {
             viewMove = false;
         }
+        
     }
     
     void ActivateAnimationAttack()
